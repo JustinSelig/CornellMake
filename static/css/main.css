@@ -1,4 +1,19 @@
 h1 {
-	color: red;
+	color: white;
 	margin-left: 100px;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 7em;
+}
+
+img {
+	height: 200px;
+	width: 500px;
+}
+
+html { 
+  background: url("http://placekitten.com/500/700") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
