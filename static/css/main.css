@@ -1,6 +1,6 @@
 h1 {
-	color: white;
 	margin-left: 100px;
+	background-color: transparent;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 7em;
 }
@@ -28,4 +28,42 @@ html {
     -moz-transition: opacity 1s ease-in-out;
     -o-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out;
+}
+
+.side-bar {
+	height: 80%;
+	width: 50px;
+	margin-top: auto;
+	margin-bottom: auto;
+	background-color: grey;
+	opacity: 0.5;
+}
+
+.tb-bar {
+	width: 80%;
+	height: 50px;
+	/*margin-left: auto;
+	margin-right: auto;*/
+	background-color: grey;
+	opacity: 0.5;
+}
+
+#sb-right {
+	right: 0;
+	position: absolute;
+}
+
+#sb-left {
+	left: 0;
+	position: absolute;
+}
+
+#sb-top {
+	top: 0;
+	position: absolute;
+}
+
+#sb-bottom {
+	bottom: 0;
+	position: absolute;
 }
