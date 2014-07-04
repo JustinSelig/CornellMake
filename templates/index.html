@@ -21,7 +21,9 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 	
-	<!--h1>Cornell<br>Makerspace</h1-->
+	<div id="name">
+		<h1>Cornell<br>Makerspace</h1>
+	</div>
    
     <!--div id="bk-img-toggle">
         <img class="bk-img" src="{{ STATIC_URL }}images/makespace.jpg"></img>
@@ -29,15 +31,17 @@
         <img class="bk-img" src="{{ STATIC_URL }}images/kitten.jpg"></img>
 	</div-->
 
-	<div class="tb">
-		<div class="tb-bar" id="sb-top"></div>
+	<div id="top-aligner">
+		<div class="tb-bar"></div>
 	</div>
-	<div class="row">
-		<div class="side-bar" id="sb-right"></div>
-		<div class="side-bar" id="sb-left"></div>
+	<div id="right-side-aligner">
+		<div class="side-bar"></div>
 	</div>
-	<div class="row">
-		<div class="tb-bar" id="sb-bottom"></div>
+	<div id="left-side-aligner">
+		<div class="side-bar"></div>
+	</div>
+	<div id="bottom-aligner">
+		<div class="tb-bar"></div>
 	</div>
 </body>
 </html>
