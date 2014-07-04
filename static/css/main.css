@@ -1,38 +1,168 @@
-h1 {
-	margin-left: 100px;
-	background-color: transparent;
-	font-family: 'Ubuntu', sans-serif;
-	font-size: 7em;
+/*body {
+	background: url("http://placekitten.com/1000/900") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}*/
+
+@-webkit-keyframes cf4FadeInOut {
+	0% {
+		opacity:1;
+	}
+	17% {
+		opacity:1;
+	}
+	25% {
+		opacity:0;
+	}
+	92% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+@-moz-keyframes cf4FadeInOut {
+	0% {
+		opacity:1;
+	}
+	17% {
+		opacity:1;
+	}
+	25% {
+		opacity:0;
+	}
+	92% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+@-o-keyframes cf4FadeInOut {
+	0% {
+		opacity:1;
+	}
+	17% {
+		opacity:1;
+	}
+	25% {
+		opacity:0;
+	}
+	92% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+@keyframes cf4FadeInOut {
+	0% {
+		opacity:1;
+	}
+	17% {
+		opacity:1;
+	}
+	25% {
+		opacity:0;
+	}
+	92% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+#cf4a {
+	width: 100%;
+	height: 100%;
+	margin:0 auto;
+	position: fixed;
+	top: 0;
+}
+
+#cf4a img {
+	position:absolute;
+	height: inherit;
+	width: inherit;
 }
 
 img {
-	height: 200px;
-	width: 500px;
+	height: auto;
+	overflow: hidden;
+	z-index: -1;
 }
 
-html { 
-  background: url("http://placekitten.com/1000/900") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+#cf4a img {
+	-webkit-animation-name: cf4FadeInOut;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 8s;
+
+	-moz-animation-name: cf4FadeInOut;
+	-moz-animation-timing-function: ease-in-out;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-duration: 8s;
+
+	-o-animation-name: cf4FadeInOut;
+	-o-animation-timing-function: ease-in-out;
+	-o-animation-iteration-count: infinite;
+	-o-animation-duration: 8s;
+
+	animation-name: cf4FadeInOut;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 8s;
+}
+#cf4a img:nth-of-type(1) {
+	-webkit-animation-delay: 6s;
+	-moz-animation-delay: 6s;
+	-o-animation-delay: 6s;
+	animation-delay: 6s;
+}
+#cf4a img:nth-of-type(2) {
+	-webkit-animation-delay: 4s;
+	-moz-animation-delay: 4s;
+	-o-animation-delay: 4s;
+	animation-delay: 4s;
+}
+#cf4a img:nth-of-type(3) {
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	-o-animation-delay: 2s;
+	animation-delay: 2s;
+}
+#cf4a img:nth-of-type(4) {
+	-webkit-animation-delay: 0;
+	-moz-animation-delay: 0;
+	-o-animation-delay: 0;
+	animation-delay: 0;
 }
 
-#bk-img-toggle {
-    height=100%;
-    width: 100%;
+/*#name{
+	margin-top: 100px;
+	margin-left: 100px;
+	position: fixed;
+}*/
+
+#content{
+	margin-top: 100px;
+	margin-left: 100px;
+	position: fixed;
 }
 
-.bk-img {
-    position: absolute;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
+#name, h1 {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 10em;
 }
 
 .tb-bar{
-	width: 80%;
+	width: 100%;
 	height: inherit;
 	margin-left: auto;
 	margin-right: auto;
@@ -76,9 +206,4 @@ html {
 	height: 100%;
 	left: 0px;
 	position: fixed;
-}
-
-#name{
-	background-color: transparent;
-	margin-top: 100px;
 }
