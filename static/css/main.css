@@ -109,7 +109,7 @@
 img {
 	height: auto;
 	overflow: hidden;
-	z-index: -1;
+	z-index: -999;
 }
 
 #cf4a img {
