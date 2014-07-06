@@ -16,13 +16,6 @@
 	<!-- Site Specific -->
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500italic,500' rel='stylesheet' type='text/css'>
-
-<!-- JavaScript
-================================================== -->
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 	
 <!-- Mobile Specifications
 ================================================== -->
@@ -54,29 +47,39 @@
 	</header>
 	
 	<main id="main-content">
-		<h1>Cornell<br>Makerspace</h1>
+		<div class="home-fg">
+			<h1>Cornell Makerspace</h1>
+	
+			<p class="lead">
+				A university-wide, cross-disciplinary initiative to foster innovation and creativity by providing students the necessary resources to work on projects that matter.
+			</p>
+		</div>
 
-		<p class="lead">
-			A university-wide, cross-disciplinary initiative to foster innovation and creativity by providing students the necessary resources to work on projects that matter.
-		</p>
-		
 		<section id="event">
 			<h3>Today's Event</h3>
 			<span id="headline">
-			{{ event.name }}
-			{{ event.image }}
-			{{ event.description }}
+				{{ event.name }}
+				{{ event.image }}
+				{{ event.description }}
 			</span>
 		</section>
-	
+
 		<!-- Slideshow Images -->
-		<div id="cf4a">
-			<img class="bk-img" src="{{ STATIC_URL }}images/makespace.jpg"></img>
-			<img class="bk-img" src="{{ STATIC_URL }}images/Maker-Space.png"></img>
-			<img class="bk-img" src="{{ STATIC_URL }}images/kitten.jpg"></img>
-			<img class="bk-img" src="{{ STATIC_URL }}images/Dark-Background1.jpg"></img>
+		<div class="bg-fader">
+			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg1.jpg"></img>
+			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg2.jpg"></img>
+			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg3.jpg"></img>
+			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg4.jpg"></img>
 		</div>
 	</main>
 
+<!-- JavaScript
+================================================== -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+	<script src="{{ STATIC_URL }}js/home.js"></script>
+>>>>>>> 6efad81069426b1e3287ea3ac8f346d197b4b95b
 </body>
 </html>

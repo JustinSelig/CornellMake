@@ -23,13 +23,15 @@
 		display: block;
 		color: #fff;
 		text-align: center;
-		padding: .5em;
+		padding: 0;
 		margin: 0;
 		position: fixed;
 	}
 	
 	.nav-top {
 		top: 0;
+		line-height: 2.5em;
+		height: 2.5em;
 		width: 100%;
 		z-index: 3;
 		background: red;
@@ -37,6 +39,8 @@
 	
 	.nav-bottom {
 		bottom: 0;
+		line-height: 2.5em;
+		height: 2.5em;
 		width: 100%;
 		z-index: 3;
 		background: orange;
@@ -45,7 +49,7 @@
 	.nav-right {
 		right: 0;
 		height: 100%;
-		writing-mode: rl-tb;
+		width: 2.5em;
 		z-index: 2;
 		background: lightblue;
 	}
@@ -53,6 +57,7 @@
 	.nav-left {
 		left: 0;
 		height: 100%;
+		width: 2.5em;
 		z-index: 2;
 		background: skyblue;
 	}
@@ -74,8 +79,18 @@
 		top: 45%;
 	}
 
-
-
+	.home-fg {
+		position: relative;
+		z-index: 1;
+	}
+	
+	.home-bg {
+		position: relative;
+		z-index: -1;
+	}
+	
+	
+	
 /*body {
 	background: url("http://placekitten.com/1000/900") no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -85,7 +100,7 @@
 }*/
 
 
-@-webkit-keyframes cf4FadeInOut {
+@-webkit-keyframes bgFadeInOut {
 	0% {
 		opacity:1;
 	}
@@ -103,7 +118,7 @@
 	}
 }
 
-@-moz-keyframes cf4FadeInOut {
+@keyframes bgFadeInOut {
 	0% {
 		opacity:1;
 	}
@@ -121,107 +136,67 @@
 	}
 }
 
-@-o-keyframes cf4FadeInOut {
-	0% {
-		opacity:1;
-	}
-	17% {
-		opacity:1;
-	}
-	25% {
-		opacity:0;
-	}
-	92% {
-		opacity:0;
-	}
-	100% {
-		opacity:1;
-	}
-}
-
-@keyframes cf4FadeInOut {
-	0% {
-		opacity:1;
-	}
-	17% {
-		opacity:1;
-	}
-	25% {
-		opacity:0;
-	}
-	92% {
-		opacity:0;
-	}
-	100% {
-		opacity:1;
-	}
-}
-
-#cf4a {
-	min-width: 100%;
-	height: auto;
-	margin:0 auto;
+.bg-fader {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
 	position: fixed;
 	top: 0;
 }
 
-#cf4a img {
-	position:absolute;
-	height: inherit;
-	width: inherit;
-}
-
-img {
-	height: auto;
-	overflow: hidden;
-	z-index: -1;
-}
-
-#cf4a img {
-	-webkit-animation-name: cf4FadeInOut;
+.bg-fader-img {
+	-webkit-animation-name: bgFadeInOut;
 	-webkit-animation-timing-function: ease-in-out;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-duration: 8s;
 
-	-moz-animation-name: cf4FadeInOut;
-	-moz-animation-timing-function: ease-in-out;
-	-moz-animation-iteration-count: infinite;
-	-moz-animation-duration: 8s;
-
-	-o-animation-name: cf4FadeInOut;
-	-o-animation-timing-function: ease-in-out;
-	-o-animation-iteration-count: infinite;
-	-o-animation-duration: 8s;
-
-	animation-name: cf4FadeInOut;
+	animation-name: bgFadeInOut;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
 	animation-duration: 8s;
 }
-#cf4a img:nth-of-type(1) {
+
+.bg-fader img:nth-of-type(1) {
 	-webkit-animation-delay: 6s;
 	-moz-animation-delay: 6s;
 	-o-animation-delay: 6s;
 	animation-delay: 6s;
 }
-#cf4a img:nth-of-type(2) {
+
+.bg-fader img:nth-of-type(2) {
 	-webkit-animation-delay: 4s;
 	-moz-animation-delay: 4s;
 	-o-animation-delay: 4s;
 	animation-delay: 4s;
 }
-#cf4a img:nth-of-type(3) {
+
+.bg-fader img:nth-of-type(3) {
 	-webkit-animation-delay: 2s;
 	-moz-animation-delay: 2s;
 	-o-animation-delay: 2s;
 	animation-delay: 2s;
 }
-#cf4a img:nth-of-type(4) {
+
+.bg-fader img:nth-of-type(4) {
 	-webkit-animation-delay: 0;
 	-moz-animation-delay: 0;
 	-o-animation-delay: 0;
 	animation-delay: 0;
 }
+
+/* Mobile first responsive fader images
+================================================== */
+
+.bg-fader-img {
+	position: absolute;
+	height: auto;
+	width: auto;
+}
+	
+
+
+
+
 
 #name{
 	margin-top: 100px;
@@ -238,51 +213,4 @@ img {
 #name, h1 {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 10em;
-}
-
-.tb-bar{
-	width: 100%;
-	height: inherit;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: grey;
-	opacity: 0.5;
-}
-
-.side-bar{
-	width: inherit;
-	height: 80%;
-	margin-top: 60px; /*auto not working*/
-	margin-bottom: auto;
-	position: absolute;
-	background-color: grey;
-	opacity: 0.5;
-}
-
-#top-aligner{
-	width: 100%;
-	height: 50px;
-	top: 0;
-	position: absolute;
-}
-
-#bottom-aligner {
-	width: 100%;
-	height: 50px;
-	bottom: 0;
-	position: absolute;
-}
-
-#right-side-aligner{
-	width: 50px;
-	height: 100%;
-	right: 0px;
-	position: fixed;
-}
-
-#left-side-aligner{
-	width: 50px;
-	height: 100%;
-	left: 0px;
-	position: fixed;
 }
