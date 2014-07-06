@@ -5,12 +5,76 @@
 		font-family: "Ubuntu";
 	}
 
+	h1 { margin-top: 0; }
+	
 /* ============================================================================
 .::[ HOME PAGE ]::.
 ============================================================================ */
+	.nav-bars {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.nav-bars .nav-top,
+	.nav-bars .nav-bottom,
+	.nav-bars .nav-right,
+	.nav-bars .nav-left {
+		display: block;
+		color: #fff;
+		text-align: center;
+		padding: .5em;
+		margin: 0;
+		position: fixed;
+	}
+	
+	.nav-top {
+		top: 0;
+		width: 100%;
+		z-index: 3;
+		background: red;
+	}
+	
+	.nav-bottom {
+		bottom: 0;
+		width: 100%;
+		z-index: 3;
+		background: orange;
+	}
+	
+	.nav-right {
+		right: 0;
+		height: 100%;
+		writing-mode: rl-tb;
+		z-index: 2;
+		background: lightblue;
+	}
+	
+	.nav-left {
+		left: 0;
+		height: 100%;
+		z-index: 2;
+		background: skyblue;
+	}
+	
+	
+	.text-rotate-right {
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		position: relative;
+		top: 45%;
+	}
+	
+	.text-rotate-left {
+		-webkit-transform: rotate(270deg);
+		-moz-transform: rotate(270deg);
+		-o-transform: rotate(270deg);
+		position: relative;
+		top: 45%;
+	}
 
-	
-	
+
 
 /*body {
 	background: url("http://placekitten.com/1000/900") no-repeat center center fixed;
@@ -19,6 +83,7 @@
 	-o-background-size: cover;
 	background-size: cover;
 }*/
+
 
 @-webkit-keyframes cf4FadeInOut {
 	0% {
@@ -158,11 +223,11 @@ img {
 	animation-delay: 0;
 }
 
-/*#name{
+#name{
 	margin-top: 100px;
 	margin-left: 100px;
 	position: fixed;
-}*/
+}
 
 #content{
 	margin-top: 100px;
