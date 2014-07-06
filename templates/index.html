@@ -1,55 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html">
 <html lang="en">
 <head>
-    <title>Cornell Makerspace</title>
+	
+<!-- Basic Page Needs
+================================================== -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500italic,500' rel='stylesheet' type='text/css'>
+	
+	<title>Cornell Makerspace</title>
+		
+<!-- CSS
+================================================== -->
 	<!-- Bootstrap -->
 	<link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+	<!-- Site Specific -->
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500italic,500' rel='stylesheet' type='text/css'>
+
+<!-- JavaScript
+================================================== -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+	
+<!-- Mobile Specifications
+================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+<!-- Browser Compatibility
+================================================== -->
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-<body>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-	
-	<div id="content">
-		<div id="name">
-			<h1>Cornell<br>Makerspace</h1>
-		</div>
-		<div id="description">
-			A university-wide, cross-disciplinary initiative to foster innovation and creativity by providing students the necessary resources to work on projects that matter.
-		</div>
-	</div>
-   
-	<!-- Slideshow Images -->
-    <div id="cf4a">
-        <img class="bk-img" src="{{ STATIC_URL }}images/makespace.jpg"></img>
-        <img class="bk-img" src="{{ STATIC_URL }}images/Maker-Space.png"></img>
-        <img class="bk-img" src="{{ STATIC_URL }}images/kitten.jpg"></img>
-		<img class="bk-img" src="{{ STATIC_URL }}images/Dark-Background1.jpg"></img>
-	</div>
 
-	<div id="top-aligner">
-		<div class="tb-bar"></div>
-	</div>
-	<div id="right-side-aligner">
-		<div class="side-bar"></div>
-	</div>
-	<div id="left-side-aligner">
-		<div class="side-bar"></div>
-	</div>
-	<div id="bottom-aligner">
-		<div class="tb-bar"></div>
-	</div>
+</head>	
+<body class="home">
+
+<!-- Body
+================================================== -->
+	<header id="top">  
+		<nav>
+			<ul>
+				<li class="nav-top"><a href="#">Connect</a></li>
+				<li class="nav-bottom"><a href="#"Create</a><li>
+				<li class="nav-right"><a href="#"Media</a></li>
+				<li class="nav-left"><a href="#"About</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main id="main-content">
+		<h1>Cornell<br>Makerspace</h1>
+
+		<p class="lead">
+			A university-wide, cross-disciplinary initiative to foster innovation and creativity by providing students the necessary resources to work on projects that matter.
+		</p>
+		
+		<!-- Slideshow Images -->
+		<div id="cf4a">
+			<img class="bk-img" src="{{ STATIC_URL }}images/makespace.jpg"></img>
+			<img class="bk-img" src="{{ STATIC_URL }}images/Maker-Space.png"></img>
+			<img class="bk-img" src="{{ STATIC_URL }}images/kitten.jpg"></img>
+			<img class="bk-img" src="{{ STATIC_URL }}images/Dark-Background1.jpg"></img>
+		</div>
+	</main>
+
 
 </body>
 </html>
