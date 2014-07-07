@@ -1,6 +1,7 @@
 /* ============================================================================
 .::[ GLOBAL SETTINGS ]::.
 ============================================================================ */
+
 	body {
 		font-family: "Ubuntu";
 	}
@@ -33,18 +34,26 @@
 		padding: 0;
 		margin: 0;
 		position: fixed;
+		text-decoration: none;
+		transition: all 200ms ease-out;
+	}
+
+	.nav-bars .text {
+		display: inline-block;
+		position: relative;
+		transition: all 350ms ease-in;
 	}
 	
-	.nav-top {
+	.nav-bars .nav-top {
 		top: 0;
 		line-height: 2.5em;
 		height: 2.5em;
 		width: 100%;
 		z-index: 3;
-		background: red;
+		background: firebrick;
 	}
 	
-	.nav-bottom {
+	.nav-bars .nav-bottom {
 		bottom: 0;
 		line-height: 2.5em;
 		height: 2.5em;
@@ -53,7 +62,7 @@
 		background: orange;
 	}
 	
-	.nav-right {
+	.nav-bars .nav-right {
 		right: 0;
 		height: 100%;
 		width: 2.5em;
@@ -61,7 +70,7 @@
 		background: lightblue;
 	}
 	
-	.nav-left {
+	.nav-bars .nav-left {
 		left: 0;
 		height: 100%;
 		width: 2.5em;
@@ -69,8 +78,13 @@
 		background: skyblue;
 	}
 	
-	
-	.text-rotate-right {
+	.nav-bars .nav-top .text {
+		top: 0;
+	}
+	.nav-bars .nav-right .text {
+		top: 0;
+	}
+	.nav-bars .nav-right .text {
 		-webkit-transform: rotate(90deg);
 		-moz-transform: rotate(90deg);
 		-o-transform: rotate(90deg);
@@ -78,18 +92,57 @@
 		top: 45%;
 	}
 	
-	.text-rotate-left {
+	.nav-bars .nav-left .text {
 		-webkit-transform: rotate(270deg);
 		-moz-transform: rotate(270deg);
 		-o-transform: rotate(270deg);
 		position: relative;
 		top: 45%;
 	}
+	
 
+/* Hover Animations
+================================================== */	
+	.nav-bars .nav-top:hover,
+	.nav-bars .nav-bottom:hover,
+	.nav-bars .nav-right:hover,
+	.nav-bars .nav-left:hover {
+		z-index: 5;
+	}
+	
+	.nav-bars .nav-top:hover .text,
+	.nav-bars .nav-bottom:hover .text,
+	.nav-bars .nav-right:hover .text,
+	.nav-bars .nav-left:hover .text {
+		font-weight: bold;
+		text-shadow: 0 1px 1px rgba(0,0,0,.75);
+		transform: scale(3.5);
+	}
+	
+	.nav-bars .nav-top:hover,
+	.nav-bars .nav-bottom:hover {
+		height: 65%;
+	}
+	.nav-bars .nav-top:hover .text,
+	.nav-bars .nav-bottom:hover .text {
+		top: 35%;
+	}
+	
+	.nav-bars .nav-right:hover,
+	.nav-bars .nav-left:hover {
+		width: 65%;
+	}
+
+	
+	
+	
+/* Home Foreground Content
+================================================== */
 	.home-fg {
 		position: relative;
 		z-index: 1;
 		padding: 7.5em;
+		max-width: 75%;
 	}
 	
 	.home-bg {
@@ -98,19 +151,30 @@
 	}
 	
 	.home-fg h1 {
-		max-width: 75%;
+		font-size: 7.5em;
+	}
+	
+	.home-fg .lead {
+		font-size: 2em;
+	}
+	
+	.home-fg .event {
+		background: rgba(0,0,0,.25);
+		color: rgba(250,250,250,.75);
+		padding: 1.5em;
+		width: 75%;
+		max-width: 41.5em;
+	}
+	
+	.home-fg .event h2 {
+		margin: 0 0 .5em 0;
 	}
 	
 	
-/*body {
-	background: url("http://placekitten.com/1000/900") no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}*/
+	
 
-
+/* Background Fader Styles
+================================================== */
 @-webkit-keyframes bgFadeInOut {
 	0% {
 		opacity:1;
@@ -236,26 +300,4 @@ div.parallax-container div.parallax {
 	position: absolute;
 	height: auto;
 	width: auto;
-}
-	
-
-
-
-
-
-#name{
-	margin-top: 100px;
-	margin-left: 100px;
-	position: fixed;
-}
-
-#content{
-	margin-top: 100px;
-	margin-left: 100px;
-	position: fixed;
-}
-
-#name, h1 {
-	font-family: 'Ubuntu', sans-serif;
-	font-size: 10em;
 }
