@@ -27,18 +27,25 @@
 		padding: 0;
 		margin: 0;
 		position: fixed;
+		text-decoration: none;
+		transition: all 200ms ease-out;
+	}
+
+	.nav-bars .text {
+		position: relative;
+		transition: all 350ms ease-in;
 	}
 	
-	.nav-top {
+	.nav-bars .nav-top {
 		top: 0;
 		line-height: 2.5em;
 		height: 2.5em;
 		width: 100%;
 		z-index: 3;
-		background: red;
+		background: firebrick;
 	}
 	
-	.nav-bottom {
+	.nav-bars .nav-bottom {
 		bottom: 0;
 		line-height: 2.5em;
 		height: 2.5em;
@@ -47,7 +54,7 @@
 		background: orange;
 	}
 	
-	.nav-right {
+	.nav-bars .nav-right {
 		right: 0;
 		height: 100%;
 		width: 2.5em;
@@ -55,7 +62,7 @@
 		background: lightblue;
 	}
 	
-	.nav-left {
+	.nav-bars .nav-left {
 		left: 0;
 		height: 100%;
 		width: 2.5em;
@@ -63,8 +70,13 @@
 		background: skyblue;
 	}
 	
-	
-	.text-rotate-right {
+	.nav-bars .nav-top .text {
+		top: 0;
+	}
+	.nav-bars .nav-right .text {
+		top: 0;
+	}
+	.nav-bars .nav-right .text {
 		-webkit-transform: rotate(90deg);
 		-moz-transform: rotate(90deg);
 		-o-transform: rotate(90deg);
@@ -72,14 +84,52 @@
 		top: 45%;
 	}
 	
-	.text-rotate-left {
+	.nav-bars .nav-left .text {
 		-webkit-transform: rotate(270deg);
 		-moz-transform: rotate(270deg);
 		-o-transform: rotate(270deg);
 		position: relative;
 		top: 45%;
 	}
+	
 
+/* Hover Animations
+================================================== */	
+	.nav-bars .nav-top:hover,
+	.nav-bars .nav-bottom:hover,
+	.nav-bars .nav-right:hover,
+	.nav-bars .nav-left:hover {
+		z-index: 5;
+	}
+	
+	.nav-bars .nav-top:hover .text,
+	.nav-bars .nav-bottom:hover .text,
+	.nav-bars .nav-right:hover .text,
+	.nav-bars .nav-left:hover .text {
+		font-weight: bold;
+		text-shadow: 0 1px 1px rgba(0,0,0,.75);
+		transform: scale(3.5);
+	}
+	
+	.nav-bars .nav-top:hover,
+	.nav-bars .nav-bottom:hover {
+		height: 65%;
+	}
+	.nav-bars .nav-top:hover .text,
+	.nav-bars .nav-bottom:hover .text {
+		top: 35%;
+	}
+	
+	.nav-bars .nav-right:hover,
+	.nav-bars .nav-left:hover {
+		width: 65%;
+	}
+
+	
+	
+	
+/* Home Foreground Content
+================================================== */
 	.home-fg {
 		position: relative;
 		z-index: 1;
