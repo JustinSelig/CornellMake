@@ -10,7 +10,7 @@ def about(request):
 	return render(request, 'about.html')
 
 def media(request):
-	return render(request, 'media.html')
+	return render(request, 'parallax.html')
 
 def create(request):
 	return render(request, 'create.html')
