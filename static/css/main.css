@@ -32,6 +32,7 @@
 	}
 
 	.nav-bars .text {
+		display: inline-block;
 		position: relative;
 		transition: all 350ms ease-in;
 	}
