@@ -16,13 +16,6 @@
 		margin: 0;
 		padding: 0;
 	}
-
-	.nav-top:hover,
-	.nav-bottom:hover,
-	.nav-left:hover,
-	.nav-right:hover {
-		opacity: 0.5;
-	}
 	
 	.nav-bars .nav-top,
 	.nav-bars .nav-bottom,
