@@ -82,6 +82,7 @@
 	.home-fg {
 		position: relative;
 		z-index: 1;
+		padding: 7.5em;
 	}
 	
 	.home-bg {
@@ -89,6 +90,9 @@
 		z-index: -1;
 	}
 	
+	.home-fg h1 {
+		max-width: 75%;
+	}
 	
 	
 /*body {
