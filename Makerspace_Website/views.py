@@ -3,9 +3,8 @@ from django.template import Context
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
 
-
-def home(request):
-	return render(request, 'index.html')
+#def home(request):
+#	return render(request, 'index.html')
 
 def about(request):
 	return render(request, 'about.html')

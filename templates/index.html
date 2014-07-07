@@ -53,6 +53,15 @@
 			<p class="lead">
 				A university-wide, cross-disciplinary initiative to foster innovation and creativity by providing students the necessary resources to work on projects that matter.
 			</p>
+			
+			<section id="event">
+				<h3>Today's Event</h3>
+				<span id="headline">
+					{{ event.name }}<br>
+					{{ event.image }}<br>
+					{{ event.description }}
+				</span>
+			</section>
 		</div>
 
 		<!-- Slideshow Images -->
@@ -71,5 +80,6 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 	<script src="{{ STATIC_URL }}js/home.js"></script>
+
 </body>
 </html>
