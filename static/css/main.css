@@ -43,7 +43,7 @@
 		height: 2.5em;
 		width: 100%;
 		z-index: 3;
-		background: firebrick;
+		background: #2F2F2F;
 	}
 	
 	.nav-bars .nav-bottom {
@@ -52,7 +52,7 @@
 		height: 2.5em;
 		width: 100%;
 		z-index: 3;
-		background: orange;
+		background: #2F2F2F;
 	}
 	
 	.nav-bars .nav-right {
@@ -60,7 +60,7 @@
 		height: 100%;
 		width: 2.5em;
 		z-index: 2;
-		background: lightblue;
+		background: #B31B1B;
 	}
 	
 	.nav-bars .nav-left {
@@ -68,7 +68,7 @@
 		height: 100%;
 		width: 2.5em;
 		z-index: 2;
-		background: skyblue;
+		background: #B31B1B;
 	}
 	
 	.nav-bars .nav-top .text {
