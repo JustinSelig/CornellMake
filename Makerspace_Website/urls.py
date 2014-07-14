@@ -13,5 +13,6 @@ urlpatterns = patterns('',
 	url(r'^home/$', home),
 	url(r'^about/$', about),
 	url(r'^media/$', media),
-	url(r'^create/$', create),
+	#url(r'^create/$', create),
+	(r'^projects/', include('projects.urls')),
 )

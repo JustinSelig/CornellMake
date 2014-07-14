@@ -11,6 +11,3 @@ def about(request):
 
 def media(request):
 	return render(request, 'parallax.html')
-
-def create(request):
-	return render(request, 'create.html')

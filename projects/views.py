@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from forms import ProductForm
 
-# Create your views here.
+def create(request):
+	args = {}
+	args['form'] = ProductForm()
+	return render(request, 'create.html', args)
