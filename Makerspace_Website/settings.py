@@ -92,3 +92,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     '/var/www/static/',
 )
+
+BASE_URL = 'http://127.0.0.1:8000/'
+# ^^^ Change this later!!! ^^^
