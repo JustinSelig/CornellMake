@@ -294,3 +294,10 @@ div.parallax-container div.parallax {
 	height: auto;
 	width: auto;
 }
+
+/* MEDIA
+====================================================*/
+.media-content {
+	background-color: #333;
+	height: 800px;
+}
