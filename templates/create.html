@@ -1,4 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Create{% endblock %}
+{% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/create.css">
+{% endblock %}
+
+{% block content %}
 
 <!-- multistep form -->
 <form id="msform">
@@ -123,6 +129,8 @@
 		})
 	});
 </script>
+
+{% endblock %}
 
 <!--form>
 	<fieldset>
