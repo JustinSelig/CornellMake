@@ -1,14 +1,43 @@
-{% extends "base.html" %}
-{% block title %}Welcome{% endblock %}
+<!DOCTYPE html">
+<html lang="en">
+	<head>
+		<title>Cornell Makerspace</title>
+		<!-- Basic Page Needs
+================================================== -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+		<title>{% block title %}{% endblock %} \ Cornell Makerspace</title>
 
-{% block content %}
+		<!-- CSS
+================================================== -->
+		<!-- Bootstrap -->
+		<link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+		<!-- Site Specific -->
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500italic,500' rel='stylesheet' type='text/css'>
+
+		<!-- Mobile Specifications
+================================================== -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Browser Compatibility
+================================================== -->
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+
 <!-- Body
 ================================================== -->
 	<header id="top">  
 		<nav>
 			<ul class="nav-bars">
-				<li><a class="nav-top" href="#"><div class="text">Connect</div></a></li>
+				<li><a class="nav-top" href="/connect/"><div class="text">Connect</div></a></li>
 				<li><a class="nav-bottom" href="/projects/create/"><div class="text">Create</div></a></li>
 				<li><a class="nav-right" href="/media/"><div class="text">Media</div></a></li>
 				<li><a class="nav-left" href="/about/"><div class="text">About</div></a></a></li>
@@ -42,8 +71,13 @@
 			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg4.jpg"></img>
 		</div>
 	</main>
-{% endblock %}
 
-{% block scripts %}
+<!-- JavaScript
+================================================== -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 <script src="{{ STATIC_URL }}js/home.js"></script>
-{% endblock %}
+</body>
+</html>

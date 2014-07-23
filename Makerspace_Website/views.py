@@ -11,3 +11,6 @@ def about(request):
 
 def media(request):
 	return render(request, 'media.html')
+
+def connect(request):
+	return render(request, 'connect.html')
