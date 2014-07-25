@@ -8,7 +8,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<title>{% block title %}{% endblock %} \ Cornell Makerspace</title>
-
+		{%block head%}{%endblock%}
 		<!-- CSS
 ================================================== -->
 		<!-- Bootstrap -->
@@ -59,7 +59,13 @@
 		</nav>
 	</header>
 		
+	<main>	
 	{% block content %}{% endblock %}
+	</main>
+		
+	<footer>
+
+	</footer>
 	
 	<!-- JavaScript
 ================================================== -->
@@ -67,6 +73,8 @@
 	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script-->
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+	<!-- jQuery -->
+	<script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 	{% block scripts %}{% endblock %}
 	</body>
 </html>
