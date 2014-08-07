@@ -1,1 +1,5 @@
 *.pyc
+
+#Ignore emacs back ups
+*#
+*~
