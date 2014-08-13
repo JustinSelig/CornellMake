@@ -8,4 +8,24 @@ Underneath Carpenter Library is the Cornell Makerspace, a large lab generously p
 <br><br>
 The members of our leadership team serve as spokespersons of the Maker Movement -- a DIY, technology-based culture of people who enjoy making things for both personal and often educational reward. As a team that understands the value of exercising one’s creativity, the CMA seeks to empower students to effect meaningful change through innovation while also encouraging STEM education. 
 
+<div class="et-wrapper" style="width:400px;">
+	<button class="et-rotate" et-in="rotateSlideIn" et-out="rotateSlideOut">Next</button>
+	<div class="et-page">
+		<h2>Page 1</h2>
+	</div>
+	<div class="et-page">
+		<h2>Page 2</h2>
+	</div>
+</div>
+
 {% endblock %}
+
+{%block head%}
+<!--stuff for new page transitions-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>-->
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/elementTransitions.css" />
+<script src="{{STATIC_URL}}js/elementTransitions.js"></script>
+<!--<script src="{{STATIC_URL}}js/demo.js"></script>-->
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/demo.css">
+{%endblock%}

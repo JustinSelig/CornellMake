@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Admin Approve{% endblock %}
+{% block content %}
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Organization</th>
+			<th>Website</th>
+			<th>Idea Name</th>
+			<th>Description</th>
+			<th>Category</th>
+			<th>Image</th>
+			<th>Approve?</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for project in submissions %}
+		<tr>
+			<td>{{ project.name }}</td>
+			<td>{{ project.email }}</td>
+			<td>{{ project.organization }}</td>
+			<td>{{ project.website }}</td>
+			<td>{{ project.idea_name }}</td>
+			<td>{{ project.description }}</td>
+			<td>{{ project.category }}</td>
+			<td><img src="{{ project.image }}"></td>
+			<td><input type="checkbox" id="{{ project.id }}"></td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}

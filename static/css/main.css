@@ -192,8 +192,6 @@
 		margin: 0 0 .5em 0;
 	}
 	
-	
-	
 
 /* Background Fader Styles
 ================================================== */
@@ -283,10 +281,22 @@
 
 
 
+/* Mobile first responsive fader images
+================================================== */
 
+.bg-fader-img {
+	position: absolute;
+	height: auto;
+	width: auto;
+}
 
-
-
+/* ============================================================================
+.::[ MEDIA ]::.
+============================================================================ */
+.media-content {
+	background-color: #333;
+	height: 800px;
+}
 
 /*Parallax-specific css*/
 div.parallax-container {
@@ -322,25 +332,9 @@ div.parallax-container div.parallax {
 	line-height: 760%;
 }
 
-/* Mobile first responsive fader images
-================================================== */
-
-.bg-fader-img {
-	position: absolute;
-	height: auto;
-	width: auto;
-}
-
-/* MEDIA
-====================================================*/
-.media-content {
-	background-color: #333;
-	height: 800px;
-}
-
-/* CREATE
-=====================================================*/
-/*custom font*/
+/* ============================================================================
+.::[ CREATE ]::.
+============================================================================ */
 
 /*form styles*/
 #msform {
