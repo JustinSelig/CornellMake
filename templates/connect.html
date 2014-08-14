@@ -29,14 +29,28 @@
 			</div>
 		</div>
 -->
-		
+		You searched for {{ query }}.
 		<div class="row">
-			You searched for {{ query }}.
+<!--
 			<ul>
 			{% for project in projects %}
-			<li>{{ project.name }}</li>
+			<li>{{ project.name }}<br>{{ project.email }}<br>{{ project.organization }}<br>{{ project.website }}<br>{{ project.idea_name }}<br></li>
 			{% endfor %}
 			</ul>
+-->
+			{% for project in projects %}
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="{{ STATIC_URL }}{{project.image}}" />
+					<div class="caption">
+						<h3>{{project.name}}</h3>
+						<p>{{project.description}}</p>
+						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
 		</div>
 	</div>
 	

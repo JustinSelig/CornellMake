@@ -39,7 +39,8 @@ def approve(request):
 			new.save()
 			old.delete()
 		for submission in disapproved_submissions:
-			old = ProjectSubmission.objects.get(id=submission)
+			try: old = ProjectSubmission.objects.get(id=submission)
+			except: continue
 			old.delete()
 		args = {}
 		args.update(csrf(request))

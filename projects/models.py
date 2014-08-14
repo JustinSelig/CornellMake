@@ -7,7 +7,7 @@ from time import time
 #	category = models.CharField(max_length=25)
 
 def get_upload_file_name(instance, filename):
-	return "static/images/project_submissions/uploaded_files/%s_%s" % (str(time()).replace('.','_'), filename)
+	return "images/project_submissions/uploaded_files/%s_%s" % (str(time()).replace('.','_'), filename)
 
 class ProjectSubmission(models.Model):
 	name = models.CharField(max_length=100)

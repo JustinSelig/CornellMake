@@ -106,5 +106,7 @@ STATICFILES_DIRS = (
     '/var/www/static/',
 )
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
+
 BASE_URL = 'http://127.0.0.1:8000/'
 # ^^^ Change this later!!! ^^^
