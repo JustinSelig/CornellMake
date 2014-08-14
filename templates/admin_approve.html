@@ -1,36 +1,38 @@
 {% extends "base.html" %}
 {% block title %}Admin Approve{% endblock %}
 {% block content %}
-
-<table class="table">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Email</th>
-			<th>Organization</th>
-			<th>Website</th>
-			<th>Idea Name</th>
-			<th>Description</th>
-			<th>Category</th>
-			<th>Image</th>
-			<th>Approve?</th>
-		</tr>
-	</thead>
-	<tbody>
-	{% for project in submissions %}
-		<tr>
-			<td>{{ project.name }}</td>
-			<td>{{ project.email }}</td>
-			<td>{{ project.organization }}</td>
-			<td>{{ project.website }}</td>
-			<td>{{ project.idea_name }}</td>
-			<td>{{ project.description }}</td>
-			<td>{{ project.category }}</td>
-			<td><img src="{{ project.image }}"></td>
-			<td><input type="checkbox" id="{{ project.id }}"></td>
-		</tr>
-	{% endfor %}
-	</tbody>
-</table>
+<form action="" method="post">{% csrf_token %}
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Organization</th>
+				<th>Website</th>
+				<th>Idea Name</th>
+				<th>Description</th>
+				<th>Category</th>
+				<th>Image</th>
+				<th>Approve?</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for submission in submissions %}
+			<tr>
+				<td>{{ submission.name }}</td>
+				<td>{{ submission.email }}</td>
+				<td>{{ submission.organization }}</td>
+				<td>{{ submission.website }}</td>
+				<td>{{ submission.idea_name }}</td>
+				<td>{{ submission.description }}</td>
+				<td>{{ submission.category }}</td>
+				<td><img src="{{ submission.image }}"></td>
+				<td>Approve <input type="checkbox" value="{{ submission.id }}" name="approved"><br>Disapprove <input type="checkbox" value="{{ submission.id }}" name="disapproved"></td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<input type="submit" value="Submit" />
+</form>
 
 {% endblock %}

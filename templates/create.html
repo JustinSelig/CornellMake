@@ -12,122 +12,123 @@
 		<p class="lead">Share your ideas. Make things happen.</p>
 	</div>
 </div>
-	
-<!-- multistep form -->
-<form id="msform" action="" method="POST" enctype="multipart/form-data">
-	{% csrf_token %}
-	<!-- progressbar -->
-	<ul id="progressbar">
-		<li class="active">Personal Info</li>
-		<li>Project Profile</li>
-		<li>Submit</li>
-	</ul>
-	<fieldset>
-		<div class="form-group">
-			<label for="name">Name *</label>
-			<!--input type="text" name="name" class="form-control" required /-->
-			{{ form.name }}
-		</div>
-		<div class="form-group">
-			<label for="name">Email *</label>
-			<!--input type="text" name="email" placeholder="netID@cornell.edu" class="form-control" required /-->
-			{{ form.email }}
-		</div>
-		<div class="form-group">
-			<label for="name">Organization or Club Name</label>
-			<!--input type="text" name="org-name" class="form-control" /-->
-			{{ form.organization }}
-		</div>
-		<div class="form-group">
-			<label for="name">Website</label>
-			<!--input type="text" name="org-name" class="form-control" /-->
-			{{ form.website }}
-		</div>
-		<input type="button" name="next" class="next action-button" value="Next"/>
-	</fieldset>				
-	<fieldset>
-		<div class="form-group">
-			<label for="name">What's it called? *</label>
-			<!--input type="text" name="idea-name" class="form-control" placeholder="Idea Name" required /-->
-			{{ form.idea_name }}
-		</div>
-		<div class="form-group">
-			<label for="name">Quick! The 30 Second Elevator Pitch! *</label>
-			<!--textarea name="idea-description" class="form-control" placeholder="Idea Description" required ></textarea-->
-			{{ form.description }}
-		</div>
-		<div class="form-group">
-			<label>What categories does it fit in? *</label>
-<!--
-			<div class="checkbox">
-				<label><input type="checkbox" name="idea-category-projectTeam"> Project Team</label>
+<div class="form-container">	
+	<!-- multistep form -->
+	<form id="msform" action="" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		<!-- progressbar -->
+		<ul id="progressbar">
+			<li class="active">Personal Info</li>
+			<li>Project Profile</li>
+			<li>Submit</li>
+		</ul>
+		<fieldset>
+			<div class="form-group">
+				<label for="name">Name *</label>
+				<!--input type="text" name="name" class="form-control" required /-->
+				{{ form.name }}
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox" name="idea-category-research"> Research</label>
+			<div class="form-group">
+				<label for="name">Email *</label>
+				<!--input type="text" name="email" placeholder="netID@cornell.edu" class="form-control" required /-->
+				{{ form.email }}
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox" name="idea-category-startup"> Startup</label>
+			<div class="form-group">
+				<label for="name">Organization or Club Name</label>
+				<!--input type="text" name="org-name" class="form-control" /-->
+				{{ form.organization }}
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox" name="idea-category-compHard"> Computer Hardware</label>
+			<div class="form-group">
+				<label for="name">Website</label>
+				<!--input type="text" name="org-name" class="form-control" /-->
+				{{ form.website }}
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox" name="idea-category-compSoft"> Computer Software</label>
+			<input type="button" name="next" class="next action-button" value="Next"/>
+		</fieldset>				
+		<fieldset>
+			<div class="form-group">
+				<label for="name">What's it called? *</label>
+				<!--input type="text" name="idea-name" class="form-control" placeholder="Idea Name" required /-->
+				{{ form.idea_name }}
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox" name="idea-category-mechanical"> Mechanical</label>
+			<div class="form-group">
+				<label for="name">Quick! The 30 Second Elevator Pitch! *</label>
+				<!--textarea name="idea-description" class="form-control" placeholder="Idea Description" required ></textarea-->
+				{{ form.description }}
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox" name="idea-category-environmental"> Environmental</label>
+			<div class="form-group">
+				<label>What categories does it fit in? *</label>
+	<!--
+				<div class="checkbox">
+					<label><input type="checkbox" name="idea-category-projectTeam"> Project Team</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" name="idea-category-research"> Research</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" name="idea-category-startup"> Startup</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" name="idea-category-compHard"> Computer Hardware</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" name="idea-category-compSoft"> Computer Software</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" name="idea-category-mechanical"> Mechanical</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" name="idea-category-environmental"> Environmental</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" name="idea-category-design"> Art, Design, or Multi-Media</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" name="idea-category-social"> Social Entrepreneurship</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" name="idea-category-other"> Other</label>
+				</div>
+	-->
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox" name="idea-category-design"> Art, Design, or Multi-Media</label>
+			{{ form.category }}
+			<div class="form-group">
+				<label for="name">Upload an image of it</label>
+				<!--input type="file" name="org-name"  /-->
+				{{ form.image }}
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox" name="idea-category-social"> Social Entrepreneurship</label>
+			<input type="button" name="previous" class="previous action-button" value="Previous" />
+			<input type="button" name="next" class="next action-button" value="Next" />
+		</fieldset>
+		<fieldset>
+			<p>We'll contact you at the email address you provided regarding the approval of your proposal.</p>
+			<hr>
+			<!--button type="submit" name="idea-submit" class="btn btn-lg btn-primary">Submit Idea</button-->					
+			<div class="panel-footer text-muted">
+				By submitting your idea, you agree to our Terms & Conditions.
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox" name="idea-category-other"> Other</label>
-			</div>
--->
-		</div>
-		{{ form.category }}
-		<div class="form-group">
-			<label for="name">Upload an image of it</label>
-			<!--input type="file" name="org-name"  /-->
-			{{ form.image }}
-		</div>
-		<input type="button" name="previous" class="previous action-button" value="Previous" />
-		<input type="button" name="next" class="next action-button" value="Next" />
-	</fieldset>
-	<fieldset>
-		<p>We'll contact you at the email address you provided regarding the approval of your proposal.</p>
-		<hr>
-		<!--button type="submit" name="idea-submit" class="btn btn-lg btn-primary">Submit Idea</button-->					
-		<div class="panel-footer text-muted">
-			By submitting your idea, you agree to our Terms & Conditions.
-		</div>
-		<input type="button" name="previous" class="previous action-button" value="Previous"/>
-<!--		<input type="submit" name="submit" class="submit action-button" value="Submit" />-->
-	</fieldset>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<input type="submit" value="Submit"/><!--This is the only submit button working for now. Fix this!-->
-<!--	<input type="submit" name="submit" class="submit action-button" value="Submit" />-->
+			<input type="button" name="previous" class="previous action-button" value="Previous"/>
+	<!--		<input type="submit" name="submit" class="submit action-button" value="Submit" />-->
+		</fieldset>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<input type="submit" value="Submit"/><!--This is the only submit button working for now. Fix this!-->
+	<!--	<input type="submit" name="submit" class="submit action-button" value="Submit" />-->
 
-</form>
+	</form>
+</div>
 {% endif %}
 {% endblock %}
 

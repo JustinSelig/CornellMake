@@ -450,3 +450,8 @@ div.parallax-container div.parallax {
 	background: #27AE60;
 	color: white;
 }
+
+.form-container {
+	height: 700px;
+	background-image: url("/static/images/bg1.jpg");
+}
