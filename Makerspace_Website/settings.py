@@ -106,6 +106,7 @@ STATICFILES_DIRS = (
     '/var/www/static/',
 )
 
+#necessary for image upload to find static folder
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 
 BASE_URL = 'http://127.0.0.1:8000/'
