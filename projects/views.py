@@ -26,10 +26,8 @@ def approve(request):
 			old = ProjectSubmission.objects.get(id=submission)
 #			#submission description update by admin
 #			name = 'description-' + str(submission)
-#			obj.description = request.POST.get(name)
-#			obj.save()
+#			old.description = request.POST.get(name)
 			new = Project.objects.create()
-#			new.user_id = obj.user_id
 			new.name = old.name
 			new.email = old.email
 			new.organization = old.organization
@@ -38,13 +36,10 @@ def approve(request):
 			new.description = old.description
 			new.category = old.category
 			new.image = old.image
-#			increase = new.approve()
 			new.save()
 			old.delete()
 		for submission in disapproved_submissions:
 			old = ProjectSubmission.objects.get(id=submission)
-#			#user =  User.objects.get(id=obj.user_id)
-#			obj.disapprove()
 			old.delete()
 		args = {}
 		args.update(csrf(request))
