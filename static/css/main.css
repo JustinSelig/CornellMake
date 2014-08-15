@@ -455,3 +455,24 @@ div.parallax-container div.parallax {
 	height: 700px;
 	background-image: url("/static/images/bg1.jpg");
 }
+
+/* ============================================================================
+.::[ CONNECT ]::.
+============================================================================ */
+
+.thumbnail{
+	height: 400px;
+	overflow: scroll;
+}
+
+.thumbnail::-webkit-scrollbar { 
+	display: none; 
+}
+
+.category-box {
+	margin: 5px;
+	background-color: rgb(200,200,200);
+	padding: 10px;
+	width: 200px;
+	text-align: left;
+}

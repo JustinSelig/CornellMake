@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from forms import ProjectSubmissionForm
 from django.core.context_processors import csrf
 from django.http import HttpResponseRedirect
@@ -36,6 +36,7 @@ def approve(request):
 			new.description = old.description
 			new.category = old.category
 			new.image = old.image
+			new.url = old.url
 			new.save()
 			old.delete()
 		for submission in disapproved_submissions:
@@ -47,3 +48,9 @@ def approve(request):
 		args['submissions'] = ProjectSubmission.objects.all()
 		return render(request, 'admin_approve.html', args)
 	return render(request, 'admin_approve.html', {'submissions':ProjectSubmission.objects.all()})
+
+def project_page(request, project_url):
+	if request.method == 'GET':
+		project = get_object_or_404(Project, url=project_url)
+		context = {'project': project}
+		return render(request, 'project_page.html', context)

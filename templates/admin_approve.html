@@ -13,6 +13,7 @@
 				<th>Description</th>
 				<th>Category</th>
 				<th>Image</th>
+				<th>URL</th>
 				<th>Approve?</th>
 			</tr>
 		</thead>
@@ -27,6 +28,7 @@
 				<td>{{ submission.description }}</td>
 				<td>{{ submission.category }}</td>
 				<td><img src="{{ STATIC_URL }}{{ submission.image }}"></td>
+				<td>{{ submission.url }}</td>
 				<td>Approve <input type="checkbox" value="{{ submission.id }}" name="approved"><br>Disapprove <input type="checkbox" value="{{ submission.id }}" name="disapproved"></td>
 			</tr>
 		{% endfor %}

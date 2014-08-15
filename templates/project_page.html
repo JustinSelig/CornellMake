@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ project.idea_name }}{% endblock %}
+{% block content %}
+
+<img src="{{ STATIC_URL }}{{project.image}}" /><br>
+URL: {{ project.url }}<br>
+Name: {{ project.name }}<br>
+Idea Name: {{ project.idea_name }}
+
+{% endblock %}
