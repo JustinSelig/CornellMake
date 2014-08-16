@@ -73,7 +73,27 @@ $(document).ready(function(){
 		});
 	});
 
-	$(".submit").click(function(){
-		return false;
+//	$(".submit").click(function(){
+//		return false;
+//	});
+});
+
+//PREVENTS WHITESPACE IN USER-ENTERED URL
+$(document).ready(function(){
+	$("input#id_url").on({
+		keydown: function(e) {
+			if (e.which === 32)
+				return false;
+		},
+		change: function() {
+			this.value = this.value.replace(/\s/g, "");
+		}
+	});
+});
+
+//SUBMITS FORM FROM WITHIN FIELDSET- necessary
+$(document).ready(function(){
+	$( "#submit" ).click(function() {
+		$( "#msform" ).submit();
 	});
 });

@@ -7,7 +7,7 @@ from time import time
 #	category = models.CharField(max_length=25)
 
 def get_upload_file_name(instance, filename):
-	return "static/images/project_submissions/uploaded_files/%s_%s" % (str(time()).replace('.','_'), filename)
+	return "images/project_submissions/uploaded_files/%s_%s" % (str(time()).replace('.','_'), filename)
 
 class ProjectSubmission(models.Model):
 	name = models.CharField(max_length=100)
@@ -30,4 +30,16 @@ class ProjectSubmission(models.Model):
 	)
 #	category = models.ForeignKey(Category, null=True)
 	category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, null=True)
-	image = models.FileField(upload_to=get_upload_file_name, default="http://www.placekitten.com/200/300/")
+	image = models.FileField(upload_to=get_upload_file_name, default="Image")
+	url = models.CharField(max_length=200, null=True)
+	
+class Project(models.Model):
+	name = models.CharField(max_length=100)
+	email = models.EmailField(max_length=100)
+	organization = models.CharField(max_length=100, null=True)
+	website = models.CharField(max_length=100, null=True)
+	idea_name = models.CharField(max_length=500, null=True)
+	description = models.TextField(max_length=500, default='default')
+	category = models.CharField(max_length=10, null=True)
+	image = models.FileField(upload_to=get_upload_file_name, default="Image")
+	url = models.CharField(max_length=200, null=True)

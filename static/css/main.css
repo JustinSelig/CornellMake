@@ -9,8 +9,14 @@
 
 	h1 { margin-top: 0; }
 
-	main { padding: 75px 0; }
+/*	main { padding: 75px 0; }*/
 
+	/*	removed all roundness from bootstrapped elements */
+	* {
+  		-webkit-border-radius: 0 !important;
+		-moz-border-radius: 0 !important;
+        border-radius: 0 !important;
+	}
 
 /* ============================================================================
 .::[ STANDARD LAYOUT]::.
@@ -192,8 +198,6 @@
 		margin: 0 0 .5em 0;
 	}
 	
-	
-	
 
 /* Background Fader Styles
 ================================================== */
@@ -283,10 +287,22 @@
 
 
 
+/* Mobile first responsive fader images
+================================================== */
 
+.bg-fader-img {
+	position: absolute;
+	height: auto;
+	width: auto;
+}
 
-
-
+/* ============================================================================
+.::[ MEDIA ]::.
+============================================================================ */
+.media-content {
+	background-color: #333;
+	height: 800px;
+}
 
 /*Parallax-specific css*/
 div.parallax-container {
@@ -322,25 +338,9 @@ div.parallax-container div.parallax {
 	line-height: 760%;
 }
 
-/* Mobile first responsive fader images
-================================================== */
-
-.bg-fader-img {
-	position: absolute;
-	height: auto;
-	width: auto;
-}
-
-/* MEDIA
-====================================================*/
-.media-content {
-	background-color: #333;
-	height: 800px;
-}
-
-/* CREATE
-=====================================================*/
-/*custom font*/
+/* ============================================================================
+.::[ CREATE ]::.
+============================================================================ */
 
 /*form styles*/
 #msform {
@@ -455,4 +455,30 @@ div.parallax-container div.parallax {
 #progressbar li.active:before,  #progressbar li.active:after{
 	background: #27AE60;
 	color: white;
+}
+
+.form-container {
+	height: 700px;
+	background-image: url("/static/images/bg1.jpg");
+}
+
+/* ============================================================================
+.::[ CONNECT ]::.
+============================================================================ */
+
+.thumbnail{
+	height: 400px;
+	overflow: scroll;
+}
+
+.thumbnail::-webkit-scrollbar { 
+	display: none; 
+}
+
+.category-box {
+	margin: 5px;
+	background-color: rgb(200,200,200);
+	padding: 10px;
+	width: 200px;
+	text-align: left;
 }

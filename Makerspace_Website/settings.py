@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 	'projects',
 	'events',
+	#'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,6 +70,18 @@ DATABASES = {
     }
 }
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'makerspace_website',
+#		'USER': 'root',
+#		'PASSWORD': 'poprightin',
+#		'HOST': 'localhost',
+#		'PORT': '',
+#    }
+#}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -92,6 +105,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     '/var/www/static/',
 )
+
+#necessary for image upload to find static folder
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 
 BASE_URL = 'http://127.0.0.1:8000/'
 # ^^^ Change this later!!! ^^^

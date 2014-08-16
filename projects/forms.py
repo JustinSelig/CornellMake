@@ -15,4 +15,4 @@ class ProjectSubmissionForm(forms.ModelForm):
 
 	class Meta:
 		model = ProjectSubmission
-		fields = ('name', 'email', 'organization', 'website', 'idea_name', 'description', 'category', 'image')
+		fields = ('name', 'email', 'organization', 'website', 'idea_name', 'description', 'category', 'image', 'url')

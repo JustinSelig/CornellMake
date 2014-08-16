@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ project.idea_name }}{% endblock %}
+{% block content %}
+
+<h1>Temporary Project Page</h1>
+<img src="{{ STATIC_URL }}{{project.image}}" /><br>
+URL: {{ project.url }}<br>
+Name: {{ project.name }}<br>
+Idea Name: {{ project.idea_name }}
+
+{% endblock %}
