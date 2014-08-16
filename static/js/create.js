@@ -73,9 +73,9 @@ $(document).ready(function(){
 		});
 	});
 
-	$(".submit").click(function(){
-		return false;
-	});
+//	$(".submit").click(function(){
+//		return false;
+//	});
 });
 
 //PREVENTS WHITESPACE IN USER-ENTERED URL
@@ -88,5 +88,12 @@ $(document).ready(function(){
 		change: function() {
 			this.value = this.value.replace(/\s/g, "");
 		}
+	});
+});
+
+//SUBMITS FORM FROM WITHIN FIELDSET- necessary
+$(document).ready(function(){
+	$( "#submit" ).click(function() {
+		$( "#msform" ).submit();
 	});
 });

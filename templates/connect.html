@@ -6,14 +6,14 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-9" role="main">
-			{%if query%}You searched for {{ query }}.{%endif%}
+			You searched for {{ query }}.
 			<div class="row">
 				{% for project in projects %}
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
 						<img src="{{ STATIC_URL }}{{project.image}}" />
 						<div class="caption">
-							<h3>{{project.name}}</h3>
+							<h3>{{project.idea_name}}</h3>
 							<p>{{project.description}}</p>
 							<p><a href="/projects/{{ project.url }}" class="btn btn-default" role="button">View Project</a></p>
 <!--							CHANGE IDEA_NAME TO A CUSTOM URL GIVEN BY USER-->
@@ -25,7 +25,7 @@
 		</div>
 		
 		<div class="col-md-3">
-			<ul class="nav">
+			<ul class="nav affix">
 				<h3>Categories</h3>
 				<button class="category-box btn"><span class="glyphicon glyphicon-user"></span> Project Team</button>
 				<button class="category-box btn"><span class="glyphicon glyphicon-search"></span> Research</button>
