@@ -14,7 +14,7 @@
 	</div>
 </div>
 -->
-<div class="form-container">	
+<div class="form-container"><br>	
 	<!-- multistep form -->
 	<form id="msform" action="" method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
@@ -28,33 +28,33 @@
 			<div class="form-group">
 				<label for="name">Name *</label>
 				<!--input type="text" name="name" class="form-control" required /-->
-				<input id="id_name" maxlength="100" name="name" type="text">
+				<input id="id_name" maxlength="100" name="name" type="text" placeholder="Example: John Doe">
 			</div>
 			<div class="form-group">
 				<label for="name">Email *</label>
 				<!--input type="text" name="email" placeholder="netID@cornell.edu" class="form-control" required /-->
-				<input id="id_email" maxlength="100" name="email" type="email">
+				<input id="id_email" maxlength="100" name="email" type="email" placeholder="So we can keep in touch">
 			</div>
 			<div class="form-group">
 				<label for="name">Organization or Club Name</label>
 				<!--input type="text" name="org-name" class="form-control" /-->
-				<input id="id_organization" maxlength="100" name="organization" type="text">
+				<input id="id_organization" maxlength="100" name="organization" type="text" placeholder="What do you call yourself?">
 			</div>
 			<div class="form-group">
 				<label for="name">Website</label>
 				<!--input type="text" name="org-name" class="form-control" /-->
-				<input id="id_website" maxlength="100" name="website" type="text">
+				<input id="id_website" maxlength="100" name="website" type="text" placeholder="If you have one...">
 			</div>
 			<input type="button" name="next" class="next action-button" value="Next"/>
 		</fieldset>				
 		<fieldset>
 			<div class="form-group">
-				<label for="name">What's it called? *</label>
-				<input id="id_idea_name" maxlength="500" name="idea_name" type="text" required>
+				<label for="name">Project Name *</label>
+				<input id="id_idea_name" maxlength="500" name="idea_name" type="text" placeholder="What's it called?" required>
 			</div>
 			<div class="form-group">
 				<label for="name">Quick! The 30 Second Elevator Pitch! *</label>
-				<textarea cols="40" id="id_description" name="description" placeholder="Idea Description" rows="3" required></textarea>
+				<textarea cols="40" id="id_description" name="description" placeholder="Project Description" rows="3" required></textarea>
 			</div>
 			<div class="form-group">
 				<label>What categories does it fit in? *</label>
@@ -102,14 +102,14 @@
 		</fieldset>
 		<fieldset>
 			<div class="form-group">
-				<label for="name">URL (For our website. No spaces please!)</label>
-				<input id="id_url" maxlength="200" name="url" type="text" required>
+				<label for="name">URL Extension (For our website. No spaces please!)</label>
+				<input id="id_url" maxlength="200" name="url" type="text" placeholder="example: cornell_makerspace" required>
 			</div>
 			<p>We'll contact you at the email address you provided regarding the approval of your proposal.</p>
 			<hr>
 			<!--button type="submit" name="idea-submit" class="btn btn-lg btn-primary">Submit Idea</button-->					
 			<div class="panel-footer text-muted">
-				By submitting your idea, you agree to our Terms & Conditions.
+				By submitting your idea, you agree to our <a href="#">Terms & Conditions.</a>
 			</div>
 			<input type="button" name="previous" class="previous action-button" value="Previous"/>
 <!--			<input id="submit" type="submit" name="submit" class="submit action-button" value="Submit" />-->
