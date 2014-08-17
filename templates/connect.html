@@ -6,6 +6,31 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-9" role="main">
+			<form action="">
+				<div>
+					<span>Show me</span>
+					<span>
+						<select>
+							<option value="projects">Projects</option>
+							<option value="users">Users</option>
+							<option value="media">Lectures</option>
+						</select>
+					</span>
+					<span>filtered by</span>
+					<span>
+						<select>
+							<option value="popularity">Popularity</option>
+							<option value="start_date">Start Date</option>
+							<option value="name">Name</option>
+						</select>
+					</span>
+				</div>
+			</form>
+<!--
+			<button class="category-box">Projects</button>
+			<button class="category-box">Users</button>
+			<button class="category-box">Media</button>
+-->
 			You searched for {{ query }}.
 			<div class="row">
 				{% for project in projects %}
