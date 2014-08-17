@@ -350,7 +350,9 @@ div.parallax-container div.parallax {
 	position: relative;
 }
 #msform fieldset {
-	background: #2F2F2F;
+/*	background: #2F2F2F;*/
+	background-image: url("/static/images/HD-Wallpaper-Room-blur.jpg");
+	background-position: -510px;
 	border: 0 none;
 	border-radius: 3px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -459,7 +461,7 @@ div.parallax-container div.parallax {
 
 .form-container {
 	height: 700px;
-	background-image: url("/static/images/bg1.jpg");
+	background-image: url("/static/images/HD-Wallpaper-Room-.jpg");
 }
 
 /* ============================================================================
