@@ -56,14 +56,13 @@ def connect(request):
 	category_filter = Q()
 	projects_filter = Q()
 	if 'category' in request.GET:
-		print request.GET['category']
 		category_filter |= Q(category=request.GET['category'])
 	if 'project-search' in request.GET:
 		query = request.GET['project-search']
 		projects = Project.objects.filter(
 										Q(name__icontains=query) & 
 										category_filter
-		)
+		).order_by()
 		return render(request, 'connect.html', {'projects':projects, 'query':query})
 	return render(request, 'connect.html', {'projects':Project.objects.all()})
 
