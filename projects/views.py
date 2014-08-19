@@ -4,7 +4,9 @@ from django.core.context_processors import csrf
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from models import ProjectSubmission, Project
+from django.db.models import Q
 
+############ ...create/... ####################
 def create(request):
 	if request.method == 'POST':
 		form = ProjectSubmissionForm(request.POST, request.FILES, request=request)
@@ -24,7 +26,7 @@ def approve(request):
 		for submission in approved_submissions: #submission is unicode id
 			print "submission: " + `submission`
 			old = ProjectSubmission.objects.get(id=submission)
-#			#submission description update by admin
+			#submission description update by admin
 #			name = 'description-' + str(submission)
 #			old.description = request.POST.get(name)
 			new = Project.objects.create()
@@ -48,6 +50,22 @@ def approve(request):
 		args['submissions'] = ProjectSubmission.objects.all()
 		return render(request, 'admin_approve.html', args)
 	return render(request, 'admin_approve.html', {'submissions':ProjectSubmission.objects.all()})
+
+############ ...connect/... ################
+def connect(request):
+	category_filter = Q()
+	projects_filter = Q()
+	if 'category' in request.GET:
+		print request.GET['category']
+		category_filter |= Q(category=request.GET['category'])
+	if 'project-search' in request.GET:
+		query = request.GET['project-search']
+		projects = Project.objects.filter(
+										Q(name__icontains=query) & 
+										category_filter
+		)
+		return render(request, 'connect.html', {'projects':projects, 'query':query})
+	return render(request, 'connect.html', {'projects':Project.objects.all()})
 
 def project_page(request, project_url):
 	if request.method == 'GET':

@@ -57,7 +57,7 @@
 			</ul>
 		</nav>
 	</header>
-	
+
 	<main id="main-content">
 		<div class="home-fg">
 			<h1>Cornell Makerspace</h1>
@@ -65,7 +65,12 @@
 			<p class="lead">
 				A university-wide, cross-disciplinary initiative to foster innovation and creativity by providing students the necessary resources to work on projects.
 			</p>
-			
+			<form action="/connect/" role="search" method="get">
+				<div class="form-group">
+					<input type="text" name="project-search" class="form-control" placeholder="Search projects, lectures, and media">
+				</div>
+				<button type="submit" class="btn btn-default hidden">Submit</button>
+			</form>
 			<section class="event">
 				<h2>Today's Event</h2>
 				<div class="headline">
