@@ -28,7 +28,6 @@ class ProjectSubmission(models.Model):
 		('SE', 'Social Entrepreneurship'),
 		('OTHER', 'Other'),
 	)
-#	category = models.ForeignKey(Category, null=True)
 	category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, null=True)
 	image = models.FileField(upload_to=get_upload_file_name, default="Image")
 	url = models.CharField(max_length=200, null=True)
