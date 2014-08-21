@@ -8,7 +8,6 @@
 			<div class="col-md-8 project-header-left">
 				<h1>{{ project.idea_name }}</h1>
 				<h3>{{ project.name }}</h3>
-				<p>{{ project.description }}</p>
 				<p>
 					{% if project.category == 'PT' %}
 					<span class="glyphicon glyphicon-user"></span> Project Team
@@ -32,6 +31,7 @@
 					<span class="glyphicon glyphicon-question-sign"></span> Other
 					{% endif %}
 				</p>
+				<h4>Currently Recruiting. Join!</h4>
 			</div>
 			<div class="col-md-4 project-header-right">
 				<button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Join this Project</button>
@@ -51,6 +51,7 @@
 					<img src="{{ STATIC_URL }}{{ project.image }}" class="img-responsive img-rounded" />
 				</div>
 				<div class="col-md-8">
+					Description:<br>
 					<p>{{ project.description }}</p>
 				</div>
 			</div>
