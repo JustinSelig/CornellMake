@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block head %}
+{% if user.is_authenticated %}
+<meta http-equiv="refresh" content="1; URL={{ BASE_URL }}/accounts/profile/">
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		{% if user.is_authenticated %}
+		<h1>redirecting</h1>
+		{% else %}
+		<h1>Sign Up</h1>
+		<span style="color:red;">{{ error }}</span>
+		<form id="register_form" action="/accounts/register/" method="POST">
+			{% csrf_token %}
+			<div class="row">
+				<label for="id_first_name">First Name</label>
+				<input id="id_first_name" maxlength="30" name="first_name" type="text" required>
+			</div>
+			<div class="row">
+				<label for="id_last_name">Last Name</label>
+				<input id="id_last_name" maxlength="30" name="last_name" type="text">
+			</div>
+			<div class="row">
+				<label for="id_email">Email</label>
+				<input id="id_email" name="email" type="email" required>
+			</div>
+			<div class="row">
+				<label for="id_email">Username</label>
+				<input id="id_username" maxlength="30" name="username" type="text" required>
+			</div>
+			<div class="row">
+				<label for="id_password1">Password</label>
+				<input id="id_password1" name="password1" type="password" autocomplete="off" required>
+			</div>
+			<div class="row">
+				<label for="id_password2">Confirm Password</label>
+				<input id="id_password2" name="password2" type="password" autocomplete="off" required>
+			</div>
+			<div class="row">
+				<button class="btn" type="submit" value="register">Sign Up</button>
+			</div>
+		</form>
+		<br><hr><br>
+		<a class="btn" href="/accounts/login">Login</a>
+		{% endif %}
+	</div>
+</div>
+
+{% endblock %}

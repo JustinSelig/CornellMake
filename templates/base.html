@@ -53,7 +53,11 @@
 						<li class="active"><a href="/create/">Create</a></li>
 						<li><a href="/media/">Media</a></li>
 						<li><a href="/about/">About</a></li>
+						{% if user.is_authenticated %}
 						<li><a href="#">Hello, {{ user }}</a></li>
+						{% else %}
+						<li><a href="#">Sign up / Login</a></li>
+						{% endif %}
 					</ul>
 					<form action="/connect/" class="navbar-form navbar-right" role="search" method="get">
 						<div class="form-group">

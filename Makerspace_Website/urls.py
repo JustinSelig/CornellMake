@@ -16,4 +16,5 @@ urlpatterns = patterns('',
 	#url(r'^create/$', create),
 #	(r'^projects/', include('projects.urls')),
 	(r'', include('projects.urls')),
+	(r'^accounts/', include('accounts.urls')),
 )
