@@ -9,4 +9,9 @@ urlpatterns = patterns('',
 #    url(r'^password/reset/done/$', reset_done, name="password_reset_done"),
 #    url(r'^password/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$', reset_confirm, name="password_reset_confirm"),
 #    url(r'^password/done/$', reset_complete, name="password_reset_complete"),
+
+	#public user profile
+	url(ur'^user/(?P<username>.*)/$', 'accounts.views.user_profile', name="user_profile"),
+#	url(ur'^user/(?P<username>.*)/edit/$', 'accounts.views.user_profile_edit', name="user_profile_edit"),
+	
 )

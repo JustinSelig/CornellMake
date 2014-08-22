@@ -56,7 +56,7 @@
 						{% if user.is_authenticated %}
 						<li><a href="#">Hello, {{ user }}</a></li>
 						{% else %}
-						<li><a href="#">Sign up / Login</a></li>
+						<li><a href="/accounts/register/">Sign up / Login</a></li>
 						{% endif %}
 					</ul>
 					<form action="/connect/" class="navbar-form navbar-right" role="search" method="get">

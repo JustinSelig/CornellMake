@@ -34,6 +34,7 @@ class Migration(SchemaMigration):
             ('description', self.gf('django.db.models.fields.TextField')(default='default', max_length=500)),
             ('category', self.gf('django.db.models.fields.CharField')(max_length=10, null=True)),
             ('image', self.gf('django.db.models.fields.files.FileField')(default='Image', max_length=100)),
+            ('url', self.gf('django.db.models.fields.CharField')(max_length=200, null=True)),
         ))
         db.send_create_signal(u'projects', ['Project'])
 
@@ -57,6 +58,7 @@ class Migration(SchemaMigration):
             'image': ('django.db.models.fields.files.FileField', [], {'default': "'Image'", 'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'organization': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True'}),
+            'url': ('django.db.models.fields.CharField', [], {'max_length': '200', 'null': 'True'}),
             'website': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True'})
         },
         u'projects.projectsubmission': {

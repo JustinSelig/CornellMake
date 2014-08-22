@@ -44,7 +44,7 @@ INSTALLED_APPS = (
 	'projects',
 	'events',
 	'accounts',
-	#'south',
+#	'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -112,3 +112,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 
 BASE_URL = 'http://127.0.0.1:8000/'
 # ^^^ Change this later!!! ^^^
+
+#necessary for user profiles
+AUTH_PROFILE_MODULE = 'accounts.UserProfile'
