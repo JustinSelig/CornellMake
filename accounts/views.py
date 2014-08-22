@@ -11,6 +11,8 @@ from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 from django.core.urlresolvers import reverse
 
+############ USER REGISTRATION AND LOGIN ####################
+
 def register(request):
 	if request.method == 'POST':
 		form = MyRegistrationForm(request.POST)
@@ -57,6 +59,11 @@ def login(request):
 	context.update(csrf(request))
 	return render(request, 'login.html', context)
 
+def logout(request):
+	pass
+
+############### USER PROFILE #####################
+
 def make_user_profile(request, username):
 	user = User.objects.get(username=username)
 	profile = user.profile #triggers django to create profile and populate it if not extant
@@ -81,5 +88,23 @@ def user_profile(request, username):
 	args['this_user'] = u.user
 	return render(request, 'user_profile.html', args)
 
-#def delete_user(request):
-#	pass
+def user_profile_edit(request, username):
+	pass
+
+def delete_user(request):
+	pass
+
+
+###################### 	PASSWORD RESET ######################
+
+def reset(request):
+	pass
+
+def reset_done(request):
+	pass
+
+def reset_confirm(request, uidb64=None, token=None):
+	pass
+
+def reset_complete(request):
+	pass
