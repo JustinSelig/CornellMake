@@ -4,7 +4,7 @@ from django.conf.urls import patterns, url
 # ...acccounts/...
 urlpatterns = patterns('',
 	url(r'^login/$', 'accounts.views.login', name='login'),
-#	url(r'^logout/$', 'accounts.views.logout', name='logout'),
+	url(r'^logout/$', 'accounts.views.logout', name='logout'),
 	url(r'^register/$', 'accounts.views.register', name='register'),
 #	url(r'^password/reset/$', reset),
 #    url(r'^password/reset/done/$', reset_done, name="password_reset_done"),

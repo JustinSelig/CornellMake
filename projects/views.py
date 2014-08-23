@@ -12,6 +12,7 @@ def create(request):
 	if request.method == 'POST':
 		form = ProjectSubmissionForm(request.POST, request.FILES, request=request)
 		if form.is_valid():
+#			form.owner = request.user
 			form.save()
 #			return HttpResponseRedirect(reverse('create'))
 			return render(request, 'create.html', {'success':True})
@@ -40,6 +41,7 @@ def approve(request):
 			new.category = old.category
 			new.image = old.image
 			new.url = old.url
+			new.owner = old.owner
 			new.save()
 			old.delete()
 		for submission in disapproved_submissions:
@@ -75,7 +77,7 @@ def project_page(request, project_url):
 		return render(request, 'project_page.html', context)
 	elif request.method == 'POST': #if join project, send email to project owner for approval and add request to table for approval
 		project = get_object_or_404(Project, url=project_url)
-		project.join_requests.add(request.user)		
+		project.member_requests.add(request.user)		
 		#send_email to project owner/email(...)
 		context = {'project': project}
 		context['join'] = True

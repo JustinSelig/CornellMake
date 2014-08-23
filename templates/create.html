@@ -3,163 +3,168 @@
 
 {% block content %}
 
-{% if success %}
-<h1>Congrats! You submitted a project. Please wait for an approval.</h1>
+{% if not user.is_authenticated %}
+<h1>You are not logged in. Please <a href="/accounts/login/">login</a> or <a href="/accounts/register/">become a registered user</a> to begin a project.
 {% else %}
-<!--
-<div class="makerspace-header bg-primary" id="header-create">
-	<div class="container">
-		<h1>Create</h1>
-		<p class="lead">Share your ideas. Make things happen.</p>
-	</div>
-</div>
--->
-<!--
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	Launch demo modal
-</button>
--->
-
-<!-- Modal -->
-<!--
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
--->
-<div class="form-container"><br>	
-	<!-- multistep form -->
-	<form id="msform" action="" method="POST" enctype="multipart/form-data">
-		{% csrf_token %}
-		<!-- progressbar -->
-		<ul id="progressbar">
-			<li class="active">Personal Info</li>
-			<li>Project Profile</li>
-			<li>Submit</li>
-		</ul>
-		<fieldset>
-			<div class="form-group">
-				<label for="name">Name *</label>
-				<!--input type="text" name="name" class="form-control" required /-->
-				<input id="id_name" maxlength="100" name="name" type="text" placeholder="Example: John Doe">
-			</div>
-			<div class="form-group">
-				<label for="name">Email *</label>
-				<!--input type="text" name="email" placeholder="netID@cornell.edu" class="form-control" required /-->
-				<input id="id_email" maxlength="100" name="email" type="email" placeholder="So we can keep in touch">
-			</div>
-			<div class="form-group">
-				<label for="name">Organization or Club Name</label>
-				<!--input type="text" name="org-name" class="form-control" /-->
-				<input id="id_organization" maxlength="100" name="organization" type="text" placeholder="What do you call yourself?">
-			</div>
-			<div class="form-group">
-				<label for="name">Website</label>
-				<!--input type="text" name="org-name" class="form-control" /-->
-				<input id="id_website" maxlength="100" name="website" type="text" placeholder="If you have one...">
-			</div>
-			<input type="button" name="next" class="next action-button" value="Next"/>
-		</fieldset>				
-		<fieldset>
-			<div class="form-group">
-				<label for="name">Project Name *</label>
-				<input id="id_idea_name" maxlength="500" name="idea_name" type="text" placeholder="What's it called?" required>
-			</div>
-			<div class="form-group">
-				<label for="name">Quick! The 30 Second Elevator Pitch! *</label>
-				<textarea cols="40" id="id_description" name="description" placeholder="Project Description" rows="3" required></textarea>
-			</div>
-			<div class="form-group">
-				<label>What categories does it fit in? *</label>
+	
+	{% if success %}
+	<h1>Congrats! You submitted a project. Please wait for an approval.</h1>
+	{% else %}
 	<!--
-				<div class="checkbox">
-					<label><input type="checkbox" name="idea-category-projectTeam"> Project Team</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" name="idea-category-research"> Research</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" name="idea-category-startup"> Startup</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" name="idea-category-compHard"> Computer Hardware</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" name="idea-category-compSoft"> Computer Software</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" name="idea-category-mechanical"> Mechanical</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" name="idea-category-environmental"> Environmental</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" name="idea-category-design"> Art, Design, or Multi-Media</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" name="idea-category-social"> Social Entrepreneurship</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" name="idea-category-other"> Other</label>
-				</div>
+	<div class="makerspace-header bg-primary" id="header-create">
+		<div class="container">
+			<h1>Create</h1>
+			<p class="lead">Share your ideas. Make things happen.</p>
+		</div>
+	</div>
 	-->
-			</div>
-			{{ form.category }}
-			<div class="form-group">
-				<label for="name">Upload an image of it</label>
-				<!--input type="file" name="org-name"  /-->
-				{{ form.image }}
-			</div>
-			<input type="button" name="previous" class="previous action-button" value="Previous" />
-			<input type="button" name="next" class="next action-button" value="Next" />
-		</fieldset>
-		<fieldset>
-			<div class="form-group">
-				<label for="name">URL Extension (For our website. No spaces please!)</label>
-				<input id="id_url" maxlength="200" name="url" type="text" placeholder="example: cornell_makerspace" required>
-			</div>
-			<p>We'll contact you at the email address you provided regarding the approval of your proposal.</p>
-			<hr>
-			<!--button type="submit" name="idea-submit" class="btn btn-lg btn-primary">Submit Idea</button-->					
-			<div class="panel-footer text-muted">
-				By submitting your idea, you agree to our <a href="#">Terms & Conditions.</a>
-			</div>
-			<input type="button" name="previous" class="previous action-button" value="Previous"/>
-<!--			<input id="submit" type="submit" name="submit" class="submit action-button" value="Submit" />-->
-			<input id="submit" type="submit" name="submit" class="action-button" value="Submit" />
-		</fieldset>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-<!--		<input type="submit" value="Submit" class="submit action-button" />This is the only submit button working for now. Fix this!-->
-	<!--	<input type="submit" name="submit" class="submit action-button" value="Submit" />-->
+	<!--
+	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		Launch demo modal
+	</button>
+	-->
 
-	</form>
-</div>
-			
-<!--
-</div>
-</div>
-</div>
--->
+	<!-- Modal -->
+	<!--
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+	-->
+	<div class="form-container"><br>	
+		<!-- multistep form -->
+		<form id="msform" action="" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<!-- progressbar -->
+			<ul id="progressbar">
+				<li class="active">Personal Info</li>
+				<li>Project Profile</li>
+				<li>Submit</li>
+			</ul>
+			<fieldset>
+				<div class="form-group">
+					<label for="name">Name *</label>
+					<!--input type="text" name="name" class="form-control" required /-->
+					<input id="id_name" maxlength="100" name="name" type="text" placeholder="Example: John Doe">
+				</div>
+				<div class="form-group">
+					<label for="name">Email *</label>
+					<!--input type="text" name="email" placeholder="netID@cornell.edu" class="form-control" required /-->
+					<input id="id_email" maxlength="100" name="email" type="email" placeholder="So we can keep in touch">
+				</div>
+				<div class="form-group">
+					<label for="name">Organization or Club Name</label>
+					<!--input type="text" name="org-name" class="form-control" /-->
+					<input id="id_organization" maxlength="100" name="organization" type="text" placeholder="What do you call yourself?">
+				</div>
+				<div class="form-group">
+					<label for="name">Website</label>
+					<!--input type="text" name="org-name" class="form-control" /-->
+					<input id="id_website" maxlength="100" name="website" type="text" placeholder="If you have one...">
+				</div>
+				<input type="button" name="next" class="next action-button" value="Next"/>
+			</fieldset>				
+			<fieldset>
+				<div class="form-group">
+					<label for="name">Project Name *</label>
+					<input id="id_idea_name" maxlength="500" name="idea_name" type="text" placeholder="What's it called?" required>
+				</div>
+				<div class="form-group">
+					<label for="name">Quick! The 30 Second Elevator Pitch! *</label>
+					<textarea cols="40" id="id_description" name="description" placeholder="Project Description" rows="3" required></textarea>
+				</div>
+				<div class="form-group">
+					<label>What categories does it fit in? *</label>
+		<!--
+					<div class="checkbox">
+						<label><input type="checkbox" name="idea-category-projectTeam"> Project Team</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="idea-category-research"> Research</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="idea-category-startup"> Startup</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="idea-category-compHard"> Computer Hardware</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="idea-category-compSoft"> Computer Software</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="idea-category-mechanical"> Mechanical</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="idea-category-environmental"> Environmental</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="idea-category-design"> Art, Design, or Multi-Media</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="idea-category-social"> Social Entrepreneurship</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="idea-category-other"> Other</label>
+					</div>
+		-->
+				</div>
+				{{ form.category }}
+				<div class="form-group">
+					<label for="name">Upload an image of it</label>
+					<!--input type="file" name="org-name"  /-->
+					{{ form.image }}
+				</div>
+				<input type="button" name="previous" class="previous action-button" value="Previous" />
+				<input type="button" name="next" class="next action-button" value="Next" />
+			</fieldset>
+			<fieldset>
+				<div class="form-group">
+					<label for="name">URL Extension (For our website. No spaces please!)</label>
+					<input id="id_url" maxlength="200" name="url" type="text" placeholder="example: cornell_makerspace" required>
+				</div>
+				<p>We'll contact you at the email address you provided regarding the approval of your proposal.</p>
+				<hr>
+				<!--button type="submit" name="idea-submit" class="btn btn-lg btn-primary">Submit Idea</button-->					
+				<div class="panel-footer text-muted">
+					By submitting your idea, you agree to our <a href="#">Terms & Conditions.</a>
+				</div>
+				<input type="button" name="previous" class="previous action-button" value="Previous"/>
+	<!--			<input id="submit" type="submit" name="submit" class="submit action-button" value="Submit" />-->
+				<input id="submit" type="submit" name="submit" class="action-button" value="Submit" />
+			</fieldset>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+	<!--		<input type="submit" value="Submit" class="submit action-button" />This is the only submit button working for now. Fix this!-->
+		<!--	<input type="submit" name="submit" class="submit action-button" value="Submit" />-->
+
+		</form>
+	</div>
+
+	<!--
+	</div>
+	</div>
+	</div>
+	-->
+	{% endif %}
 {% endif %}
 {% endblock %}
 
