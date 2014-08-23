@@ -34,7 +34,12 @@
 				<h4>Currently Recruiting. Join!</h4>
 			</div>
 			<div class="col-md-4 project-header-right">
-				<button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Join this Project</button>
+				{% if join %}<span style="color:green;">Join request sent to project owner.</span>{% endif %}
+				<form action="" method="post">{% csrf_token %}
+					<button class="btn btn-success" name="join-project" type="submit">
+						<span class="glyphicon glyphicon-plus"></span> Join this Project
+					</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -66,7 +71,13 @@
 <br>
 <br>
 <br>
-
+<!--only if current user is project owner-->
+Member Requests:<br>
+<ul>
+{% for member_request in project.member_requests %}
+	<li>{{ member_request ))</li>
+{% endfor %}
+</ul>
 <h1>Temporary Project Page</h1>
 <img src="{{ STATIC_URL }}{{project.image}}" /><br>
 URL: {{ project.url }}<br>

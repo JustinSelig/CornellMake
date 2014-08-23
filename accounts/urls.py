@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, url
 #from views import reset, reset_done, reset_confirm, reset_complete
 
+# ...acccounts/...
 urlpatterns = patterns('',
 	url(r'^login/$', 'accounts.views.login', name='login'),
 #	url(r'^logout/$', 'accounts.views.logout', name='logout'),
@@ -11,7 +12,8 @@ urlpatterns = patterns('',
 #    url(r'^password/done/$', reset_complete, name="password_reset_complete"),
 
 	#public user profile
-	url(ur'^user/(?P<username>.*)/$', 'accounts.views.user_profile', name="user_profile"),
+	url(ur'^user/(?P<username>.*)/$', 'accounts.views.public_user_profile', name="public_user_profile"),
 #	url(ur'^user/(?P<username>.*)/edit/$', 'accounts.views.user_profile_edit', name="user_profile_edit"),
+	url(ur'^user/profile/$', 'accounts.views.personal_user_profile', name="personal_user_profile"),
 	
 )

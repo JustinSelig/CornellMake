@@ -1,8 +1,12 @@
 {% extends "base.html" %}
-{% block title %}User Profile{% endblock %}
+{% block title %}{{this_user}}'s Profile{% endblock %}
 {% block content %}
 
+Profile: {{ this_profile }}<br>
+Profile user: {{ this_profile.user }}<br>
+Profile username: {{this_profile.username }}<br>
 Username: {{ this_user.username }}<br>
-Email: {{ this_user.email }}
+Email: {{ this_user.email }}<br>
+first name: {{this_user.first_name}}
 
 {% endblock %}

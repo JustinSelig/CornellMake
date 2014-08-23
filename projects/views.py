@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from models import ProjectSubmission, Project
 from django.db.models import Q
+from accounts.models import UserProfile
 
 ############ ...create/... ####################
 def create(request):
@@ -68,6 +69,15 @@ def connect(request):
 
 def project_page(request, project_url):
 	if request.method == 'GET':
-		project = get_object_or_404(Project, url=project_url)
+		project = get_object_or_404(Project, url=project_url) #finds project object in database based on url. Very cool!
 		context = {'project': project}
+		context.update(csrf(request))
+		return render(request, 'project_page.html', context)
+	elif request.method == 'POST': #if join project, send email to project owner for approval and add request to table for approval
+		project = get_object_or_404(Project, url=project_url)
+		project.join_requests.add(request.user)		
+		#send_email to project owner/email(...)
+		context = {'project': project}
+		context['join'] = True
+		context.update(csrf(request))
 		return render(request, 'project_page.html', context)

@@ -1,5 +1,6 @@
 from django.db import models
 from time import time
+from django.contrib.auth.models import User
 
 #""" Category model. A Category has an automatically-produced id and a name. """  
 #class Category(models.Model):
@@ -30,7 +31,7 @@ class ProjectSubmission(models.Model):
 	)
 	category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, null=True)
 	image = models.FileField(upload_to=get_upload_file_name, default="Image")
-	url = models.CharField(max_length=200, null=True)
+	url = models.SlugField(max_length=200, null=True, unique=True)
 	
 class Project(models.Model):
 	name = models.CharField(max_length=100)
@@ -41,4 +42,7 @@ class Project(models.Model):
 	description = models.TextField(max_length=500, default='default')
 	category = models.CharField(max_length=10, null=True)
 	image = models.FileField(upload_to=get_upload_file_name, default="Image")
-	url = models.CharField(max_length=200, null=True)
+	url = models.SlugField(max_length=200, null=True, unique=True)
+#	owner = models.ForeignKey(User)
+	member_requests = models.ManyToManyField(User, related_name='member_requests')
+	members = models.ManyToManyField(User, related_name='members')
