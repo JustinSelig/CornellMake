@@ -37,7 +37,7 @@
 			<div class="col-md-4 project-header-right">
 				{% if join %}<span style="color:green;">Join request sent to project owner.</span>{% endif %}
 				<form action="" method="post">{% csrf_token %}
-					<button class="btn btn-success" name="join-project" type="submit">
+					<button class="btn btn-success" name="join-project" value="submit" type="submit">
 						<span class="glyphicon glyphicon-plus"></span> Join this Project
 					</button>
 				</form>
@@ -63,6 +63,7 @@
 			</div>
 			<div class="tab-pane fade" id="profile">
 			<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+			<p>Members: {% for member in project.members.all %}{{ member }} {% endfor %}</p>
 			</div>
 		</div>
 	</div>
@@ -74,12 +75,25 @@
 <br>
 <!--only if current user is project owner show member requests-->
 {% if user == project.owner %}
-	Member Requests:<br>
-	<ul>
-	{% for member_request in project.member_requests.all %}
-		<li>{{ member_request }}</li>
-	{% endfor %}
-	</ul>
+<form action="" method="post">{% csrf_token %}
+	<table class="table">
+		<thead>
+			<tr>
+				<th>User</th>
+				<th>Approve?</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for member_request in project.member_requests.all %}
+			<tr>
+				<td>{{ member_request }}</td>
+				<td>Approve <input type="checkbox" value="{{ member_request.id }}" name="approved"><br>Disapprove <input type="checkbox" value="{{ member_request.id }}" name="disapproved"></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<input type="submit" name="member-approve" value="submit" />
+</form>
 {% endif %}
 
 {% endblock %}

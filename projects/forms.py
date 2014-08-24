@@ -17,7 +17,6 @@ class ProjectSubmissionForm(forms.ModelForm):
 	def save(self, commit=True):
 		instance = super(ProjectSubmissionForm, self).save(commit=False)
 		instance.owner = self.request.user
-#		self.owner = self.request.user
 		
 		if commit:
 			instance.save()

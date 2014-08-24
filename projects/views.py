@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse
 from models import ProjectSubmission, Project
 from django.db.models import Q
 from accounts.models import UserProfile
+from django.contrib.auth.models import User
 
 ############ ...create/... ####################
 def create(request):
@@ -70,16 +71,30 @@ def connect(request):
 	return render(request, 'connect.html', {'projects':Project.objects.all()})
 
 def project_page(request, project_url):
+	project = get_object_or_404(Project, url=project_url) #finds project object in database based on url. Very cool!
+	context = {'project': project}
+	context.update(csrf(request))
 	if request.method == 'GET':
-		project = get_object_or_404(Project, url=project_url) #finds project object in database based on url. Very cool!
-		context = {'project': project}
-		context.update(csrf(request))
 		return render(request, 'project_page.html', context)
-	elif request.method == 'POST': #if join project, send email to project owner for approval and add request to table for approval
-		project = get_object_or_404(Project, url=project_url)
+	elif 'join-project' in request.POST and request.POST['join-project'] == 'submit': #if join project, send email to project owner for approval and add request to table for approval
 		project.member_requests.add(request.user)		
 		#send_email to project owner/email(...)
-		context = {'project': project}
 		context['join'] = True
-		context.update(csrf(request))
+		return render(request, 'project_page.html', context)
+	elif 'member-approve' in request.POST and request.POST['member-approve'] == 'submit':
+		approved_requests = request.POST.getlist('approved')
+		disapproved_requests = request.POST.getlist('disapproved')
+		for member in approved_requests: #member is user id
+			prof = UserProfile.objects.get(user_id=member)
+			prof.projects.add(project)
+			prof.save()
+			u = User.objects.get(id=member)
+			project.members.add(u)
+			project.member_requests.remove(u)
+			project.save()
+			#send email...
+		for member in disapproved_requests:
+			u = User.objects.get(id=member)
+			project.member_requests.remove(u)
+			project.save()
 		return render(request, 'project_page.html', context)
