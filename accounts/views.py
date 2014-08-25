@@ -11,6 +11,7 @@ from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.http import Http404
 
 ############ USER REGISTRATION AND LOGIN ####################
 
@@ -83,25 +84,29 @@ def make_user_profile(request, username):
 All changes made here are published in the public profile"""
 @login_required
 def personal_user_profile(request):
-	pass
+	#show join requests
+	profile = request.user.profile
+	args = {'profile':profile}
+	args['member_requests'] = UserProfile.objects.get(user_id=request.user.id).member_requests.all()
+	return render(request, 'user_profile.html', args)
 
 """Renders public user profile page"""
 def public_user_profile(request, username):
-	try: u = UserProfile.objects.get(user__username=username) #use '__' instead of '.' since invocation, not expression
-	except: u = request.user.profile #gets or creates profile if not extant
+	try: profile = UserProfile.objects.get(user__username=username) #use '__' instead of '.' since invocation, not expression
+	except: raise Http404
 	#username cannot be unicode? would representation in browser be same as in server? (ex. %3B)
 #	profile = request.user.profile #triggers django to create profile and populate it if not extant
 #	form = UserProfileForm(instance=profile)
 	args = {}
 #	args.update(csrf(request))
 #	args['form'] = form
-	args['this_profile'] = u
-	args['this_user'] = u.user
+	args['profile'] = profile
+#	args['this_user'] = profile.user
 	return render(request, 'user_profile.html', args)
 
-"""May not be necessary now with personal_user_profile"""
-def user_profile_edit(request, username):
-	pass
+#"""May not be necessary now with personal_user_profile"""
+#def user_profile_edit(request, username):
+#	pass
 
 def delete_user(request):
 	pass

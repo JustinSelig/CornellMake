@@ -54,7 +54,7 @@
 						<li><a href="/media/">Media</a></li>
 						<li><a href="/about/">About</a></li>
 						{% if user.is_authenticated %}
-						<li><a href="#">Hello, {{ user }}</a></li>
+						<li><a href="/accounts/user/profile/">Hello, {{ user }}</a></li>
 						{% else %}
 						<li><a href="/accounts/register/">Sign up / Login</a></li>
 						{% endif %}

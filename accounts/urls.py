@@ -11,9 +11,8 @@ urlpatterns = patterns('',
 #    url(r'^password/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$', reset_confirm, name="password_reset_confirm"),
 #    url(r'^password/done/$', reset_complete, name="password_reset_complete"),
 
-	#public user profile
+	#public and private user profile
+	url(r'^user/profile/$', 'accounts.views.personal_user_profile', name="personal_user_profile"),	#this needs to come before next url!
 	url(ur'^user/(?P<username>.*)/$', 'accounts.views.public_user_profile', name="public_user_profile"),
 #	url(ur'^user/(?P<username>.*)/edit/$', 'accounts.views.user_profile_edit', name="user_profile_edit"),
-	url(ur'^user/profile/$', 'accounts.views.personal_user_profile', name="personal_user_profile"),
-	
 )
