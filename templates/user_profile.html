@@ -2,11 +2,12 @@
 {% block title %}{{this_user}}'s Profile{% endblock %}
 {% block content %}
 
-Profile: {{ this_profile }}<br>
-Profile user: {{ this_profile.user }}<br>
-Profile username: {{this_profile.username }}<br>
-Username: {{ this_user.username }}<br>
-Email: {{ this_user.email }}<br>
-first name: {{this_user.first_name}}
+Profile user: {{ profile.user }}<br>
+Profile username: {{ profile.username }}<br>
+Username: {{ profile.user.username }}<br>
+Email: {{ profile.user.email }}<br>
+first name: {{ profile.user.first_name}}<br>
+My Projects: <ul>{% for project in profile.projects.all %}<li>{{ project.name }}</li>{% endfor %}</ul>
+Member Requests: <ul>{% for project in member_requests %}<li>{{ project.name }}</li>{% endfor %}</ul>
 
 {% endblock %}

@@ -74,10 +74,13 @@ def project_page(request, project_url):
 	project = get_object_or_404(Project, url=project_url) #finds project object in database based on url. Very cool!
 	context = {'project': project}
 	context.update(csrf(request))
+	profile=request.user.profile
 	if request.method == 'GET':
 		return render(request, 'project_page.html', context)
 	elif 'join-project' in request.POST and request.POST['join-project'] == 'submit': #if join project, send email to project owner for approval and add request to table for approval
-		project.member_requests.add(request.user)		
+		project.member_requests.add(request.user)
+		profile.member_requests.add(project)
+		profile.save()
 		#send_email to project owner/email(...)
 		context['join'] = True
 		return render(request, 'project_page.html', context)
@@ -97,4 +100,5 @@ def project_page(request, project_url):
 			u = User.objects.get(id=member)
 			project.member_requests.remove(u)
 			project.save()
+		profile.member_requests.remove(project)
 		return render(request, 'project_page.html', context)
