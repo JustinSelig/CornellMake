@@ -10,8 +10,9 @@ from projects.models import Project
 def about(request):
 	return render(request, 'about.html')
 
-def media(request):
-	return render(request, 'media.html')
+#galv: Removing this to render everything media-related within media
+#def media(request):
+#	return render(request, 'media.html')
 
 #def connect(request):
 #	if 'project-search' in request.GET:
