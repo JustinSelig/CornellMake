@@ -6,11 +6,15 @@
 <a href="/accounts/user/profile/"><button class="btn btn-default">Edit Profile</button></a><br>
 {% endif %}
 
-Profile user: {{ profile.user }}<br>
-Profile username: {{ profile.username }}<br>
 Username: {{ profile.user.username }}<br>
 Email: {{ profile.user.email }}<br>
 first name: {{ profile.user.first_name}}<br>
 My Projects: <ul>{% for project in profile.projects.all %}<li>{{ project.name }}</li>{% endfor %}</ul>
+
+Contact Information:<br>
+Email: {{ profile.user.email }}<br>
+Phone Number: {{ profile.phone }}<br>
+Major: {{ profile.major }}<br>
+School: {{ profile.school }}
 
 {% endblock %}

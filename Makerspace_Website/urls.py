@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from views import *
 from events.views import home
 from django.contrib import admin
+from media.views import media
 admin.autodiscover()
 
 urlpatterns = patterns('',

@@ -84,10 +84,22 @@ def make_user_profile(request, username):
 All changes made here are published in the public profile"""
 @login_required
 def private_user_profile(request):
-	#show join requests
 	profile = request.user.profile
 	args = {'profile':profile}
 	args['member_requests'] = UserProfile.objects.get(user_id=request.user.id).member_requests.all()
+	if request.method == 'POST':
+		email = request.POST.get('email')
+		phone = request.POST.get('phone')
+		major = request.POST.get('major')
+		school = request.POST.get('school')
+		profile.email = email
+		profile.phone = phone
+		profile.major = major
+		profile.school = school
+		profile.save()
+		args['profile_change'] = True
+		return render(request, 'private_user_profile.html', args)
+	#show join requests
 	return render(request, 'private_user_profile.html', args)
 
 """Renders public user profile page"""

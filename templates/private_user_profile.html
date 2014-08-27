@@ -15,17 +15,21 @@
 </form>
 -->
 <a href="/accounts/user/{{profile.user}}"><button class="btn btn-default">View Public Profile</button></a><br>
-Profile user: {{ profile.user }}<br>
-Profile username: {{ profile.username }}<br>
 Username: {{ profile.user.username }}<br>
-first name: {{ profile.user.first_name}}<br>
+First Name: {{ profile.user.first_name }}<br>
+Last Name: {{ profile.user.last_name }}<br>
 My Projects: <ul>{% for project in profile.projects.all %}<li>{{ project.name }}</li>{% endfor %}</ul>
-{% if member_requests %}Member Requests: <ul>{% for project in member_requests %}<li>{{ project.name }}</li>{% endfor %}</ul>{% endif %}
+Pending Membership Requests: <ul>{% for project in member_requests %}<li>{{ project.name }}</li>{% endfor %}</ul>
 <br>
-Contact Information:<br>
-Email: {{ profile.user.email }}<br>
-Phone Number: {{ profile.phone }}<br>
-Major: {{ profile.major }}<br>
-School: {{ profile.school }}
+
+<form action="" method="post">{% csrf_token %}
+	{% if profile_change %}<label style="color:green;">Updated Successfully</label>{% endif %}<br>
+	Contact Information:<br>
+	Email: <input name="email" value="{{ profile.user.email }}" /><br>
+	Phone Number: <input name="phone" value="{{ profile.phone }}" /><br>
+	Major: <input name="major" value="{{ profile.major }}" /><br>
+	School: <input name="school" value="{{ profile.school }}" /><br>
+	<input class="btn btn-default" type="submit" value="submit" />
+</form>
 
 {% endblock %}

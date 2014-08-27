@@ -3,7 +3,7 @@ from django.db.models import Q
 
 # Create your views here.
 
-def home(request):
+def media(request):
     return render(request, 'media.html')
     
 def search(request):
