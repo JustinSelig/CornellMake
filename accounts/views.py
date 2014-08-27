@@ -83,12 +83,12 @@ def make_user_profile(request, username):
 """Renders profile that is only available to loggedin user. It is editable. 
 All changes made here are published in the public profile"""
 @login_required
-def personal_user_profile(request):
+def private_user_profile(request):
 	#show join requests
 	profile = request.user.profile
 	args = {'profile':profile}
 	args['member_requests'] = UserProfile.objects.get(user_id=request.user.id).member_requests.all()
-	return render(request, 'user_profile.html', args)
+	return render(request, 'private_user_profile.html', args)
 
 """Renders public user profile page"""
 def public_user_profile(request, username):
@@ -102,7 +102,7 @@ def public_user_profile(request, username):
 #	args['form'] = form
 	args['profile'] = profile
 #	args['this_user'] = profile.user
-	return render(request, 'user_profile.html', args)
+	return render(request, 'public_user_profile.html', args)
 
 #"""May not be necessary now with personal_user_profile"""
 #def user_profile_edit(request, username):

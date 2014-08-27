@@ -12,7 +12,7 @@ urlpatterns = patterns('',
 #    url(r'^password/done/$', reset_complete, name="password_reset_complete"),
 
 	#public and private user profile
-	url(r'^user/profile/$', 'accounts.views.personal_user_profile', name="personal_user_profile"),	#this needs to come before next url!
+	url(r'^user/profile/$', 'accounts.views.private_user_profile', name="private_user_profile"),	#this needs to come before next url!
 	url(ur'^user/(?P<username>.*)/$', 'accounts.views.public_user_profile', name="public_user_profile"),
 #	url(ur'^user/(?P<username>.*)/edit/$', 'accounts.views.user_profile_edit', name="user_profile_edit"),
 )
