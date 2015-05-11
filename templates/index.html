@@ -1,3 +1,8 @@
+{% block head %}
+<style type="text/css">
+	html {overflow-y: hidden;}
+</style>
+{% endblock %}
 <!DOCTYPE html><!--Self-contained html file which does not extend the base-->
 <html lang="en">
 	<head>
@@ -42,12 +47,17 @@
 		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/elementTransitions.css" />
 		<script src="{{STATIC_URL}}js/elementTransitions.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/demo.css">
-
+		<script> 
+			$(document).ready(function(){  
+				$(".main-nav").animate({left:'20px'},"slow");		
+			});
+		</script> 
 </head>
 <body>
 
 <!-- Body
 ================================================== -->
+<!--
 	<header id="top">  
 		<nav>
 			<ul class="nav-bars">
@@ -58,41 +68,126 @@
 			</ul>
 		</nav>
 	</header>
-
-	<main id="main-content">
-		<div class="home-fg">
-			<h1>Cornell Makerspace</h1>
+-->
+	<video loop="1" preload="1" autoplay src="{{STATIC_URL}}video/7131.mp4" width="100%" style="position:absolute; left:0; top:0;"></video>
+	<main id="main-content" class="row">
+		<div class="home-fg col-md-9">
+			<!--h1 style="color:white;">Cornell Makerspace</h1>
 	
-			<p class="lead">
+			<p class="lead" style="color:white;">
 				A university-wide, cross-disciplinary initiative to foster innovation and creativity by providing students the necessary resources to work on projects.
 			</p>
-			<p>To become a registered member, you must <a href="#">start a project!</a></p>
-			<form action="/connect/" role="search" method="get">
+			<p>To become a registered member, you must <a href="#">start a project!</a></p-->
+			<!--test-->
+			<div class="flip-container lead" ontouchstart="this.classList.toggle('hover');" style="height:300px;">
+				<div class="flipper">
+					<div class="front">
+						<h2 style="color:white;font-size:4em;">Cornell Makerspace</h2>
+					</div>
+					<div class="back" style="color:white;">
+						<p>A university-wide, cross-disciplinary initiative to foster innovation and creativity by providing students the necessary resources to work on projects.<br><br>Interested? Let's <a href="/accounts/register/">get started.</a></p>
+					</div>
+				</div>
+			</div>
+			<!--endtest-->
+			<!--form action="/connect/" role="search" method="get">
 				<div class="form-group">
 					<input type="text" name="project-search" class="form-control" placeholder="Search projects, lectures, and media">
 				</div>
 				<button type="submit" class="btn btn-default hidden">Submit</button>
-			</form>
-			<section class="event">
-				<h2>Today's Event</h2>
-				<div class="headline">
-					{{ event.name }}<br>
-					{{ event.image }}<br>
-					{{ event.description }}
+			</form-->
+			<br><br>
+			<div class="row main-nav" role="navigation">
+				<a href="/connect/">
+					<div style="background-color:#0E4FA0;" class="nav-home">
+						<h3>Connect</h3>
+					</div>
+				</a>
+				<a href="/create/">
+					<div style="background-color:#2FB4FA;" class="nav-home">
+						<h3>Create</h3>
+					</div>
+				</a>
+				<a href="/media/">
+					<div style="background-color:#DFC994;" class="nav-home">
+						<h3>Media</h3>
+					</div>
+				</a>
+				<a href="/about/">
+					<div style="background-color:#E18269;" class="nav-home">
+						<h3>About</h3>
+					</div>
+				</a>
+				<div style="background-color:#D8535C;" class="nav-home">
+					<h3>Sign In</h3>
 				</div>
-			</section>
+			</div>
 		</div>
 		
 		<!-- Slideshow Images -->
+<!--
 		<div class="bg-fader">
 			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg1.jpg"></img>
 			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg2.jpg"></img>
 			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg3.jpg"></img>
 			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg4.jpg"></img>
 		</div>
-<div style = "z-index:9">
-<iframe src="https://www.google.com/calendar/embed?showPrint=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=c6eapm34bft114p7fab95enekc%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</div>
+-->
+		<!--VIDEO BACKGROUND INSTEAD?-->
+	<div class="col-md-3" style = "z-index:9">
+		<iframe height="200px" width="300px" src="https://www.google.com/calendar/embed?showPrint=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=c6eapm34bft114p7fab95enekc%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no" class="row pull-right"></iframe>
+		<!--div class="flip-container row pull-right" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper" style="width:200px;height:100px;color:white;text-align:center;">
+				<div class="front" style="background:red;height:inherit;width:inherit;opacity:0.5;">
+					<h3>Create</h3>
+				</div>
+				<div class="back" style="background:red;height:inherit;width:inherit;">
+					<p>Create content</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-container row pull-right" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper" style="width:200px;height:100px;color:white;text-align:center;">
+				<div class="front" style="background:red;height:inherit;width:inherit;opacity:0.5;">
+					<h3>Connect</h3>
+				</div>
+				<div class="back" style="background:red;height:inherit;width:inherit;">
+					<p>Create content</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-container row pull-right" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper" style="width:200px;height:100px;color:white;text-align:center;">
+				<div class="front" style="background:red;height:inherit;width:inherit;opacity:0.5;">
+					<h3>Create</h3>
+				</div>
+				<div class="back" style="background:red;height:inherit;width:inherit;">
+					<p>Create content</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-container row pull-right" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper" style="width:200px;height:100px;color:white;text-align:center;">
+				<div class="front" style="background:red;height:inherit;width:inherit;opacity:0.5;">
+					<h3>Create</h3>
+				</div>
+				<div class="back" style="background:red;height:inherit;width:inherit;">
+					<p>Create content</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-container row pull-right" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper" style="width:200px;height:100px;color:white;text-align:center;">
+				<div class="front" style="background:red;height:inherit;width:inherit;opacity:0.5;">
+					<h3>Create</h3>
+				</div>
+				<div class="back" style="background:red;height:inherit;width:inherit;">
+					<p>Create content</p>
+				</div>
+			</div>
+		</div-->
+	</div>
+<!-- TESTING PAGE TRANSITIONS
 <div class="et-wrapper" style="width:100%;">
 	<button class="et-rotate" et-in="moveFromRight" et-out="rotatePushLeft">Next</button>
 	<div class="et-page">
@@ -102,6 +197,7 @@
 		<h2>Page 2</h2>
 	</div>
 </div>
+-->
 
 	</main>
 

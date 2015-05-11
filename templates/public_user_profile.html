@@ -9,7 +9,7 @@
 Username: {{ profile.user.username }}<br>
 Email: {{ profile.user.email }}<br>
 first name: {{ profile.user.first_name}}<br>
-My Projects: <ul>{% for project in profile.projects.all %}<li>{{ project.name }}</li>{% endfor %}</ul>
+My Projects: <ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul>
 
 Contact Information:<br>
 Email: {{ profile.user.email }}<br>

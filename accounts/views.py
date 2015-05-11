@@ -109,16 +109,8 @@ def public_user_profile(request, username):
 	#username cannot be unicode? would representation in browser be same as in server? (ex. %3B)
 #	profile = request.user.profile #triggers django to create profile and populate it if not extant
 #	form = UserProfileForm(instance=profile)
-	args = {}
-#	args.update(csrf(request))
-#	args['form'] = form
-	args['profile'] = profile
-#	args['this_user'] = profile.user
+	args = {'profile': profile}
 	return render(request, 'public_user_profile.html', args)
-
-#"""May not be necessary now with personal_user_profile"""
-#def user_profile_edit(request, username):
-#	pass
 
 def delete_user(request):
 	pass

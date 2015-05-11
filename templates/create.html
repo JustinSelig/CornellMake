@@ -32,7 +32,7 @@
 	-->
 	<div class="form-container"><br>	
 		<!-- multistep form -->
-		<form id="msform" action="" method="POST" enctype="multipart/form-data">
+		<form id="msform" class="col-md-6" action="" method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			<!-- progressbar -->
 			<ul id="progressbar">
@@ -131,31 +131,16 @@
 	<!--			<input id="submit" type="submit" name="submit" class="submit action-button" value="Submit" />-->
 				<input id="submit" type="submit" name="submit" class="action-button" value="Submit" />
 			</fieldset>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
 	<!--		<input type="submit" value="Submit" class="submit action-button" />This is the only submit button working for now. Fix this!-->
 		<!--	<input type="submit" name="submit" class="submit action-button" value="Submit" />-->
 
+		</form>
+		
+		<!--workshop hosting form-->
+		<form class="col-md-4">
+		Name: <input />
+		Email: <input />
+		Message: <textarea></textarea>
 		</form>
 	</div>
 
