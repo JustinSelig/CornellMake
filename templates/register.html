@@ -8,44 +8,42 @@
 
 {% block content %}
 
-<div class="container">
-	<div class="row">
+<div class="col-md-12">
+	<div class="login-box">
+		<br>
 		{% if user.is_authenticated %}
-		<h1>redirecting</h1>
+		<span class="profile-form-title">redirecting</span>
 		{% else %}
-		<h1>Sign Up</h1>
+
+		<span class="profile-form-title">Sign Up</span>
+		<br>
 		<span style="color:red;">{{ error }}</span>
 		<form id="register_form" action="/accounts/register/" method="POST">
 			{% csrf_token %}
+			<br>
 			<div class="row">
-				<label for="id_first_name">First Name</label>
-				<input id="id_first_name" maxlength="30" name="first_name" type="text" required>
-			</div>
+				<input id="id_first_name" maxlength="30" name="first_name" type="text" required placeholder="First Name"  class="form-control">
+			</div><br>
 			<div class="row">
-				<label for="id_last_name">Last Name</label>
-				<input id="id_last_name" maxlength="30" name="last_name" type="text">
-			</div>
+				<input id="id_last_name" maxlength="30" name="last_name" type="text" placeholder="Last Name"  class="form-control">
+			</div><br>
 			<div class="row">
-				<label for="id_email">Email</label>
-				<input id="id_email" name="email" type="email" required>
-			</div>
+				<input id="id_email" name="email" type="email" required placeholder="Email"  class="form-control">
+			</div><br>
 			<div class="row">
-				<label for="id_email">Username (No spaces, use appropriate characters, please)</label>
-				<input id="id_username" maxlength="30" name="username" type="text" required>
-			</div>
+				<input id="id_username" maxlength="30" name="username" type="text" required placeholder="Username (no spaces please)"  class="form-control">
+			</div><br>
 			<div class="row">
-				<label for="id_password1">Password</label>
-				<input id="id_password1" name="password1" type="password" autocomplete="off" required>
-			</div>
+				<input id="id_password1" name="password1" type="password" autocomplete="off" required placeholder="Password"  class="form-control">
+			</div><br>
 			<div class="row">
-				<label for="id_password2">Confirm Password</label>
-				<input id="id_password2" name="password2" type="password" autocomplete="off" required>
-			</div>
+				<input id="id_password2" name="password2" type="password" autocomplete="off" required placeholder="Confirm Password" class="form-control">
+			</div><br>
 			<div class="row">
-				<button class="btn" type="submit" value="register">Sign Up</button>
+				<button class="btn btn-default" type="submit" value="register">Sign Up</button>
 			</div>
 		</form>
-		<br><hr><br>
+		<hr>
 		<a class="btn" href="/accounts/login">Login</a>
 		{% endif %}
 	</div>

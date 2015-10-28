@@ -55,8 +55,8 @@ def approve(request):
 		return render(request, 'admin_approve.html', args)
 	return render(request, 'admin_approve.html', {'submissions':ProjectSubmission.objects.all()})
 
-############ ...connect/... ################
-def connect(request):
+############ ...discover/... ################
+def discover(request):
 	category_filter = Q()
 	projects_filter = Q()
 	if 'category' in request.GET:
@@ -67,8 +67,8 @@ def connect(request):
 										Q(name__icontains=query) & 
 										category_filter
 		).order_by()
-		return render(request, 'connect.html', {'projects':projects, 'query':query})
-	return render(request, 'connect.html', {'projects':Project.objects.all()})
+		return render(request, 'discover.html', {'projects':projects, 'query':query})
+	return render(request, 'discover.html', {'projects':Project.objects.all()})
 
 def project_page(request, project_url):
 	project = get_object_or_404(Project, url=project_url) #finds project object in database based on url. Very cool!

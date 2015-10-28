@@ -14,9 +14,9 @@ def about(request):
 #def media(request):
 #	return render(request, 'media.html')
 
-#def connect(request):
+#def discover(request):
 #	if 'project-search' in request.GET:
 #		query = request.GET['project-search']
 #		projects = Project.objects.filter(name__icontains=query)
-#		return render(request, 'connect.html', {'projects':projects, 'query':query})
-#	return render(request, 'connect.html')
+#		return render(request, 'discover.html', {'projects':projects, 'query':query})
+#	return render(request, 'discover.html')

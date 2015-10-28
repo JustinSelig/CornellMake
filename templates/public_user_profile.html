@@ -2,19 +2,48 @@
 {% block title %}{{ profile.user }}'s Profile{% endblock %}
 {% block content %}
 
-{% if profile.user == user %}
-<a href="/accounts/user/profile/"><button class="btn btn-default">Edit Profile</button></a><br>
+
+
+
+
+<div class="col-md-3"></div>
+
+<div class="col-md-6">
+	<div class="profile-box">
+
+
+
+
+
+<div class="profile-form-header">
+	<span class="profile-form-title">{{ profile.user.username }}</span>
+	{% if profile.user == user %}
+<a href="/accounts/user/profile/"><button class="btn btn-default pull-right">Edit Profile</button></a><br>
 {% endif %}
+</div>
 
-Username: {{ profile.user.username }}<br>
-Email: {{ profile.user.email }}<br>
-first name: {{ profile.user.first_name}}<br>
-My Projects: <ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul>
 
-Contact Information:<br>
-Email: {{ profile.user.email }}<br>
-Phone Number: {{ profile.phone }}<br>
-Major: {{ profile.major }}<br>
-School: {{ profile.school }}
+<div class="profile-form-section">
+
+<br>
+
+<span class="bold">Name:</span> {{ profile.user.first_name}} {{ profile.user.last_name}}<br><ul></ul>
+<span class="bold">Current projects: </span> <ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul><br>
+</div>
+<br>
+<span class="bold">Email:</span>  {{ profile.user.email }}<br><br>
+<span class="bold">Phone:</span>  {{ profile.phone }}<br><br>
+<span class="bold">Major:</span>  {{ profile.major }}<br><br>
+<span class="bold">School:</span>  {{ profile.school }}
+
+
+
+
+</div>
+</div>
+<div class="col-md-3"></div>
+
+
+
 
 {% endblock %}

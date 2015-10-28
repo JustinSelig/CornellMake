@@ -4,6 +4,6 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
 	url(r'^create/$', 'projects.views.create', name='create'),
 	url(r'^create/admin-approve/$', 'projects.views.approve'),
-	url(r'^connect/$', 'projects.views.connect'),
+	url(r'^discover/$', 'projects.views.discover'),
 	url(ur'^projects/(?P<project_url>.*)/$', 'projects.views.project_page', name="project_page") #regex allows all chars except spaces
 )

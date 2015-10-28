@@ -14,22 +14,49 @@
 	<input type="submit" value="Change Password" />
 </form>
 -->
-<a href="/accounts/user/{{profile.user}}"><button class="btn btn-default">View Public Profile</button></a><br>
-Username: {{ profile.user.username }}<br>
-First Name: {{ profile.user.first_name }}<br>
-Last Name: {{ profile.user.last_name }}<br>
-My Projects: <ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul>
-Pending Membership Requests: <ul>{% for project in member_requests %}<li>{{ project.name }}</li>{% endfor %}</ul>
+<div class="col-md-3"></div>
+
+<div class="col-md-6">
+	<div class="profile-box">
+
+
+
+
+
+<div class="profile-form-header">
+	<span class="profile-form-title">Edit Profile</span>
+	<a href="/accounts/user/{{profile.user}}">
+		<button class="btn btn-default pull-right">View Public Profile</button>
+	</a>
+</div>
+
 <br>
 
+<div class="profile-form-section">
+<span class="bold">Username:</span> {{ profile.user.username }}
+<ul></ul>
+<span class="bold">Name:</span> {{ profile.user.first_name }} {{ profile.user.last_name }} 
+<ul></ul>
+<span class="bold">My Projects:</span> <ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul>
+<span class="bold">Pending Membership Requests:</span> <ul>{% for project in member_requests %}<li>{{ project.name }}</li>{% endfor %}</ul><br>
+
+</div>
+<br>
+
+
 <form action="" method="post">{% csrf_token %}
-	{% if profile_change %}<label style="color:green;">Updated Successfully</label>{% endif %}<br>
-	Contact Information:<br>
-	Email: <input name="email" value="{{ profile.user.email }}" /><br>
-	Phone Number: <input name="phone" value="{{ profile.phone }}" /><br>
-	Major: <input name="major" value="{{ profile.major }}" /><br>
-	School: <input name="school" value="{{ profile.school }}" /><br>
-	<input class="btn btn-default" type="submit" value="submit" />
+	<span class="bold">Email: </span><input name="email" class="form-control" value="{{ profile.user.email }}" /><br>
+	<span class="bold">Phone Number: </span><input name="phone" class="form-control" value="{{ profile.phone }}" /><br>
+	<span class="bold">Major: </span><input name="major" class="form-control" value="{{ profile.major }}" /><br>
+	<span class="bold">School: </span><input name="school" class="form-control" value="{{ profile.school }}" /><br>
+	<input class="btn btn-default" type="submit" value="Save and Update" /> {% if profile_change %}<label style="color:green;">Update success!</label>{% endif %}
 </form>
+
+
+</div>
+</div>
+<div class="col-md-3"></div>
+
+
 
 {% endblock %}

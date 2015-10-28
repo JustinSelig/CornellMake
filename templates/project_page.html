@@ -1,78 +1,91 @@
 {% extends "base.html" %}
 {% block title %}{{ project.idea_name }}{% endblock %}
 {% block content %}
-
+<div class="fluid-container">
 <div class="row">
 	<div class="{{project.category}}-project project-intro">
 		<div class="project-header panel panel-default col-md-8">
 			<div class="col-md-8 project-header-left">
-				<h1>{{ project.idea_name }}</h1>
-				<h3>Name: {{ project.name }}</h3>
-				<h3>Owner: {{ project.owner }}</h3>
-				<p>
-					{% if project.category == 'PT' %}
-					<span class="glyphicon glyphicon-user"></span> Project Team
-					{% elif project.category == 'RESEARCH' %}
-					<span class="glyphicon glyphicon-search"></span> Research
-					{% elif project.category == 'STARTUP' %}
-					<span class="glyphicon glyphicon-road"></span> Startup
-					{% elif project.category == 'CH' %}
-					<span class="glyphicon glyphicon-floppy-disk"></span> Computer Hardware
-					{% elif project.category == 'CS' %}
-					<span class="glyphicon glyphicon-sound-stereo"></span> Computer Software
-					{% elif project.category == 'MECHE' %}
-					<span class="glyphicon glyphicon-wrench"></span> Mechanical
-					{% elif project.category == 'ENV' %}
-					<span class="glyphicon glyphicon-leaf"></span> Environmental
-					{% elif project.category == 'ADM' %}
-					<span class="glyphicon glyphicon-picture"></span> Art, Design, Multimedia
-					{% elif project.category == 'SE' %}
-					<span class="glyphicon glyphicon-globe"></span> Social Entrepreneurship
-					{% elif project.category == 'OTHER' %}
-					<span class="glyphicon glyphicon-question-sign"></span> Other
-					{% endif %}
-				</p>
-				<h4>Currently Recruiting. Join!</h4>
+				<div class="project-title-section"><h1>{{ project.idea_name }}</h1></div>
+				<div class="project-title-section">
+
+					<br><p><span class="bold">Contact Name:</span> {{ project.name }}</p>
+						<p><span class="bold">Username:</span> {{ project.owner }}</p>
+						<span class="bold">Type:</span>
+						<span>
+							{% if project.category == 'PT' %}
+							<span class="glyphicon glyphicon-user"></span> Project Team
+							{% elif project.category == 'RESEARCH' %}
+							<span class="glyphicon glyphicon-search"></span> Research
+							{% elif project.category == 'STARTUP' %}
+							<span class="glyphicon glyphicon-road"></span> Startup
+							{% elif project.category == 'CH' %}
+							<span class="glyphicon glyphicon-floppy-disk"></span> Computer Hardware
+							{% elif project.category == 'CS' %}
+							<span class="glyphicon glyphicon-sound-stereo"></span> Computer Software
+							{% elif project.category == 'MECHE' %}
+							<span class="glyphicon glyphicon-wrench"></span> Mechanical
+							{% elif project.category == 'ENV' %}
+							<span class="glyphicon glyphicon-leaf"></span> Environmental
+							{% elif project.category == 'ADM' %}
+							<span class="glyphicon glyphicon-picture"></span> Art, Design, Multimedia
+							{% elif project.category == 'SE' %}
+							<span class="glyphicon glyphicon-globe"></span> Social Entrepreneurship
+							{% elif project.category == 'OTHER' %}
+							<span class="glyphicon glyphicon-question-sign"></span> Other
+							{% endif %}
+						</span><br>
+					</div>
+
+<br>
+				<p><span class="bold">Description:</span><br>
+				{{ project.description }}</p>
 			</div>
 			<div class="col-md-4 project-header-right">
 				{% if join %}<span style="color:green;">Join request sent to project owner.</span>{% endif %}
+				<div class="currently-recruiting-text"><span class="bold"><p>Currently recruiting.</p></span></div><br>
 				<form action="" method="post">{% csrf_token %}
+
+
+
 					<button class="btn btn-success" name="join-project" value="submit" type="submit">
-						<span class="glyphicon glyphicon-plus"></span> Join this Project
+						<span class="glyphicon glyphicon-plus"></span> Ask to Join
 					</button>
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
+</div>
 <div class="container">
 	<div class="row">
-		<ul id="myTab" class="nav nav-tabs" role="tablist">
-			<li class="active"><a href="#overview" role="tab" data-toggle="tab">Overview</a></li>
-			<li><a href="#profile" role="tab" data-toggle="tab">Profile</a></li>
-		</ul>
-		<div id="myTabContent" class="tab-content">
-			<div class="tab-pane fade in active" id="overview">
-				<div class="col-md-4">
-					<img src="{{ STATIC_URL }}{{ project.image }}" class="img-responsive img-rounded" />
-				</div>
-				<div class="col-md-8">
-					Description:<br>
-					<p>{{ project.description }}</p>
+			<div class="project-information">
+				<ul id="myTab" class="nav nav-tabs" role="tablist">
+					<li class="active"><a href="#overview" role="tab" data-toggle="tab">Overview</a></li>
+					<li><a href="#profile" role="tab" data-toggle="tab">Team Profile</a></li>
+				</ul>
+				<div id="myTabContent" >
+					<div class="tab-pane fade in active" id="overview">
+						<div class="col-md-12 tab-content">
+<!-- 							<img src="{{ STATIC_URL }}{{ project.image }}" class="img-responsive img-rounded" width="200"/>
+ -->						<br>
+							<span class="bold">Overview:</span><br>
+							<p>{{ project.description }}</p><br><br><br><br><br><br>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="profile">
+						<div class="col-md-12 tab-content">
+				
+					<p>Members: {% for member in project.members.all %}{{ member }} {% endfor %}</p>
+						</div>
+					</div>
+				
 				</div>
 			</div>
-			<div class="tab-pane fade" id="profile">
-			<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-			<p>Members: {% for member in project.members.all %}{{ member }} {% endfor %}</p>
-			</div>
-		</div>
+		
 	</div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
 <!--only if current user is project owner show member requests-->
 {% if user == project.owner %}
 <form action="" method="post">{% csrf_token %}

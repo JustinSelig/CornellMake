@@ -15,6 +15,8 @@
 		<link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
 		<!-- Site Specific -->
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,700italic,700,600italic,600,400italic,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500italic,500' rel='stylesheet' type='text/css'>
 
 		<!-- Mobile Specifications
@@ -31,40 +33,53 @@
 <![endif]-->
 		{% block stylesheets %}{% endblock %}
 	</head>
-	<body>
+	<body class="grey-container">
 	<header>
 		<nav class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
+				<div class="navbar-header red">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/">Cornell MakerSpace</a>
+					<a class="navbar-brand red" href="/"><span class="bold">Cornell Make</span></a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="main-navbar">
 					<ul class="nav navbar-nav">
-						<li><a href="/connect/">Connect</a></li>
-						<li class="active"><a href="/create/">Create</a></li>
-						<li><a href="/media/">Media</a></li>
-						<li><a href="/about/">About</a></li>
+						
+						<li><a href="/discover/">Discover</a></li>
 						{% if user.is_authenticated %}
-						<li><a href="/accounts/user/profile/">Hello, {{ user }}</a></li>
-						{% else %}
-						<li><a href="/accounts/register/">Sign up / Login</a></li>
+						<li><a href="/create/">Create</a></li>
 						{% endif %}
+<!-- 						<li><a href="/media/">Media</a></li>
+						<li><a href="/about/">About</a></li> -->
+						
 					</ul>
-					<form action="/connect/" class="navbar-form navbar-right" role="search" method="get">
+					<div class="pull-right">
+
+
+
+					<form action="/discover/" class="navbar-form navbar-right pull-left" role="search" method="get">
 						<div class="form-group">
 							<input type="text" name="project-search" class="form-control" placeholder="Search for project">
 						</div>
-						<button type="submit" class="btn btn-default">Search</button>
+						<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
 					</form>
+
+					<ul class="nav navbar-nav pull-left">
+						{% if user.is_authenticated %}
+						<li><a href="/accounts/user/profile/" id="username">Hello, <span class="bold">{{ user }}</span></a></li>
+						{% else %}
+						<li><a href="/accounts/register/" id="username">Sign up / Login</a></li>
+						{% endif %}
+					</ul>
+
+					</div>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container -->
 		</nav>
