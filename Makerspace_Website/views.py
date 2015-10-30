@@ -10,9 +10,9 @@ from projects.models import Project
 def about(request):
 	return render(request, 'about.html')
 
-#galv: Removing this to render everything media-related within media
-#def media(request):
-#	return render(request, 'media.html')
+def home(request):
+	projects = Project.objects.all()[:3]	#change to be most popular projects
+	return render(request, 'index.html', {'projects':projects})
 
 #def discover(request):
 #	if 'project-search' in request.GET:

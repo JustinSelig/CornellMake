@@ -11,16 +11,25 @@ from django.contrib.auth.models import User
 ############ ...create/... ####################
 def create(request):
 	if request.method == 'POST':
+		args = {}
+		args["category"] = request.POST.get("category")
+		args["project_name"] = request.POST.get("project_name")		
+		args.update(csrf(request))
+		return render(request, 'create-form.html', args)
+	return render(request, 'create.html')
+
+def create_form(request):
+	if request.method == 'POST':
 		form = ProjectSubmissionForm(request.POST, request.FILES, request=request)
 		if form.is_valid():
 #			form.owner = request.user
 			form.save()
 #			return HttpResponseRedirect(reverse('create'))
-			return render(request, 'create.html', {'success':True})
+			return render(request, 'create-form.html', {'success':True})
 	args = {}
 	args.update(csrf(request))
 	args['form'] = ProjectSubmissionForm()
-	return render(request, 'create.html', args)
+	return render(request, 'create-form.html', args)
 
 def approve(request):
 	if request.method == 'POST':
