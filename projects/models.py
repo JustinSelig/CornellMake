@@ -28,11 +28,17 @@ class ProjectSubmission(models.Model):
 		('ADM', 'Art, Design, or Multimedia'),
 		('SE', 'Social Entrepreneurship'),
 		('OTHER', 'Other'),
+		('RAND', 'Random'),
 	)
 	category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, null=True)
 	image = models.FileField(upload_to=get_upload_file_name, default="Image")
 	url = models.SlugField(max_length=200, null=True, unique=True)
 	owner = models.ForeignKey(User, null=True)
+	credit_offered = models.NullBooleanField(null=True)
+	supervisor = models.CharField(max_length=100, null=True)
+	pay = models.NullBooleanField(null=True)
+	department = models.CharField(max_length=100, null=True)
+	date_started = models.DateField(auto_now = True, editable = True, null=True)
 	
 class Project(models.Model):
 	name = models.CharField(max_length=100)
@@ -47,3 +53,8 @@ class Project(models.Model):
 	owner = models.ForeignKey(User, null=True)
 	member_requests = models.ManyToManyField(User, related_name='member_requests')
 	members = models.ManyToManyField(User, related_name='members')
+	credit_offered = models.NullBooleanField(null=True)
+	supervisor = models.CharField(max_length=100, null=True)
+	pay = models.NullBooleanField(null=True)
+	department = models.CharField(max_length=100, null=True)
+	date_started = models.DateField(auto_now = True, editable = True, null=True)

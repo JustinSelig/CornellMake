@@ -17,6 +17,11 @@
 				<th>Image</th>
 				<th>URL</th>
 				<th>Owner</th>
+				<th>Credit Offered</th>
+				<th>Supervisor</th>
+				<th>Pay</th>
+				<th>Department</th>
+				<th>Date Started</th>
 				<th>Approve?</th>
 			</tr>
 		</thead>
@@ -30,9 +35,14 @@
 				<td>{{ submission.idea_name }}</td>
 				<td>{{ submission.description }}</td>
 				<td>{{ submission.category }}</td>
-				<td><img src="{{ STATIC_URL }}{{ submission.image }}" width="400"></td>
+				<td><img src="{{ STATIC_URL }}{{ submission.image }}" width="50"></td>
 				<td>{{ submission.url }}</td>
 				<td>{{ submission.owner }}</td>
+				<td>{{ submission.credit_offered }}</td>
+				<td>{{ submission.supervisor }}</td>
+				<td>{{ submission.pay }}</td>
+				<td>{{ submission.department }}</td>
+				<td>{{ submission.date_started }}</td>
 				<td>Approve <input type="checkbox" value="{{ submission.id }}" name="approved"><br>Disapprove <input type="checkbox" value="{{ submission.id }}" name="disapproved"></td>
 			</tr>
 		{% endfor %}

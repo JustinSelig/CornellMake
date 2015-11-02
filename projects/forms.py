@@ -18,10 +18,12 @@ class ProjectSubmissionForm(forms.ModelForm):
 		instance = super(ProjectSubmissionForm, self).save(commit=False)
 		instance.owner = self.request.user
 		
-		if commit:
+		if commit:	#seems unnecessary
 			instance.save()
 		return instance
 
 	class Meta:
 		model = ProjectSubmission
-		fields = ('name', 'email', 'organization', 'website', 'idea_name', 'description', 'category', 'image', 'url')
+		fields = ('name', 'email', 'organization', 'website', 'idea_name', 
+		'description', 'category', 'image', 'url', 'credit_offered',
+		'supervisor', 'pay', 'department')

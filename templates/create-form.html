@@ -61,7 +61,28 @@
 					<span class="bold">Website</span>
 					<!--input type="text" name="org-name" class="form-control" /-->
 					<input id="id_website" class="form-control"  maxlength="100" name="website" type="text" placeholder="If you have one...">
-				</div><br>
+				</div>
+				<div class="form-group">
+					<span class="bold">Credit Offered?</span>
+					<!--input type="text" name="org-name" class="form-control" /-->
+					<input id="id_credit_offered" class="form-control"  type="checkbox" name="credit_offered"> <!-- check in code to see if true/false captured-->
+				</div>
+				<div class="form-group">
+					<span class="bold">Supervisor</span>
+					<!--input type="text" name="org-name" class="form-control" /-->
+					<input id="id_supervisor" class="form-control"  maxlength="100" name="supervisor" type="text" placeholder="Faculty or staff member?">
+				</div>
+				<div class="form-group">
+					<span class="bold">Pay Offered?</span>
+					<!--input type="text" name="org-name" class="form-control" /-->
+					<input id="id_psy" class="form-control"  type="checkbox" name="pay"> <!-- check in code to see if true/false captured-->
+				</div>
+				<div class="form-group">
+					<span class="bold">Department</span>
+					<!--input type="text" name="org-name" class="form-control" /-->
+					<input id="id_department" class="form-control"  maxlength="100" name="department" type="text" >
+				</div>
+				<br>
 				<input type="button" name="next" class="next btn btn-default next-button" value="Next"/>
 			</fieldset>				
 			<fieldset>
@@ -131,7 +152,7 @@
 				</div><br>
 				<input type="button" name="previous" class="previous btn btn-default next-button" value="Previous"/>
 	<!--			<input id="submit" type="submit" name="submit" class="submit action-button" value="Submit" />-->
-				<input id="submit" type="submit" name="submit" class="btn btn-default next-button" value="Submit" />
+				<input id="submit" type="submit" name="submit-final" class="btn btn-default next-button" value="Submit" />
 			</fieldset>
 	<!--		<input type="submit" value="Submit" class="submit action-button" />This is the only submit button working for now. Fix this!-->
 		<!--	<input type="submit" name="submit" class="submit action-button" value="Submit" />-->

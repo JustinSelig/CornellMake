@@ -9,27 +9,40 @@ from accounts.models import UserProfile
 from django.contrib.auth.models import User
 
 ############ ...create/... ####################
-def create(request):
-	if request.method == 'POST':
+def create(request):	#initial screen asking for project name and category
+	if request.POST and 'submit-initial' in request.POST: #submitted initial form, 'submit-initial' is in name field
 		args = {}
 		args["category"] = request.POST.get("category")
 		args["project_name"] = request.POST.get("project_name")		
 		args.update(csrf(request))
+		args['form'] = ProjectSubmissionForm()
+		args['form'] = ProjectSubmissionForm()
 		return render(request, 'create-form.html', args)
-	return render(request, 'create.html')
-
-def create_form(request):
-	if request.method == 'POST':
+	elif request.POST and 'submit-final' in request.POST: #actual full form submitted
 		form = ProjectSubmissionForm(request.POST, request.FILES, request=request)
 		if form.is_valid():
 #			form.owner = request.user
 			form.save()
 #			return HttpResponseRedirect(reverse('create'))
 			return render(request, 'create-form.html', {'success':True})
-	args = {}
+		#else: return render(request, 'about.html') #uncomment to test form validity
+		return render(request, 'discover.html') #if form is invalid take to discover page
+	return render(request, 'create.html')
+
+"""
+def create_form(request):	#full project form
+	if request.method == 'POST': #submitted full project form
+		form = ProjectSubmissionForm(request.POST, request.FILES, request=request)
+		if form.is_valid():
+#			form.owner = request.user
+			form.save()
+#			return HttpResponseRedirect(reverse('create'))
+			return render(request, 'index.html', {'success':True})
+	args = {}	#
 	args.update(csrf(request))
 	args['form'] = ProjectSubmissionForm()
 	return render(request, 'create-form.html', args)
+"""
 
 def approve(request):
 	if request.method == 'POST':
@@ -52,6 +65,10 @@ def approve(request):
 			new.image = old.image
 			new.url = old.url
 			new.owner = old.owner
+			new.credit_offered = old.credit_offered
+			new.supervisor = old.supervisor
+			new.pay = old.pay
+			new.department = old.department
 			new.save()
 			old.delete()
 		for submission in disapproved_submissions:
