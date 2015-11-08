@@ -13,7 +13,6 @@
 }	
 
 /*	main { padding: 75px 0; }*/
-
 	/*	removed all roundness from bootstrapped elements */
 	* {
   		-webkit-border-radius: 0;
@@ -26,17 +25,18 @@
 	}
 
 	.white {
-	color: #ffffff;
+	color: #ffffff; 
 	}
-
 
 	.home-white-panel {
 		background-color: white;
 		height: 100%;
 	}
 
-	.newclass{
-		width:350px!important
+	@media (min-width: 1200px) {
+	.container {
+	   	width: 1000px;
+	  }
 	}
 
 
@@ -45,216 +45,116 @@
 ============================================================================ */
 
 	.navbar-static-top { margin-bottom: 0; }
-	
-	.makerspace-header {
-		padding: 75px 0;
-		margin: 0;
-	}
-	
-	.makerspace-header h1 {
-		font-size: 72px;
-	}
-	
-	.makerspace-header .lead {
-		font-size: 32px;
-	}
-	
-	.panel-title {
-		font-size: 24px;
-		font-weight: bold;
-	}
 
-	
-/* ============================================================================
-.::[ LANDING PAGE ]::.
-============================================================================ */
-	#main-content {
-		overflow: hidden;
-		background: url(../images/landing-bg.jpg) no-repeat center center fixed; 
-	 	-webkit-background-size: cover;
-	 	-moz-background-size: cover;
-	 	-o-background-size: cover;
-	 	background-size: cover;
-	}
-
-	.home-text {
-		padding-top: 6em;
-	}
-
-	@font-face {
-    font-family: 'Montserrat-Bold';
-    src: url(../fonts/Montserrat-Bold.otf);
-	}
-
-	h1{
-		font-weight: 800;
-		font-size: 3.5em;
-		line-height: 1em;
-		margin-top: 0; 
-		font-family: 'montserrat-bold';
-	}
-
-	h2{
-		font-weight: normal;
-		font-size: 1.4em;
-	}
-
-	.description {
-		font size: 2em!important;
-	}
-
-#logo
-{
-background:url(../images/CU-logo.svg) no-repeat center center;
-height:200px;
-width:100%;
-margin-top: 50px;
-}
-
-.home-white-panel {
-	background-color: white;
-	height: 100%;
-	text-align: center;
-}
-
-.description-button {
-	background-color: #0E4FA0;
-}
-
-.create-button {
-	background-color:#2FB4FA;
-}
-
-.sign-in-button {
-	background-color:#D8535C;
-}
-
-.landing-nav-button {
-    height: 35px;
-    width: 60%;
-    display: inline-block;
-    margin-left: 10%
-    margin-right: auto;
-    margin-bottom: 10px;
-    text-align: center;
-    color: white;
-    line-height: 2.5em;
-    border-radius: 3px;
-}
-
-#landing-nav-buttons {
-	left: 0!important;
-}
 
 /* ============================================================================
 .::[ HOME PAGE ]::.
 ============================================================================ */
-	
-	.nav-home {
-		height:70px;
-		width:150px;
-		display:inline-block;
-		margin: 5px;
-		opacity: 1; /*Set to 0.7?*/
-		text-align: center;
-		color: white;
-	}
 
-	.main-nav {
-		display:block;
-		position:relative;
-		left:-1000px;
-	}
+.hero {
+	background-image: url(../images/landing-bg.jpg);
+	text-align: center;
+	background-size: 100%
+}
 
-	.navbar-nav-right {
-		margin: 0;
-	}
+.hero-container {
+	padding-top:15%;
+	padding-bottom:18%;
+}
+
+.hero-text {
+	color: white;
+}
+
+.hero-text h1 {
+	font-weight: 300;
+}
+
+.btn-started {
+	background-color: #44e5d8;
+	padding: 15px;
+	border: 0px;
+	margin-top: 50px;
+	border-radius: 3px;
+	color: white;
+}
+
+.btn-started:hover {
+	background-color: #3ccabf;
+}
+
+.btn-started a {
+	color: white;
+	text-decoration: none;
+}
 
 /* Nav Bars
 ================================================== */
-	.nav-bars {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-	
-	.nav-bars .nav-top,
-	.nav-bars .nav-bottom,
-	.nav-bars .nav-right,
-	.nav-bars .nav-left {
-		display: block;
-		color: #fff;
-		text-align: center;
-		padding: 0;
-		margin: 0;
-		position: fixed;
-		text-decoration: none;
-		transition: all 200ms ease-out;
+/*Style for entire navbar bar*/
+	.navbar-custom {
+		background-color: #ffffff;
+		border-color: #e7e7e7;
 	}
 
-	.nav-bars .text {
-		display: inline-block;
-		position: relative;
-		transition: all 350ms ease-in;
-	}
-	
-	.nav-bars .nav-top {
-		top: 0;
-		line-height: 2.5em;
-		height: 2.5em;
-		width: 100%;
-		z-index: 3;
-		background: #2F2F2F;
-	}
-	
-	.nav-bars .nav-bottom {
-		bottom: 0;
-		line-height: 2.5em;
-		height: 2.5em;
-		width: 100%;
-		z-index: 3;
-		background: #2F2F2F;
-	}
-	
-	.nav-bars .nav-right {
-		right: 0;
-		height: 100%;
-		width: 2.5em;
-		z-index: 2;
-		background: #B31B1B;
-	}
-	
-	.nav-bars .nav-left {
-		left: 0;
-		height: 100%;
-		width: 2.5em;
-		z-index: 2;
-		background: #B31B1B;
-	}
-	
-	.nav-bars .nav-top .text {
-		top: 0;
-	}
-	.nav-bars .nav-right .text {
-		top: 0;
-	}
-	.nav-bars .nav-right .text {
-		-webkit-transform: rotate(90deg);
-		-moz-transform: rotate(90deg);
-		-o-transform: rotate(90deg);
-		position: relative;
-		top: 45%;
-	}
-	
-	.nav-bars .nav-left .text {
-		-webkit-transform: rotate(270deg);
-		-moz-transform: rotate(270deg);
-		-o-transform: rotate(270deg);
-		position: relative;
-		top: 45%;
+/*Style for 1)search bar box and 2)search bar*/
+	.navbar-form-custom {
+		border-left: 2px solid #e7e7e7;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 
-	
+
+	.form-control-custom {
+		border-style: none;
+		box-shadow: 0 0 0 rgba(0,0,0,0);
+	}
+
+	.form-control-custom:focus {
+		outline: none;
+		border-style: none;
+  		box-shadow: 0 0 0 rgba(0,0,0,0);
+	}
+
+/*Style for navbar logo*/
+
+	.title-cornell {
+		font-weight: 600;
+		color: #e7e7e7;
+	}
+
+	.title-make {
+		font-weight: 600;
+		color: #44e5d8;
+	}
+
+/*navbar padding*/
+	.navbar-header {
+		padding-left: 20px;
+	}
+
+	.nav > li > a {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.navbar-nav {
+		margin-left: 10px;
+		margin-right: 20px;
+	}
+
+	.nav > li:hover {
+		background-color: #f0f0f0;
+	}
+
+/*	.nav li a:hover {
+		color: #bb1a20!important;
+	}*/
+
+
+/*Style for misc*/
+
 
 	.pull-right {
 		float: right;
@@ -264,21 +164,43 @@ margin-top: 50px;
 		float: left;
 	}
 
-	#username {
-		padding-right: 0;
-	}
-
-	.red {
-		color: #bb1a20!important;
-	}
-
-	.nav li a:hover {
-		color: #bb1a20!important;
-	}
+	
 
 	.button-gradient {
 	background: linear-gradient(#fff, #f0f0f0);
 	}
+
+	.search-bar {}
+
+/* Discover Page
+================================================== */
+
+.discover-header {
+	background-color: #edf2fd;
+	color: black;
+	padding-top: 100px;
+    padding-bottom: 100px;
+    font-size: 25px;
+    text-align: left;
+}
+
+/* Create Page
+================================================== */
+.create-header {
+	padding-top: 100px;
+	font-weight: 300;
+ font-size: 25px;
+}
+
+/* About Page
+================================================== */
+
+.about-header {
+	background-image: url(../images/makespace.jpg);
+	height: 300px;
+	background-size: 100%;
+
+}
 
 /* Hover Flip Effects
 ================================================== */
@@ -327,6 +249,8 @@ margin-top: 50px;
 		transform: rotateY(180deg);
 	}
 	/* End hover-flip */
+
+	
 	
 
 /* Home Menu Nav
@@ -666,6 +590,10 @@ div.parallax-container div.parallax {
 	background-color: #f2f3f4;
 }
 
+.blue-container {
+	background-color: #fdfefe;
+}
+
  .next-button {
  	width: 30%!important;
  	    display: inline-block;
@@ -764,7 +692,7 @@ div.parallax-container div.parallax {
 .project-picture-box {
 	width: 200px; 
 	height: 200px; 
-	overflow: hidden;
+	overflow: scroll;
 	margin: 0;
 	padding: 0;
 	float: left;
@@ -785,45 +713,6 @@ div.parallax-container div.parallax {
 	position:  relative;
    
 }
-
-.project-description {
-}
-/*.research {
-	background-color: #0E4FA0;
-
-}
-
-.startup {
-	background-color:#2FB4FA;
-}
-
-.computer-hardware {
-	background-color:#D8535C;
-}
-
-.computer-software {
-
-}
-
-.mechanical {
-
-}
-
-.environmental {
-
-}
-
-.design {
-
-}
-
-.social {
-
-}
-
-.other {
-
-}*/
 
 
 
