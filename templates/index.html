@@ -26,15 +26,16 @@
 				<div class="col-sm-4">
 					<div class="project-panel">
 							<div class="project-thumbnail" style="">
-								<a href="/projects/{{ project.url }}"> <img src="{{ STATIC_URL }}{{project.image}}" class="project-thumbnail-img" width="200"></a>
+								<a href="/projects/{{ project.url }}"> <img src="{{ STATIC_URL }}{{project.image}}" class="project-thumbnail-img"></a>
 							</div>
 							<div class="project-info caption">
-								<h3>{{project.idea_name}}</h3>
+								<strong><p>{{project.idea_name}}</strong><br>
+								by {{project.name}}</p>
 								<p>{{project.description}}</p>
-								<p>{{project.name}}</p>
+								
 							</div>
 					</div>
-				</div>		
+				</div>
 				{% endfor %}		
 	</div>		
 </div>
