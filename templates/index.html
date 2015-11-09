@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}CornellMake{% endblock %}
-
+{% block body-color %}grey{% endblock %}
 {% block content %}
 
 <div class="hero">
@@ -23,43 +23,18 @@
 			<h3>Featured Projects</h3>
 		</div>
 				{% for project in projects %}
-				<div class="col-md-4">
-
-					<div class="projects-panel">
-							<div class="project-picture-box" >
-								<img src="{{ STATIC_URL }}{{project.image}}" class="project-picture" height="200px" >
+				<div class="col-sm-4">
+					<div class="project-panel">
+							<div class="project-thumbnail" style="">
+								<a href="/projects/{{ project.url }}"> <img src="{{ STATIC_URL }}{{project.image}}" class="project-thumbnail-img" width="200"></a>
 							</div>
-							<div class="caption pull-left project-caption">
+							<div class="project-info caption">
 								<h3>{{project.idea_name}}</h3>
 								<p>{{project.description}}</p>
-								<div="view-project-button"><p><a href="/projects/{{ project.url }}" class="btn btn-default" role="button">View Project</a></p></div>
+								<p>{{project.name}}</p>
 							</div>
 					</div>
-
-
-					<div class="col-md-4">
-
-					<div class="projects-panel">
-							<div class="project-picture-box" >
-								<img src="{{ STATIC_URL }}{{project.image}}" class="project-picture" height="200px" >
-							</div>
-							<div class="caption pull-left project-caption">
-								<h3>{{project.idea_name}}</h3>
-								<p>{{project.description}}</p>
-								<div="view-project-button"><p><a href="/projects/{{ project.url }}" class="btn btn-default" role="button">View Project</a></p></div>
-							</div>
-					</div>
-					<div class="col-md-4">
-					<div class="projects-panel">
-							<div class="project-picture-box" >
-								<img src="{{ STATIC_URL }}{{project.image}}" class="project-picture" height="200px" >
-							</div>
-							<div class="caption pull-left project-caption">
-								<h3>{{project.idea_name}}</h3>
-								<p>{{project.description}}</p>
-								<div="view-project-button"><p><a href="/projects/{{ project.url }}" class="btn btn-default" role="button">View Project</a></p></div>
-							</div>
-					</div>				
+				</div>		
 				{% endfor %}		
 	</div>		
 </div>
