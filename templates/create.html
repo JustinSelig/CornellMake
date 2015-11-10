@@ -8,7 +8,7 @@
     <div class="col-md-12">
 	<form accept-charset="UTF-8" method="POST">
 		{% csrf_token %}
-		<span class="bold">I want to post a</span>
+		<span>I want to post a</span>
 			<span>
 				<select name="category">
 					<option value="business">Startup/Business</option>
@@ -17,7 +17,7 @@
 					<option value="personal">Personal</option>
 				</select>
 			</span>
-			<span class="bold">project called:</span> <input type="text" name="project_name" placeholder="Project Name">
+			<span>project called:</span> <input type="text" name="project_name" placeholder="Project Name">
 			<br/>
 			<input id="submit" type="submit" name="submit-initial" class="btn btn-default btn-started" value="Create" />
 	</form>

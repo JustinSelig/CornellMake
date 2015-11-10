@@ -7,8 +7,8 @@
 <div class="container hero-container">
 	<div class="row">
 		<div class="col-md-12 hero-text">
-			<h1>Find people to help you bring your ideas to life.</h1>
-			<button class="btn btn-default btn-started" type="submit" value="started"><a href="/accounts/register">Let's get started</a></button>
+			<h3>Find people to help you bring your ideas to life.</h3>
+			<button class="btn btn-default btn-started" type="submit" value="started"><a href="/accounts/register">Sign Up</a></button>
 		</div>
 	</div>
 </div>
@@ -19,8 +19,8 @@
 	<div class="row">
 		
 
-		<div class="col-md-12">
-			<h3>Featured Projects</h3>
+		<div class="col-md-12 all-projects-title">
+			<h4>People are working on:</h4>
 		</div>
 				{% for project in projects %}
 				<div class="col-sm-4">
@@ -28,11 +28,17 @@
 							<div class="project-thumbnail" style="">
 								<a href="/projects/{{ project.url }}"> <img src="{{ STATIC_URL }}{{project.image}}" class="project-thumbnail-img"></a>
 							</div>
-							<div class="project-info caption">
-								<strong><p>{{project.idea_name}}</strong><br>
+							<div class="project-info-box">
+
+								<strong><p><a href="/projects/{{ project.url }}">{{project.idea_name}}</a></strong><br>
 								by {{project.name}}</p>
-								<p>{{project.description}}</p>
-								
+								<p class="smalltext project-description">{{project.description}} 
+
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+							</div>
+							<div class="project-category-box">
+							<span class="glyphicon glyphicon-globe"></span><span>   {{project.category}}</span>
 							</div>
 					</div>
 				</div>
