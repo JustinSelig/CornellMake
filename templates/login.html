@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Login{% endblock %}
-{% block body-color %}blue{% endblock %}
+{% block body-color %}grey{% endblock %}
 {% block head %}
 {% if user.is_authenticated %}
 <meta http-equiv="refresh" content="1; URL={{ BASE_URL }}/accounts/profile/">
@@ -10,12 +10,13 @@
 {% block content %}
 
 
-<div class="col-md-12">
+<div class="col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3">
+
 	<div class="login-box">
+	<div class="login-box-fields">
 	{% if user.is_authenticated %}
 	<h1>Redirecting</h1>
 	{% else %}
-	<br>
 	<span class="profile-form-title">Login</span>
 	<form action="/accounts/login/" method="POST">
 		{% csrf_token %}
@@ -33,14 +34,20 @@
 		</div>
 		<br>
 		<div class="row">
-			<button class="btn btn-default " type="submit" value="login">Login</button>
+			<button class="btn btn-default btn-red btn-login" type="submit" value="login">Login</button>
 		</div>
 	</form>
-	<hr>
-	<a class="btn" href="/accounts/register/">Sign Up</a>
-	<br><br>
-	<a class="btn" href="/accounts/password/reset/">Forgot password?</a>
+
 	{% endif %}
+</div>
+<div class="login-box-footer">
+
+
+	<span>New here? </span><a href="/accounts/register/">Sign Up!</a>
+	<br><!-- <br>
+
+	<a href="/accounts/password/reset/">Forgot password?</a> -->
+	</div>
 </div>
 </div>
 

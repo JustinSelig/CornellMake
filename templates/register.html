@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Register{% endblock %}
-{% block body-color %}blue{% endblock %}
+{% block body-color %}grey{% endblock %}
 {% block head %}
 {% if user.is_authenticated %}
 <meta http-equiv="refresh" content="1; URL={{ BASE_URL }}/accounts/user/profile/">
@@ -9,9 +9,10 @@
 
 {% block content %}
 
-<div class="col-md-12">
+<div class="col-sm-4 col-sm-offset-4">
 	<div class="login-box">
-		<br>
+
+		<div class="login-box-fields">
 		{% if user.is_authenticated %}
 		<span class="profile-form-title">redirecting</span>
 		{% else %}
@@ -41,11 +42,13 @@
 				<input id="id_password2" name="password2" type="password" autocomplete="off" required placeholder="Confirm Password" class="form-control">
 			</div><br>
 			<div class="row">
-				<button class="btn btn-default" type="submit" value="register">Sign Up</button>
+				<button class="btn btn-default btn-red" type="submit" value="register">Sign Up</button>
 			</div>
 		</form>
-		<hr>
-		<a class="btn" href="/accounts/login">Login</a>
+		</div>
+		<div class="login-box-footer">
+		<span>Already have an account?</span><a href="/accounts/login"> Login!</a>
+		</div>
 		{% endif %}
 	</div>
 </div>
