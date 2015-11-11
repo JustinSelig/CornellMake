@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'cornellmake.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,12 +67,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+		'django.core.context_processors.static',
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'gettingstarted.wsgi.application'
+WSGI_APPLICATION = 'cornellmake.wsgi.application'
 
 
 # Database
@@ -86,26 +87,27 @@ DATABASES = {
     }
 }
 """
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'python-getting-started',
+        'NAME': 'cornellmake',
         'USER': 'justin',
         'PASSWORD': 'abc123',
         'HOST': 'localhost',
         'PORT': '',
     }
 }
-"""
 
+
+"""
 # we only need the engine name, as heroku takes care of the rest
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
     }
 }
-
+"""
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -118,27 +120,28 @@ USE_TZ = True
 
 
 # Parse database configuration from $DATABASE_URL
-DATABASES['default'] =  dj_database_url.config()
+#DATABASES['default'] =  dj_database_url.config()
 
 # Enable Connection Pooling (if desired)
-DATABASES['default']['ENGINE'] = 'django_postgrespool'
+#DATABASES['default']['ENGINE'] = 'django_postgrespool'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['[your-project-name].herokuapp.com']
+ALLOWED_HOSTS = ['testmake.herokuapp.com']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
 )
 
 #necessary for image upload to find static folder

@@ -1,0 +1,260 @@
+{% block head %}
+<style type="text/css">
+	html {overflow-y: hidden;}
+</style>
+{% endblock %}
+
+<!DOCTYPE html><!--Self-contained html file which does not extend the base-->
+<html lang="en">
+	<head>
+
+
+
+	  <meta  name = "viewport" content="width=device-width">
+		<title>Cornell Makerspace</title>
+		<!-- Basic Page Needs
+================================================== -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>{% block title %}{% endblock %} \ Cornell Makerspace</title>
+{% load staticfiles %}
+		<!-- CSS
+================================================== -->
+		<!-- Bootstrap -->
+		<link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+		<!-- Site Specific -->
+		<link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,700italic,700,600italic,600,400italic,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500italic,500' rel='stylesheet' type='text/css'>
+
+		<!-- Mobile Specifications
+================================================== -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Browser Compatibility
+================================================== -->
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+		<!--css for page transitions-->
+<!--
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/animations.css">
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/component.css">
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/multilevelmenu.css">
+-->
+		
+		<!--stuff for new page transitions-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/elementTransitions.css" />
+		<script src="{{STATIC_URL}}js/elementTransitions.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/demo.css">
+		<script> 
+			$(document).ready(function(){  
+				$(".main-nav").animate({left:'20px'},"slow");		
+			});
+		</script> 
+</head>
+<body>
+
+<!-- Body
+================================================== -->
+<!--
+	<header id="top">  
+		<nav>
+			<ul class="nav-bars">
+				<li><a class="nav-top" href="/discover/"><div class="text">discover</div></a></li>
+				<li><a class="nav-bottom" href="/create/"><div class="text">Create</div></a></li>
+				<li><a class="nav-right" href="/media/"><div class="text">Media</div></a></li>
+				<li><a class="nav-left" href="/about/"><div class="text">About</div></a></a></li>
+			</ul>
+		</nav>
+	</header>
+-->
+<!-- 	<video loop="0" preload="1" autoplay src="{{STATIC_URL}}video/7131.mp4" width="100%" style="position:absolute; left:0; top:0;"></video>
+ -->
+
+	<div class="container-fluid">
+	<main id="main-content" class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="home-text col-md-6">
+			<!--h1 style="color:white;">Cornell Makerspace</h1>
+	
+			<p class="lead" style="color:white;">
+				A university-wide, cross-disciplinary initiative to foster innovation and creativity by providing students the necessary resources to work on projects.
+			</p>
+			<p>To become a registered member, you must <a href="#">start a project!</a></p-->
+			<!--test-->
+
+			<div>
+				
+					<div>
+						<h1 class="white">Welcome to <br> Cornell Make</h1>
+					</div>
+					<div class="description">
+						<h2 class="white">A way to find people to help you bring your ideas to life.</h2>
+
+					</div>
+						<!-- <br><br>Interested? Let's <a href="/accounts/register/">get started.</a></p> -->
+
+				</div>
+			</div>
+			<div class="col-md-4 home-white-panel">
+
+				<div id="logo"></div>
+				<p>Interested? <span class="bold">Let's get started.</span></p>
+			
+			<!--endtest-->
+			<!--form action="/discover/" role="search" method="get">
+				<div class="form-group">
+					<input type="text" name="project-search" class="form-control" placeholder="Search projects, lectures, and media">
+				</div>
+				<button type="submit" class="btn btn-default hidden">Submit</button>
+			</form-->
+			<br><br>
+					<div class="main-nav" id="landing-nav-buttons">
+
+						<a href="/discover/">
+							<div class="description-button landing-nav-button">
+								<span class="bold">Discover</span>
+							</div>
+						</a>
+						<!-- <a href="/create/">
+							<div class="create-button landing-nav-button">
+								<span class="bold">Create</span>
+							</div>
+						</a> -->
+		<!-- 				<a href="/media/">
+							<div style="background-color:#DFC994;" class="nav-home">
+								<h3>Media</h3>
+							</div>
+						</a>
+						<a href="/about/">
+							<div style="background-color:#E18269;" class="nav-home">
+								<h3>About</h3>
+							</div> -->
+						</a href="/accounts/">
+						<div class="sign-in-button landing-nav-button">
+							<span class="bold">Sign in</span>
+						</div>
+					</div>
+					{% for project in projects %}
+					
+								<h3>{{project.idea_name}}</h3>
+								<p>{{project.description}}</p>
+		
+					{% endfor %}
+			
+		</div>
+		
+		<!-- Slideshow Images -->
+<!--
+		<div class="bg-fader">
+			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg1.jpg"></img>
+			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg2.jpg"></img>
+			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg3.jpg"></img>
+			<img class="bg-fader-img" src="{{ STATIC_URL }}images/bg4.jpg"></img>
+		</div>
+-->
+		<!--VIDEO BACKGROUND INSTEAD?-->
+
+
+
+
+
+
+
+
+<!-- 	<div class="col-md-3" style = "z-index:9">
+		<iframe height="200px" width="300px" src="https://www.google.com/calendar/embed?showPrint=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=c6eapm34bft114p7fab95enekc%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no" class="row pull-right"></iframe> -->
+
+
+
+
+
+
+
+		<!--div class="flip-container row pull-right" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper" style="width:200px;height:100px;color:white;text-align:center;">
+				<div class="front" style="background:red;height:inherit;width:inherit;opacity:0.5;">
+					<h3>Create</h3>
+				</div>
+				<div class="back" style="background:red;height:inherit;width:inherit;">
+					<p>Create content</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-container row pull-right" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper" style="width:200px;height:100px;color:white;text-align:center;">
+				<div class="front" style="background:red;height:inherit;width:inherit;opacity:0.5;">
+					<h3>discover</h3>
+				</div>
+				<div class="back" style="background:red;height:inherit;width:inherit;">
+					<p>Create content</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-container row pull-right" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper" style="width:200px;height:100px;color:white;text-align:center;">
+				<div class="front" style="background:red;height:inherit;width:inherit;opacity:0.5;">
+					<h3>Create</h3>
+				</div>
+				<div class="back" style="background:red;height:inherit;width:inherit;">
+					<p>Create content</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-container row pull-right" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper" style="width:200px;height:100px;color:white;text-align:center;">
+				<div class="front" style="background:red;height:inherit;width:inherit;opacity:0.5;">
+					<h3>Create</h3>
+				</div>
+				<div class="back" style="background:red;height:inherit;width:inherit;">
+					<p>Create content</p>
+				</div>
+			</div>
+		</div>
+		<div class="flip-container row pull-right" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper" style="width:200px;height:100px;color:white;text-align:center;">
+				<div class="front" style="background:red;height:inherit;width:inherit;opacity:0.5;">
+					<h3>Create</h3>
+				</div>
+				<div class="back" style="background:red;height:inherit;width:inherit;">
+					<p>Create content</p>
+				</div>
+			</div>
+		</div-->
+	</div>
+<!-- TESTING PAGE TRANSITIONS
+<div class="et-wrapper" style="width:100%;">
+	<button class="et-rotate" et-in="moveFromRight" et-out="rotatePushLeft">Next</button>
+	<div class="et-page">
+		<h2>Page 1</h2>
+	</div>
+	<div class="et-page">
+		<h2>Page 2</h2>
+	</div>
+</div>
+-->
+
+	</main>
+</div>
+
+<!-- JavaScript
+================================================== -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+<script src="{{ STATIC_URL }}js/home.js"></script>
+<!--js for page transitions-->
+<script src="{{ STATIC_URL }}js/modernizr.custom.js"></script>
+<!--<script src="{{ STATIC_URL }}js/jquery.dlmenu.js"></script>-->
+<!--<script src="{{ STATIC_URL }}js/pagetransitions.js"></script>-->
+</body>
+</html>
