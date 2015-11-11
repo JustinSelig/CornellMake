@@ -54,19 +54,48 @@
 	}
 
 	select {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
 	border: 2px solid black;
 	border-radius: 3px;
 	padding: 10px;
+	margin: 5px;
 	background: transparent;
+
+	width: 280px;
+		background: url('../images/down-arrow.png') no-repeat 245px 25px; 
+		background-size: 17px 10px;
+	
 }
 
 	select:hover {
 		color: #919191;
 		border: 2px solid #919191;
+
+				background: url('../images/down-arrow-grey.png') no-repeat 245px 25px; 
+background-size: 17px 10px;
+
 	}
+
+	.select-create-category {	
+	}
+
+	.select-create-category:hover {
+	}
+
+	.select-discover-category {
+	}
+
+	.select-discover-category:hover {
+	}
+
+	.select-discover-sorting {
+	}
+
+	.select-discover-sorting:hover {
+	}
+
 
 
 /* ============================================================================
@@ -84,7 +113,8 @@
 /*Style for entire navbar bar*/
 	.navbar-custom {
 		background-color: #ffffff;
-		border-color: #e7e7e7;
+		    border-bottom: 1px solid #d0d0d0;
+    box-shadow: 0 -1px 4px rgba(0,0,0,0.2);
 	}
 
 /*Style for 1)search bar box and 2)search bar*/
@@ -111,7 +141,7 @@
 /*Style for navbar logo*/
 
 	.title-cornell {
-		font-weight: 600;
+		font-weight: 400;
 		color: black;
 	}
 
@@ -297,10 +327,11 @@
 }
 
 .project-category-box {
+
 	background-color: #f6f6f6;
     border-radius: 0 0 3px 3px;
     border-top: 1px solid #e7e7e7;
-   /* box-shadow: 0 1px 0 0 #fff inset;*/
+    box-shadow: 0 1px 0 0 #fff inset;
     padding: 10px;
     position: relative;
     color: #8E8E8E;
@@ -338,7 +369,6 @@ font-weight: 300;
 /*form styles*/
 #msform {
 /*	width: 400px;*/
-	text-align: center;
 	position: relative;
 }
 #msform fieldset {
@@ -346,13 +376,12 @@ font-weight: 300;
 	background-color: white;
 	background-position: -510px;
 	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
-	padding: 20px 20px 20px 20px;
+	border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 	color: black;
 	box-sizing: border-box;
-	width: 80%;
-	margin: 5% 10%;
+	width: 100%;
+	margin-top: 30px;
 
 	/*stacking fieldsets above each other*/
 	position: absolute;
@@ -402,28 +431,29 @@ font-weight: 300;
 }
 /*progressbar*/
 #progressbar {
-	margin-bottom: 30px;
+	
 	/*CSS counters to number the steps*/
+	text-align: center;
 	counter-reset: step;
+	margin: auto;
+	margin-bottom: 30px;
+	width: 330px;
 }
 #progressbar li {
 	list-style-type: none;
 	color: black;
-	width: 33.33%;
+	width: 90px;
 	float: left;
 	position: relative;
 }
 #progressbar li:before {
 	content: counter(step);
 	counter-increment: step;
-	width: 20px;
-	line-height: 20px;
+	width: 100px;
+	line-height: 40px;
 	display: block;
-	font-size: 10px;
 	color: #333;
 	background: white;
-	border-radius: 3px;
-	margin: 0 auto 5px auto;
 }
 /*progressbar discoverors*/
 #progressbar li:after {
@@ -469,8 +499,39 @@ font-weight: 300;
     line-height: 1.42857143;
  }
 
+.optional-section {
+	background-color: #e7e7e7;
+}
+
+.form-group-custom {
+	padding-bottom: 15px;
+}
+
+.checkbox {
+	display: inline;
+}
 
 
+/*label {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+.checkbox {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}*/
+
+.form-group-custom > .col-md-8 {
+
+	margin-bottom: 15px;
+}
 
 
 /* ============================================================================

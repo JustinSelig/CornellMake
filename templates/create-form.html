@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Create{% endblock %}
+{% block body-color %}grey{% endblock %}
 
 {% block content %}
 
 {% if not user.is_authenticated %}
-<h1>You are not logged in. Please <a href="/accounts/login/">login</a> or <a href="/accounts/register/">become a registered user</a> to begin a project.
+<h1>You are not logged in. Please <a href="/accounts/login/">login</a> or <a href="/accounts/register/">become a registered user</a> to begin a project.</h1>
 {% else %}
 	
 	{% if success %}
@@ -30,148 +31,192 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 	-->
-	<div class="form-container"><br>	
-		<div class="col-md-3"></div>
+	<div class="container">
+	</div class="row">
 		<!-- multistep form -->
-		<form id="msform" class="col-md-6" action="" method="POST" enctype="multipart/form-data">
+		<form id="msform" class="col-sm-8 col-sm-offset-2" action="" method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			<!-- progressbar -->
 			<ul id="progressbar">
-				<li class="active">Personal Info</li>
-				<li>Project Profile</li>
+				<li class="active">Project Information</li>
+				<li>About You</li>
 				<li>Submit</li>
 			</ul>
 			<fieldset>
-				<div class="form-group">
-					<span class="bold">Name *</span>
-					<!--input type="text" name="name" class="form-control" required /-->
-					<input id="id_name" class="form-control" maxlength="100" name="name" type="text" placeholder="Example: John Doe" value={{ project_name }}>
+			<div class="required-section col-sm-12">
+				<div class="form-group-custom">
+					<div class="col-sm-4">
+						<span class="bold">Project Image</span>
+					</div>
+					<div class="col-sm-8">
+						{{ form.image }}
+					</div>
 				</div>
-				<div class="form-group">
-					<span class="bold">Email *</span>
-					<!--input type="text" name="email" placeholder="netID@cornell.edu" class="form-control" required /-->
-					<input id="id_email" class="form-control" maxlength="100" name="email" type="email" placeholder="So we can keep in touch">
+
+				<div class="form-group-custom">
+					<div class="col-sm-4">
+						<span class="bold">Project Name *</span>
+					</div>
+					<div class="col-sm-8">
+						<input id="id_idea_name" maxlength="500" name="idea_name" type="text" placeholder="What's it called?" required>
+					</div>
 				</div>
-				<div class="form-group">
-					<span class="bold">Organization or Club Name</span>
-					<!--input type="text" name="org-name" class="form-control" /-->
-					<input id="id_organization" class="form-control" maxlength="100" name="organization" type="text" placeholder="What do you call yourself?">
+
+				<div class="form-group-custom">
+
+					<div class="col-sm-4">
+						<span class="bold">Project Category *</span>
+						
+					</div>
+					<div class="col-sm-8">
+					{{ form.category }}
+					</div>
 				</div>
-				<div class="form-group">
-					<span class="bold">Website</span>
-					<!--input type="text" name="org-name" class="form-control" /-->
-					<input id="id_website" class="form-control"  maxlength="100" name="website" type="text" placeholder="If you have one...">
+
+				<div class="form-group-custom">
+					<div class="col-sm-4">
+						<span class="bold">Quick! The one sentence Elevator Pitch! *</span>
+					</div>
+					<div class="col-sm-8">
+						<textarea cols="40" id="id_description" name="description" placeholder="Project Description" rows="3" required></textarea>
+					</div>
+
 				</div>
-				<div class="form-group">
-					<span class="bold">Credit Offered?</span>
-					<!--input type="text" name="org-name" class="form-control" /-->
-					<input id="id_credit_offered" class="form-control"  type="checkbox" name="credit_offered"> <!-- check in code to see if true/false captured-->
 				</div>
-				<div class="form-group">
-					<span class="bold">Supervisor</span>
-					<!--input type="text" name="org-name" class="form-control" /-->
-					<input id="id_supervisor" class="form-control"  maxlength="100" name="supervisor" type="text" placeholder="Faculty or staff member?">
+				
+
+
+				<div class="col-sm-12 optional-section">
+					<div class="form-group-custom">
+					<div class="col-sm-4">
+					<span class="bold">Tags</span>
+					</div>
+					<div class="col-sm-8">
+						<!--input type="text" name="org-name" class="form-control" /-->
+						<label><input id="id_credit_offered" type="checkbox" class="checkbox" name="credit_offered">
+						Credit Offered</label>
+						 <!-- check in code to see if true/false captured-->
+						
+						<!--input type="text" name="org-name" class="form-control" /-->
+						<input id="id_psy" type="checkbox" class="checkbox" name="pay">
+						<span>Pay Offered</span> 
+						<!-- check in code to see if true/false captured-->
+					</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-4">
+						<span class="bold">Department</span>
+						</div>
+						<!--input type="text" name="org-name" class="form-control" /-->
+						<div class="col-sm-8">
+						<input id="id_department" class="form-control"  maxlength="100" name="department" type="text" 
+						placeholder="If any...">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-4">
+						<span class="bold">Supervisor</span>
+						</div>
+						<!--input type="text" name="org-name" class="form-control" /-->
+						<div class="col-sm-8">
+						<input id="id_supervisor" class="form-control"  maxlength="100" name="supervisor" type="text" placeholder="If any...">
+						</div>
+					</div>
 				</div>
-				<div class="form-group">
-					<span class="bold">Pay Offered?</span>
-					<!--input type="text" name="org-name" class="form-control" /-->
-					<input id="id_psy" class="form-control"  type="checkbox" name="pay"> <!-- check in code to see if true/false captured-->
-				</div>
-				<div class="form-group">
-					<span class="bold">Department</span>
-					<!--input type="text" name="org-name" class="form-control" /-->
-					<input id="id_department" class="form-control"  maxlength="100" name="department" type="text" >
-				</div>
-				<br>
+				
 				<input type="button" name="next" class="next btn btn-default next-button" value="Next"/>
-			</fieldset>				
+			</fieldset>	
+
+
+
+
+
 			<fieldset>
-				<div class="form-group">
-					<span class="bold">Project Name *</span>
-					<input id="id_idea_name" maxlength="500" name="idea_name" type="text" placeholder="What's it called?" required>
+
+			<div class="required-section col-sm-12">
+				<div class="form-group-custom">
+					<div class="col-sm-4">
+						<span class="bold">Name *</span>
+
+						<!--input type="text" name="name" class="form-control" required /-->
+					</div>
+					<div class="col-sm-8">
+						<input id="id_name" class="form-control" maxlength="100" name="name" type="text" placeholder="Example: Denice Cassaro" value={{ project_name }}>
+					</div>
 				</div>
-				<div class="form-group">
-					<span class="bold">Quick! The 30 Second Elevator Pitch! *</span>
-					<textarea cols="40" id="id_description" name="description" placeholder="Project Description" rows="3" required></textarea>
+				<div class="form-group-custom">
+					<div class="col-sm-4">
+						<span class="bold">Contact Email *</span>
+					</div>
+					<div class="col-sm-8">
+						<input id="id_email" class="form-control" maxlength="100" name="email" type="email" placeholder="So people can talk to you">
+					</div>
 				</div>
-				<div class="form-group">
-					<span class="bold">What categories does it fit in? *</span>
-		<!--
-					<div class="checkbox">
-						<label><input type="checkbox" name="idea-category-projectTeam"> Project Team</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" name="idea-category-research"> Research</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" name="idea-category-startup"> Startup</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" name="idea-category-compHard"> Computer Hardware</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" name="idea-category-compSoft"> Computer Software</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" name="idea-category-mechanical"> Mechanical</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" name="idea-category-environmental"> Environmental</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" name="idea-category-design"> Art, Design, or Multi-Media</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" name="idea-category-social"> Social Entrepreneurship</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" name="idea-category-other"> Other</label>
-					</div>
-		-->
 				</div>
-				{{ form.category }}
-				<div class="form-group">
-					<span class="bold">Upload an image of it</span>
-					<!--input type="file" name="org-name"  /-->
-					{{ form.image }}
+				<div class="col-sm-12 optional-section">
+					<div class="form-group-custom">
+						<div class="col-sm-4">
+							<span class="bold">Organization or Club Name</span>
+						</div>
+						<div class="col-sm-8">
+							<input id="id_organization" class="form-control" maxlength="100" name="organization" type="text" placeholder="If this is part of something else">
+						</div>
+					</div>
+					<div class="form-group-custom">
+						<div class="col-sm-4">
+							<span class="bold">Website</span>
+						</div>
+						<div class="col-sm-8">
+							<input id="id_website" class="form-control"  maxlength="100" name="website" type="text" placeholder="If you have one...">
+						</div>
+					</div>
 				</div>
-				<br><br>
+				
+		
 				<input type="button" name="previous" class="previous btn btn-default next-button" value="Previous" />
 				<input type="button" name="next" class="next btn btn-default next-button" value="Next" />
 			</fieldset>
+
+
 			<fieldset>
-				<div class="form-group">
+
+				<div class="form-group-custom">
+				<div class="col-sm-4">
 					<span class="bold">URL Extension (For our website. No spaces please!)</span>
+				</div>
+				<div class="col-sm-8">
 					<input id="id_url" maxlength="200" name="url" type="text" placeholder="example: cornell_makerspace" required>
 				</div>
-				<p>We'll contact you at the email address you provided regarding the approval of your proposal.</p>
-				<hr>
-				<!--button type="submit" name="idea-submit" class="btn btn-lg btn-primary">Submit Idea</button-->					
-				<div class="panel-footer text-muted">
+				</div>
+								
+				<div class="text-muted">
 					By submitting your idea, you agree to our <a href="#">Terms & Conditions.</a>
-				</div><br>
+				</div>
 				<input type="button" name="previous" class="previous btn btn-default next-button" value="Previous"/>
-	<!--			<input id="submit" type="submit" name="submit" class="submit action-button" value="Submit" />-->
-				<input id="submit" type="submit" name="submit-final" class="btn btn-default next-button" value="Submit" />
+
+				<input id="submit" type="submit" name="submit-final" class="btn btn-default next-button" value="Submit"/>
 			</fieldset>
+
+
+
+
+			<!--button type="submit" name="idea-submit" class="btn btn-lg btn-primary">Submit Idea</button-->	
 	<!--		<input type="submit" value="Submit" class="submit action-button" />This is the only submit button working for now. Fix this!-->
 		<!--	<input type="submit" name="submit" class="submit action-button" value="Submit" />-->
 
 		</form>
 		
 		<!--workshop hosting form-->
-<!-- 		<form class="col-md-4">
+<!-- 		<form class="col-sm-4">
 		Name: <input />
 		Email: <input />
 		Message: <textarea></textarea>
 		</form> -->
+
+	</div>
 	</div>
 
-	<!--
-	</div>
-	</div>
-	</div>
-	-->
+	
 	{% endif %}
 {% endif %}
 {% endblock %}
