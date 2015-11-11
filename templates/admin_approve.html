@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Admin Approve{% endblock %}
+{% block content %}
+
+{% if user.is_staff %}
+<form action="" method="post">{% csrf_token %}
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Organization</th>
+				<th>Website</th>
+				<th>Idea Name</th>
+				<th>Description</th>
+				<th>Category</th>
+				<th>Image</th>
+				<th>URL</th>
+				<th>Owner</th>
+				<th>Credit Offered</th>
+				<th>Supervisor</th>
+				<th>Pay</th>
+				<th>Department</th>
+				<th>Date Started</th>
+				<th>Approve?</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for submission in submissions %}
+			<tr>
+				<td>{{ submission.name }}</td>
+				<td>{{ submission.email }}</td>
+				<td>{{ submission.organization }}</td>
+				<td>{{ submission.website }}</td>
+				<td>{{ submission.idea_name }}</td>
+				<td>{{ submission.description }}</td>
+				<td>{{ submission.category }}</td>
+				<td><img src="{{ STATIC_URL }}{{ submission.image }}" width="50"></td>
+				<td>{{ submission.url }}</td>
+				<td>{{ submission.owner }}</td>
+				<td>{{ submission.credit_offered }}</td>
+				<td>{{ submission.supervisor }}</td>
+				<td>{{ submission.pay }}</td>
+				<td>{{ submission.department }}</td>
+				<td>{{ submission.date_started }}</td>
+				<td>Approve <input type="checkbox" value="{{ submission.id }}" name="approved"><br>Disapprove <input type="checkbox" value="{{ submission.id }}" name="disapproved"></td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<input type="submit" value="Submit" />
+</form>
+
+{% else %}
+Sorry, you do not have valid credentials to access this page. <a href="#">Contact</a> the administrators for access rights.
+{% endif %}
+
+{% endblock %}

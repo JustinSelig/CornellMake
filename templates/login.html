@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}
+{% if user.is_authenticated %}
+<meta http-equiv="refresh" content="1; URL={{ BASE_URL }}/accounts/profile/">
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="col-md-12">
+	<div class="login-box">
+	{% if user.is_authenticated %}
+	<h1>Redirecting</h1>
+	{% else %}
+	<br>
+	<span class="profile-form-title">Login</span>
+	<form action="/accounts/login/" method="POST">
+		{% csrf_token %}
+		<div class="row">
+			<span style="color:red;">{{ invalid }}</span>
+			<span style="color:green;">{{ success }}</span>
+		</div>
+		<br>
+		<div class="row">
+			<input type="text" name="username" placeholder="Username" class="form-control" required>
+		</div>
+		<br>
+		<div class="row">
+			<input type="password" name="password" placeholder="Password" class="form-control" required>			
+		</div>
+		<br>
+		<div class="row">
+			<button class="btn btn-default " type="submit" value="login">Login</button>
+		</div>
+	</form>
+	<hr>
+	<a class="btn" href="/accounts/register/">Sign Up</a>
+	<br><br>
+	<a class="btn" href="/accounts/password/reset/">Forgot password?</a>
+	{% endif %}
+</div>
+</div>
+
+{% endblock %}

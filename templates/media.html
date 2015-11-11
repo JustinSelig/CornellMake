@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Media{% endblock %}
+<!--link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css"-->
+
+{% block content %}
+
+<div class="media-content">
+	<!-- Parallax Test -->
+	<div class="parallax-container" data-jkit="[parallax:strength=1;axis=both;scope=local]">
+		<div class="parallax parallax1">Media</div>
+		<div class="parallax parallax2">Cornell Makerspace</div>
+	</div>
+</div>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	</ol>
+
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
+		<div class="item active">
+			<img src="{{STATIC_URL}}images/bg1.jpg" alt="...">
+			<div class="carousel-caption">
+				Page 1
+			</div>
+		</div>
+		<div class="item">
+			<img src="{{STATIC_URL}}images/bg2.jpg" alt="...">
+			<div class="carousel-caption">
+				Page 2
+			</div>
+		</div>
+		<div class="item">
+			<img src="{{STATIC_URL}}images/bg3.jpg" alt="...">
+			<div class="carousel-caption">
+				Page 3
+			</div>
+		</div>
+	</div>
+
+	<!-- Controls -->
+	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript" src="http://jquery-jkit.com/js/google-code-prettify/prettify.js"></script>
+	<script>window.jQuery || document.write('<script src="http://jquery-jkit.com/js/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="http://jquery-jkit.com/js/jquery.easing.1.3.js"></script>
+	<script src="http://jquery-jkit.com/js/jquery.jkit.1.2.16.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/media.js"></script>
+{% endblock %}
