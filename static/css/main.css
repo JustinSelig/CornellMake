@@ -4,6 +4,7 @@
 	
 	body {
 		padding: 0;
+		background-color: #f4f4f4;
 
 	}
 
@@ -255,14 +256,13 @@ fieldset .btn-red {
 	margin-bottom: 15px;
 }
 
-#submit {
+fieldset #submit{
 	background-color: #00D848;
 }
 
-#submit:hover {
+fieldset #submit:hover {
 	background-color: #00C441;
 }
-
 
 /* ============================================================================
 .::[ DISCOVER PAGE ]::.
@@ -281,6 +281,10 @@ fieldset .btn-red {
     font-size: 27px;
     	font-weight: 300;
 	
+}
+
+.all-projects-container {
+	margin-bottom: 100px;
 }
 
 /*style for project panel, comprised of thumbnail, info-box and category-box */
@@ -353,9 +357,8 @@ fieldset .btn-red {
 /* Create Page
 ================================================== */
 .create-header {
-	padding-top: 100px;
-	padding-bottom: 100px;
- border-bottom: 1px solid #e7e7e7;
+	padding-top: 20%;
+	padding-bottom: 20%;
  text-align: center;
 font-size: 27px;
 font-weight: 300;
@@ -449,14 +452,11 @@ font-weight: 300;
 	text-align: center;
 	counter-reset: step;
 	margin: auto;
-	margin-top: 50px;
-	margin-bottom: 100px;
-	width: 310px;
 }
 #progressbar li {
 	list-style-type: none;
 	color: black;
-	width: 90px;
+	width: 100px;
 	float: left;
 	position: relative;
 }
@@ -464,7 +464,7 @@ font-weight: 300;
 	content: counter(step);
 	counter-increment: step;
 	width: 100px;
-	line-height: 40px;
+	line-height: 50px;
 	display: block;
 	color: #333;
 	background: white;
@@ -489,6 +489,13 @@ font-weight: 300;
 #progressbar li.active:before,  #progressbar li.active:after{
 	background: #DD265A;
 	color: white;
+}
+
+.progressbar-box {
+	width: 350px;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 70px;
 }
 
 .form-container {
@@ -547,7 +554,7 @@ font-weight: 300;
 /* ============================================================================
 .::[ PROJECT PAGE ]::.
 ============================================================================ */
-
+/*
 .PT-project {background-image: url("/static/images/bg1.jpg");}
 .RESEARCH-project {background-image: url("/static/images/bg2.jpg");}
 .STARTUP-project {background-image: url("/static/images/bg3.jpg");}
@@ -557,7 +564,7 @@ font-weight: 300;
 .ENV-project {background-image: url("/static/images/bg3.jpg");}
 .ADM-project {background-image: url("/static/images/bg4.jpg");}
 .SOCIAL-project {background-image: url("/static/images/bg1.jpg");}
-.OTHER-project {background-image: url("/static/images/bg2.jpg");}
+.OTHER-project {background-image: url("/static/images/bg2.jpg");}*/
 
 .project-intro {
 	width: 100%;
@@ -573,12 +580,11 @@ font-weight: 300;
 
 .project-header {
 	background-color: white;
-	height: 300px;
+	height: 3\800px;
 	margin: auto;
-/*	width: 980px;*/
 	padding: 0;
 	border: none;
-	border-radius: 5px;
+	border-radius: 3px;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
 
 }

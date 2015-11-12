@@ -1,11 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Register{% endblock %}
+{% block title %}Sign Up{% endblock %}
 {% block body-color %}grey{% endblock %}
 {% block head %}
 {% if user.is_authenticated %}
 <meta http-equiv="refresh" content="1; URL={{ BASE_URL }}/accounts/user/profile/">
 {% endif %}
 {% endblock %}
+
 
 {% block content %}
 

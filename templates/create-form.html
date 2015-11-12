@@ -37,11 +37,13 @@
 		<form id="msform" class="col-sm-8 col-sm-offset-2" action="" method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			<!-- progressbar -->
-			<ul id="progressbar">
-				<li class="active">Project Information</li>
-				<li>About You</li>
-				<li>Submit</li>
-			</ul>
+			<div class="progressbar-box">
+				<ul id="progressbar">
+					<li class="active">Project Information</li>
+					<li>About You</li>
+					<li>Submit</li>
+				</ul>
+			</div>
 			<fieldset>
 			<div class="required-section col-sm-12">
 				<div class="form-group-custom">
