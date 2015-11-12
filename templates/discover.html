@@ -2,35 +2,42 @@
 {% block title %}Discover{% endblock %}
 {% block body-color %}grey{% endblock %}
 {% block content %}
-<div class="discover-header">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<form action="">
-					<div>
-						<span>
-							<select class="select-discover-category">
-								<option value="all">All</option>
-								<option value="academic">Academic</option>
-								<option value="extracirricular">Extracirricular</option>
-								<option value="startup/business">Startup/Business</option>
-								<option value="personal">Personal</option>
-							</select>
-						</span>
-						<span>projects, sorted by</span>
-						<span>
-							<select class="select-discover-sorting">
-								<option value="popularity">Popularity</option>
-								<option value="date">Date</option>
-								<option value="name">Name</option>
-							</select>
-						</span>
-					</div>
-				</form>
+
+
+	<div class="discover-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<form method="post">
+					{% csrf_token %}
+						<div>
+							<span>
+								<select class="select-discover-category" name="category">
+									<option value="">All</option>
+									<option value="RESEARCH">Academic</option>
+									<option value="RAND">Extracirricular</option>
+									<option value="STARTUP">Startup/Business</option>
+									<option value="OTHER">Personal</option>
+								</select>
+							</span>
+							<span>projects, sorted by</span>
+							<span>
+								<select class="select-discover-sorting" name="filter">
+									<option value="popularity">Popularity</option>
+									<option value="date">Date</option>
+									<option value="name">Name</option>
+								</select>
+							</span>
+							<span>
+								<input id="submit" type="submit" name="search" class="btn btn-default btn-red" value="Search"></input>
+							</span>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
 
 <div class="container">
 	<div class="row">

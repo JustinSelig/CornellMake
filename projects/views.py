@@ -83,6 +83,17 @@ def approve(request):
 
 ############ ...discover/... ################
 def discover(request):
+	#just added-change to get request
+	if request.method == 'POST':
+		category = request.POST['category']
+		print category
+		filter = request.POST['filter']
+		projects = Project.objects.filter(category__icontains=category).order_by()
+		args = {}
+		args.update(csrf(request))
+		args['projects'] = projects
+		return render(request, 'discover.html', args)
+	#end added
 	category_filter = Q()
 	projects_filter = Q()
 	if 'category' in request.GET:

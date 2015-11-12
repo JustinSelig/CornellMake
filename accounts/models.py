@@ -8,7 +8,7 @@ class UserProfile(models.Model):
 	username = models.CharField(max_length=100, default='username')
 	projects = models.ManyToManyField(Project)
 	member_requests = models.ManyToManyField(Project, related_name='member_requests_reverse')
-	email = models.EmailField(max_length=100, null=True)
+	email = models.EmailField(max_length=100)
 	phone = models.CharField(max_length=20, null=True)
 	school = models.CharField(max_length=200)
 	major = models.CharField(max_length=200)
