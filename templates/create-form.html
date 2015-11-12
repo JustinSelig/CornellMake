@@ -37,16 +37,19 @@
 		<form id="msform" class="col-sm-8 col-sm-offset-2" action="" method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			<!-- progressbar -->
-			<ul id="progressbar">
-				<li class="active">Project Information</li>
-				<li>About You</li>
-				<li>Submit</li>
-			</ul>
+			<div class="progressbar-box">
+				<ul id="progressbar">
+					<li class="active">Project Information</li>
+					<li>About You</li>
+					<li>Submit</li>
+				</ul>
+			</div>
 			<fieldset>
 			<div class="required-section col-sm-12">
 				<div class="form-group-custom">
 					<div class="col-sm-4">
-						<span class="bold">Project Image</span>
+						<span class="bold">Project Image *</span>
+						<p class="smalltext">This will be used as your project's thumbnail.</p>
 					</div>
 					<div class="col-sm-8">
 						{{ form.image }}
@@ -58,7 +61,7 @@
 						<span class="bold">Project Name *</span>
 					</div>
 					<div class="col-sm-8">
-						<input id="id_idea_name" maxlength="500" name="idea_name" type="text" placeholder="What's it called?" required>
+						<input id="id_idea_name" maxlength="500" name="idea_name" class="form-control" type="text" required>
 					</div>
 				</div>
 
@@ -75,10 +78,23 @@
 
 				<div class="form-group-custom">
 					<div class="col-sm-4">
-						<span class="bold">Quick! The one sentence Elevator Pitch! *</span>
+						<span class="bold">Project Blurb *</span>
+						<p class="smalltext">Quick! The 10 second elevator pitch!</p>
 					</div>
 					<div class="col-sm-8">
-						<textarea cols="40" id="id_description" name="description" placeholder="Project Description" rows="3" required></textarea>
+						<textarea cols="40" id="id_description" name="description" class="form-control" rows="3" required></textarea>
+					</div>
+
+				</div>
+				
+
+				<div class="form-group-custom">
+					<div class="col-sm-4">
+						<span class="bold">Project Description *</span>
+						<p class="smalltext">Include who you are looking for!</p>
+					</div>
+					<div class="col-sm-8">
+						<textarea cols="40" id="id_description" name="description" class="form-control"  rows="6" required></textarea>
 					</div>
 
 				</div>
@@ -87,14 +103,15 @@
 
 
 				<div class="col-sm-12 optional-section">
+					<p><span class="bold>">OPTIONAL SECTION</span><p>
 					<div class="form-group-custom">
 					<div class="col-sm-4">
 					<span class="bold">Tags</span>
 					</div>
 					<div class="col-sm-8">
 						<!--input type="text" name="org-name" class="form-control" /-->
-						<label><input id="id_credit_offered" type="checkbox" class="checkbox" name="credit_offered">
-						Credit Offered</label>
+						<input id="id_credit_offered" type="checkbox" class="checkbox" name="credit_offered">
+						<span>Credit Offered</span>
 						 <!-- check in code to see if true/false captured-->
 						
 						<!--input type="text" name="org-name" class="form-control" /-->
@@ -103,7 +120,7 @@
 						<!-- check in code to see if true/false captured-->
 					</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group-custom">
 						<div class="col-sm-4">
 						<span class="bold">Department</span>
 						</div>
@@ -113,7 +130,7 @@
 						placeholder="If any...">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group-custom">
 						<div class="col-sm-4">
 						<span class="bold">Supervisor</span>
 						</div>
@@ -124,7 +141,7 @@
 					</div>
 				</div>
 				
-				<input type="button" name="next" class="next btn btn-default next-button" value="Next"/>
+				<input type="button" name="next" class="next btn btn-default pull-right next-button btn-red" value="Next"/>
 			</fieldset>	
 
 
@@ -154,6 +171,7 @@
 				</div>
 				</div>
 				<div class="col-sm-12 optional-section">
+					<p><span class="bold>">OPTIONAL SECTION</span><p>
 					<div class="form-group-custom">
 						<div class="col-sm-4">
 							<span class="bold">Organization or Club Name</span>
@@ -173,8 +191,8 @@
 				</div>
 				
 		
-				<input type="button" name="previous" class="previous btn btn-default next-button" value="Previous" />
-				<input type="button" name="next" class="next btn btn-default next-button" value="Next" />
+				<input type="button" name="previous" class="previous btn btn-default next-button btn-red" value="Previous" />
+				<input type="button" name="next" class="next btn btn-default next-button pull-right btn-red" value="Next" />
 			</fieldset>
 
 
@@ -185,16 +203,16 @@
 					<span class="bold">URL Extension (For our website. No spaces please!)</span>
 				</div>
 				<div class="col-sm-8">
-					<input id="id_url" maxlength="200" name="url" type="text" placeholder="example: cornell_makerspace" required>
+					<input id="id_url" maxlength="200" name="url" type="text" class="form-control" placeholder="example: cornell_makerspace" required>
 				</div>
 				</div>
 								
 				<div class="text-muted">
 					By submitting your idea, you agree to our <a href="#">Terms & Conditions.</a>
 				</div>
-				<input type="button" name="previous" class="previous btn btn-default next-button" value="Previous"/>
+				<input type="button" name="previous" class="previous btn btn-default btn-red next-button" value="Previous"/>
 
-				<input id="submit" type="submit" name="submit-final" class="btn btn-default next-button" value="Submit"/>
+				<input id="submit" type="submit" name="submit-final" class="btn btn-default next-button btn-red pull-right" value="Submit"/>
 			</fieldset>
 
 

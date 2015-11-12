@@ -4,6 +4,7 @@
 	
 	body {
 		padding: 0;
+		background-color: #f4f4f4;
 
 	}
 
@@ -227,6 +228,8 @@ background-size: 17px 10px;
 	border: 0px;
 	border-radius: 3px;
 	color: white;
+	font-size: 22px;
+    	font-weight: 300;
 }
 
 .btn-red:hover {
@@ -248,9 +251,18 @@ background-size: 17px 10px;
 	margin-top: 30px;
 }
 
-.btn-lgin{ width: 100%;
-	}
+fieldset .btn-red {
+	margin-top: 60px;
+	margin-bottom: 15px;
+}
 
+fieldset #submit{
+	background-color: #00D848;
+}
+
+fieldset #submit:hover {
+	background-color: #00C441;
+}
 
 /* ============================================================================
 .::[ DISCOVER PAGE ]::.
@@ -269,6 +281,10 @@ background-size: 17px 10px;
     font-size: 27px;
     	font-weight: 300;
 	
+}
+
+.all-projects-container {
+	margin-bottom: 100px;
 }
 
 /*style for project panel, comprised of thumbnail, info-box and category-box */
@@ -341,9 +357,8 @@ background-size: 17px 10px;
 /* Create Page
 ================================================== */
 .create-header {
-	padding-top: 100px;
-	padding-bottom: 100px;
- border-bottom: 1px solid #e7e7e7;
+	padding-top: 20%;
+	padding-bottom: 20%;
  text-align: center;
 font-size: 27px;
 font-weight: 300;
@@ -381,7 +396,11 @@ font-weight: 300;
 	color: black;
 	box-sizing: border-box;
 	width: 100%;
-	margin-top: 30px;
+	margin-top: 60px;
+	padding-top: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 100px;
 
 	/*stacking fieldsets above each other*/
 	position: absolute;
@@ -395,11 +414,8 @@ font-weight: 300;
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
-	margin-bottom: 10px;
 	width: 100%;
 	box-sizing: border-box;
-	color: #2C3E50;
-	font-size: 13px;
 }
 /*buttons*/
 #msform .action-button {
@@ -436,13 +452,11 @@ font-weight: 300;
 	text-align: center;
 	counter-reset: step;
 	margin: auto;
-	margin-bottom: 30px;
-	width: 330px;
 }
 #progressbar li {
 	list-style-type: none;
 	color: black;
-	width: 90px;
+	width: 100px;
 	float: left;
 	position: relative;
 }
@@ -450,7 +464,7 @@ font-weight: 300;
 	content: counter(step);
 	counter-increment: step;
 	width: 100px;
-	line-height: 40px;
+	line-height: 50px;
 	display: block;
 	color: #333;
 	background: white;
@@ -473,8 +487,15 @@ font-weight: 300;
 /*marking active/completed steps green*/
 /*The number of the step and the discoveror before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-	background: #B31B1B;
+	background: #DD265A;
 	color: white;
+}
+
+.progressbar-box {
+	width: 350px;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 70px;
 }
 
 .form-container {
@@ -490,17 +511,24 @@ font-weight: 300;
 }
 
  .next-button {
- 	width: 30%!important;
- 	    display: inline-block;
-    padding: 6px 12px!important;
+ 	width: 200px!important;
+ 	display: inline-block;
     margin-bottom: 0;
-    font-size: 14px!important;
-    font-weight: 400!important;
     line-height: 1.42857143;
  }
 
 .optional-section {
-	background-color: #e7e7e7;
+	background-color: #f6f6f6;
+	padding-top: 15px;
+	border-radius: 3px;
+	color: #777;;
+	
+}
+
+.optional-section p{
+	font-weight: 200;
+	color: #777;
+	padding-bottom: 10px;
 }
 
 .form-group-custom {
@@ -511,33 +539,22 @@ font-weight: 300;
 	display: inline;
 }
 
+.form-group-custom > .col-sm-8 {
+	padding-right: 0px;
+	margin-bottom: 30px;
 
-/*label {
-    display: block;
-    padding-left: 15px;
-    text-indent: -15px;
 }
-.checkbox {
-    width: 13px;
-    height: 13px;
-    padding: 0;
-    margin:0;
-    vertical-align: bottom;
-    position: relative;
-    top: -1px;
-    *overflow: hidden;
-}*/
 
-.form-group-custom > .col-md-8 {
+.form-group-custom > .col-sm-4 {
+	padding-left: 0px;
 
-	margin-bottom: 15px;
 }
 
 
 /* ============================================================================
 .::[ PROJECT PAGE ]::.
 ============================================================================ */
-
+/*
 .PT-project {background-image: url("/static/images/bg1.jpg");}
 .RESEARCH-project {background-image: url("/static/images/bg2.jpg");}
 .STARTUP-project {background-image: url("/static/images/bg3.jpg");}
@@ -547,7 +564,7 @@ font-weight: 300;
 .ENV-project {background-image: url("/static/images/bg3.jpg");}
 .ADM-project {background-image: url("/static/images/bg4.jpg");}
 .SOCIAL-project {background-image: url("/static/images/bg1.jpg");}
-.OTHER-project {background-image: url("/static/images/bg2.jpg");}
+.OTHER-project {background-image: url("/static/images/bg2.jpg");}*/
 
 .project-intro {
 	width: 100%;
@@ -563,12 +580,11 @@ font-weight: 300;
 
 .project-header {
 	background-color: white;
-	height: 300px;
+	height: 3\800px;
 	margin: auto;
-/*	width: 980px;*/
 	padding: 0;
 	border: none;
-	border-radius: 5px;
+	border-radius: 3px;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
 
 }
