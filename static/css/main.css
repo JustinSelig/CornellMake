@@ -79,24 +79,22 @@ background-size: 17px 10px;
 
 	}
 
-	.select-create-category {	
-	}
+/*#wrapper {
+	min-height:100%;
+	position:relative;
+}
 
-	.select-create-category:hover {
-	}
-
-	.select-discover-category {
-	}
-
-	.select-discover-category:hover {
-	}
-
-	.select-discover-sorting {
-	}
-
-	.select-discover-sorting:hover {
-	}
-
+}
+#content {
+	padding-bottom:100px;  
+}
+#footer {
+	width:100%;
+	height:100px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}*/
 
 
 /* ============================================================================
@@ -196,7 +194,47 @@ background-size: 17px 10px;
 
 
 
+/*footer*/
 
+.footer {
+		background-color: #3D3D3D;
+	}
+
+.footer-title {
+	float: left;
+    height: 100px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    color: white;
+    padding-left: 20px;
+}
+
+.footer-brand {
+	font-size: 18px;
+    line-height: 20px;
+    color: white;
+}
+
+.footer-brand:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.footer-cornell {
+		font-weight: 400;
+	}
+
+.footer-make {
+		font-weight: 600;
+	}
+
+.footer-right {
+	  padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    color: white;
+    text-align: right;
+}
 
 
 /* ============================================================================
@@ -284,7 +322,7 @@ fieldset #submit:hover {
 }
 
 .all-projects-container {
-	margin-bottom: 100px;
+	margin-bottom: 80px;
 }
 
 /*style for project panel, comprised of thumbnail, info-box and category-box */
@@ -357,7 +395,7 @@ fieldset #submit:hover {
 /* Create Page
 ================================================== */
 .create-header {
-	padding-top: 20%;
+	padding-top: 16%;
 	padding-bottom: 20%;
  text-align: center;
 font-size: 27px;
