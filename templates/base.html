@@ -32,6 +32,7 @@
 		{% block stylesheets %}{% endblock %}
 	</head>
 	<body class="{% block body-color %}{% endblock %}-container">
+	<div id="wrapper">
 	<header>
 		<nav class="navbar navbar-default navbar-custom navbar-static-top" role="navigation">
 			<div class="container-fluid">
@@ -130,13 +131,23 @@
 		</nav>
 	</header>
 		
-	<main>	
+	<main id="content">	
 	{% block content %}{% endblock %}
 	</main>
 		
-	<footer>
-
-	</footer>
+	<div class="footer" id="footer">
+		<div class="container-fluid">
+			<div class="footer-title">
+				<a class="footer-brand" href="/"><span class="footer-cornell">Cornell</span><span class="footer-make">Make</span></a>
+				<p class="smalltext">© 2015</p>
+			</div>
+ 			<div class="footer-right">
+				<div class="pull-right">
+					<strong>Questions? Talk to us:</strong> <p class="smalltext">hello@cornellmake.com</p>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<!-- JavaScript
 ================================================== -->
