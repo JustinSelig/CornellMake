@@ -1,0 +1,32 @@
+<!-- Ajax results for product search in nav bar (in "base.html") -->
+
+{% if projects.count > 0 %}
+	{% if query != '' %}
+		<ul>
+		{% for project in projects|slice:":6" %}
+		
+			<!--
+			<div class="uk-overlay uk-height-1-1">
+				{% for path in project.image_list %}
+					{% if forloop.first %}
+				  	<img class="uk-height-1-1" src="/static/img/{{ path }}">
+			  	{% endif %}
+				{% endfor %}
+		    <a href="{{BASE_URL}}/project/{{ product.product_id }}">
+		    	<div class="uk-overlay-area">
+		        <div class="uk-overlay-area-content">
+		        	<div class="name">{{ product.name }}</div>
+		        	<div class="price">${{ product.unit_price }}</div>
+		        </div>
+			    </div>
+			  </a>
+			</div>
+			-->
+			<li>{{ project.name }}</li>
+		{% endfor %}
+		</ul>
+		<!--div class="more uk-width-1-1 uk-text-center"><a class="link" href="{{BASE_URL}}search/?search={{ query }}" type="submit">show more</a></div-->
+	{% endif %}
+{% else %}
+	<div class="uk-text-center">Bummer, no results.</div>
+{% endif %}

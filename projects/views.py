@@ -98,7 +98,7 @@ def discover(request):
 	projects_filter = Q()
 	if 'category' in request.GET:
 		category_filter |= Q(category=request.GET['category'])
-	if 'project-search' in request.GET:
+	if 'project-search' in request.GET:	#searched from base template nav bar
 		query = request.GET['project-search']
 		projects = Project.objects.filter(
 										Q(name__icontains=query) & 

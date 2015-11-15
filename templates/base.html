@@ -63,16 +63,55 @@
 					<form action="/discover/" class="navbar-form navbar-form-custom navbar-right pull-left" role="search" method="get">
 						<div class="form-group">
 							<span class="glyphicon glyphicon-search"></span>
-							<input type="text" name="project-search" autocomplete="off" class="form-control form-control-custom" placeholder="Search for project">
+							<input type="text" id="search-input" name="project-search" autocomplete="off" class="form-control form-control-custom" placeholder="Search for project">
 						</div>
 <!-- 						<button type="submit" class="btn btn-default"></button>
- -->					</form>
+ -->				</form>
+ 
+ 					<div class="search" style="top:-332px;">
+						<div id="search-results"></div>
+					</div>
+					<script type="text/javascript">
+					
+						$(function() {
+							$('#search-input').keyup(function(e) {
+								if (e.keyCode == 27) { 	//escape key
+									$("body").removeClass("stop-scrolling");
+									$(".search").animate({top: "-332px"}, 500);
+									$(".closeSearch").addClass("hidden");
+								} else {
+									$.ajax({
+										type: "POST",
+										url: "/ajax_result/",
+										data: { 
+											'search_text' : $('#search-input').val(),
+											'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+										},
+										success: searchSuccess,
+										dataType: 'html'
+									});
+								}
+							});
+						});
+						
+						function searchSuccess(data, textStatus, jqXHR) {
+							$('#search-results').html(data);
+						}
+					</script>
+					
+									<!-- ajax search results
+				<div class="search" style="top:-332px;">
+					<div class="uk-width-1-1 uk-text-center">
+						<div class="results uk-width-4-5 uk-container-center uk-text-center">
+							<div id="search-results" class="images uk-height-1-1 uk-width-1-1 uk-text-left"></div>
+						</div>
+					</div>
+				</div>
+				-->
+					
 					<div class="pull-right">
 
-
-
-
-
+				
 					<ul class="nav navbar-nav pull-left">
 						{% if user.is_authenticated %}
 						<li><a href="/accounts/user/profile/" id="username">
@@ -106,6 +145,7 @@
 	<script src="{{STATIC_URL}}js/jquery-1.9.1.min.js" type="text/javascript"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/ajax.js"></script>
 	{% block scripts %}{% endblock %}
 	</body>
 </html>
