@@ -116,8 +116,9 @@
 				
 					<ul class="nav navbar-nav pull-left">
 						{% if user.is_authenticated %}
-						<li><a href="/accounts/user/profile/" id="username">
+						<li><a href="/accounts/user/{{ user }}/" id="username">
 							Hello, <span class="bold">{{ user }}</span></a>
+							<li><a href="/accounts/logout/">Log Out</a></li>
 						</li>
 						{% else %}
 						<li><a href="/accounts/register/">Sign up </a></li>

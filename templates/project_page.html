@@ -5,39 +5,56 @@
 
 <div class="container">
 <div class="row">
-	<div class="{{project.category}}-project project-intro">
-		<div class="project-header col-md-12">
+	<div class="{{project.category}}-project project-box">
 
-				<div class="project-title-section"><h1>{{ project.idea_name }}</h1></div>
-				<p>By {{ project.owner }}</p>
+		<div class="project-box-header">
+			<h3>{{ project.idea_name }}</h3>
+			<p>By {{ project.owner }}</p>
+		</div>
 
-		<div class="col-md-8 project-header-left">
-				<img src="{{ STATIC_URL }}{{ project.image }}" width="600"/>
-			</div>
-			<div class="col-md-4 project-header-right">
+		<div class="col-md-8 project-box-left">
+			<img src="{{ STATIC_URL }}{{ project.image }}" class="project-box-image"/>
+		</div>
+		<div class="col-md-4 project-box-right">
 
-
-				<div class="project-title-section">
-				<p><span class="bold">Description:</span>
-				{{ project.description }}</p>
-					<br><p><span class="bold">Contact Name:</span> {{ project.name }}</p>
-						
-						<span class="bold">Type:</span>
-
-						<p><span class="bold">Website:</span> {{ project.website }}</p>
-						<p><span class="bold">Credit Offered:</span> {{ project.credit_offered }}</p>
-						<p><span class="bold">Pay:</span> {{ project.pay }}</p>
-						<p><span class="bold">Supervisor:</span> {{ project.supervisor }}</p>
-						<p><span class="bold">Department:</span> {{ project.department }}</p>
-					</div>
+				<p>
+					
+					{{ project.description }}<span>(description)</span>
+				</p>
+				
+				<span>Type:</span>
+				
+						<p><span>Credit Offered:</span> {{ project.credit_offered }}</p>
+						<p><span>Pay:</span> {{ project.pay }}</p>
+						<p><span>Supervisor:</span> {{ project.supervisor }}</p>
+						<p><span>Department:</span> {{ project.department }}</p>
+			
 
 				
-			</div>
-			
 		</div>
+		
 	</div>
 </div>
 </div>
+
+<div class="project-slide-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<h3>About</h3> 
+				<p>{{ project.description }}</p>
+			</div>
+			<div class="col-md-4">
+				<h3>Contact</h3> 
+				<p>{{ project.name }}<span>(contact name)</span></p>
+				<p>{{ project.website }}<span>(website)</span></p>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
 
 <!-- 
 <div class="container">
