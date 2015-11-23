@@ -1,45 +1,29 @@
 {% extends "base.html" %}
 {% block title %}{{ project.idea_name }}{% endblock %}
 {% block content %}
-<div class="fluid-container">
+
+
+<div class="container">
 <div class="row">
 	<div class="{{project.category}}-project project-intro">
-		<div class="project-header panel panel-default col-md-12">
-		<div class="col-md-4 project-header-left">
-				<img src="{{ STATIC_URL }}{{ project.image }}" class="img-responsive img-rounded" width="200"/>
-			</div>
-			<div class="col-md-8 project-header-right">
-
+		<div class="project-header col-md-12">
 
 				<div class="project-title-section"><h1>{{ project.idea_name }}</h1></div>
-				<div class="project-title-section">
+				<p>By {{ project.owner }}</p>
 
+		<div class="col-md-8 project-header-left">
+				<img src="{{ STATIC_URL }}{{ project.image }}" width="600"/>
+			</div>
+			<div class="col-md-4 project-header-right">
+
+
+				<div class="project-title-section">
+				<p><span class="bold">Description:</span>
+				{{ project.description }}</p>
 					<br><p><span class="bold">Contact Name:</span> {{ project.name }}</p>
-						<p><span class="bold">Username:</span> {{ project.owner }}</p>
+						
 						<span class="bold">Type:</span>
-<!-- 						<span>
-							{% if project.category == 'PT' %}
-							<span class="glyphicon glyphicon-user"></span> Project Team
-							{% elif project.category == 'RESEARCH' %}
-							<span class="glyphicon glyphicon-search"></span> Research
-							{% elif project.category == 'STARTUP' %}
-							<span class="glyphicon glyphicon-road"></span> Startup
-							{% elif project.category == 'CH' %}
-							<span class="glyphicon glyphicon-floppy-disk"></span> Computer Hardware
-							{% elif project.category == 'CS' %}
-							<span class="glyphicon glyphicon-sound-stereo"></span> Computer Software
-							{% elif project.category == 'MECHE' %}
-							<span class="glyphicon glyphicon-wrench"></span> Mechanical
-							{% elif project.category == 'ENV' %}
-							<span class="glyphicon glyphicon-leaf"></span> Environmental
-							{% elif project.category == 'ADM' %}
-							<span class="glyphicon glyphicon-picture"></span> Art, Design, Multimedia
-							{% elif project.category == 'SE' %}
-							<span class="glyphicon glyphicon-globe"></span> Social Entrepreneurship
-							{% elif project.category == 'OTHER' %}
-							<span class="glyphicon glyphicon-question-sign"></span> Other
-							{% endif %}
-						</span><br> -->
+
 						<p><span class="bold">Website:</span> {{ project.website }}</p>
 						<p><span class="bold">Credit Offered:</span> {{ project.credit_offered }}</p>
 						<p><span class="bold">Pay:</span> {{ project.pay }}</p>
@@ -47,15 +31,15 @@
 						<p><span class="bold">Department:</span> {{ project.department }}</p>
 					</div>
 
-<br>
-				<p><span class="bold">Description:</span><br>
-				{{ project.description }}</p>
+				
 			</div>
 			
 		</div>
 	</div>
 </div>
 </div>
+
+<!-- 
 <div class="container">
 	<div class="row">
 			<div class="project-information">
@@ -84,7 +68,7 @@
 		
 	</div>
 </div>
-
+ -->
 
 <!-- 
 

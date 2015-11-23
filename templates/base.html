@@ -17,6 +17,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,700italic,700,600italic,600,400italic,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500italic,500' rel='stylesheet' type='text/css'>
 
+		<link rel="icon" type="image/png" href="{{ STATIC_URL }}images/icon.png">
+
 		<!-- Mobile Specifications
 ================================================== -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,9 +34,8 @@
 		{% block stylesheets %}{% endblock %}
 	</head>
 	<body class="{% block body-color %}{% endblock %}-container">
-	<div id="wrapper">
-	<header>
-		<nav class="navbar navbar-default navbar-custom navbar-static-top" role="navigation">
+	<div class="wrapper">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header red">
@@ -61,10 +62,10 @@
  -->						<li><a href="/about/">About</a></li>
 						
 					</ul>
-					<form action="/discover/" class="navbar-form navbar-form-custom navbar-right pull-left" role="search" method="get">
+					<form action="/discover/" class="navbar-form  navbar-right pull-left" role="search" method="get">
 						<div class="form-group">
 							<span class="glyphicon glyphicon-search"></span>
-							<input type="text" id="search-input" name="project-search" autocomplete="off" class="form-control form-control-custom" placeholder="Search for project">
+							<input type="text" id="search-input" name="project-search" autocomplete="off" class="form-control " placeholder="Search for project">
 						</div>
 <!-- 						<button type="submit" class="btn btn-default"></button>
  -->				</form>
@@ -116,8 +117,7 @@
 					<ul class="nav navbar-nav pull-left">
 						{% if user.is_authenticated %}
 						<li><a href="/accounts/user/profile/" id="username">
-							Hello, <span class="bold">{{ user }}</span>
-							<span class="glyphicon glyphicon-camera"></span></a>
+							Hello, <span class="bold">{{ user }}</span></a>
 						</li>
 						{% else %}
 						<li><a href="/accounts/register/">Sign up </a></li>
@@ -129,16 +129,17 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container -->
 		</nav>
-	</header>
 		
-	<main id="content">	
+	<main>	
 	{% block content %}{% endblock %}
 	</main>
+	<div class="push"></div>
+</div>
 		
 	<div class="footer" id="footer">
 		<div class="container-fluid">
-			<div class="footer-title">
-				<a class="footer-brand" href="/"><span class="footer-cornell">Cornell</span><span class="footer-make">Make</span></a>
+			<div class="footer-logo-box">
+				<a class="footer-logo" href="/"><span class="footer-cornell">Cornell</span><span class="footer-make">Make</span></a>
 				<p class="smalltext">© 2015</p>
 			</div>
  			<div class="footer-right">
