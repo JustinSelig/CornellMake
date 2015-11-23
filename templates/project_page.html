@@ -2,51 +2,53 @@
 {% block title %}{{ project.idea_name }}{% endblock %}
 {% block content %}
 
-
+<div class="project-box-1">
 <div class="container">
 <div class="row">
-	<div class="{{project.category}}-project project-box">
+	<div class="{{project.category}}-project">
 
 		<div class="project-box-header">
-			<h3>{{ project.idea_name }}</h3>
-			<p>By {{ project.owner }}</p>
+			<h3 class="project-box-title">{{ project.idea_name }}</h3>
+			<p class="project-box-author">by {{ project.owner }}</p>
 		</div>
 
 		<div class="col-md-8 project-box-left">
 			<img src="{{ STATIC_URL }}{{ project.image }}" class="project-box-image"/>
 		</div>
 		<div class="col-md-4 project-box-right">
+			<div class="project-box-descriptors">
+				<p><span class="bold">Type: </span><span class="glyphicon glyphicon-globe"> </span><span> {{project.category}}</span></p>
+				<p><span class="bold">Supervisor:</span> {{ project.supervisor }}</p>
+				<p><span class="bold">Department:</span> {{ project.department }}</p>
 
-				<p>
-					
-					{{ project.description }}<span>(description)</span>
-				</p>
+			</div>
 				
-				<span>Type:</span>
-				
-						<p><span>Credit Offered:</span> {{ project.credit_offered }}</p>
-						<p><span>Pay:</span> {{ project.pay }}</p>
-						<p><span>Supervisor:</span> {{ project.supervisor }}</p>
-						<p><span>Department:</span> {{ project.department }}</p>
-			
+				<p><span>Credit Offered:</span> {{ project.credit_offered }}</p>
+				<p><span>Pay:</span> {{ project.pay }}</p>
 
-				
+		</div>
+		<div class="col-md-8">
+			<h4>
+				{{ project.description }}<span>(description)</span>
+			</h4>
 		</div>
 		
 	</div>
 </div>
 </div>
+</div>
 
-<div class="project-slide-2">
+<div class="project-box-2">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<h3>About</h3> 
+				<h4 class="about-title">About</h4> 
 				<p>{{ project.description }}</p>
 			</div>
 			<div class="col-md-4">
-				<h3>Contact</h3> 
-				<p>{{ project.name }}<span>(contact name)</span></p>
+
+				<h4 class="about-title">Contact</h4> 
+				<p>{{ project.name }}<span>(email)</span></p>
 				<p>{{ project.website }}<span>(website)</span></p>
 
 			</div>

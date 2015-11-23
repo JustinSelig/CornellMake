@@ -16,7 +16,6 @@
 					<br>
 					<span class="bold">Name:</span> {{ profile.user.first_name}} {{ profile.user.last_name}}<br><ul></ul>
 					<span class="bold">Current projects: </span> <ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul><br>
-					<br>
 					<span class="bold">Email:</span>  {{ profile.user.email }}<br><br>
 					<span class="bold">Phone:</span>  {{ profile.phone }}<br><br>
 					<span class="bold">Major:</span>  {{ profile.major }}<br><br>

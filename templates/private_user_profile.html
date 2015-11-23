@@ -26,7 +26,7 @@
 <div class="profile-form-header">
 	<span class="profile-form-title">Edit Profile</span>
 	<a href="/accounts/user/{{profile.user}}">
-		<button class="btn btn-default pull-right">View Public Profile</button>
+		<button class="btn btn-default pull-right">Cancel</button>
 	</a>
 </div>
 
@@ -45,11 +45,32 @@
 
 
 <form action="" method="post">{% csrf_token %}
-	<span class="bold">Email: </span><input name="email" class="form-control" value="{{ profile.user.email }}" /><br>
-	<span class="bold">Phone Number: </span><input name="phone" class="form-control" value="{{ profile.phone }}" /><br>
-	<span class="bold">Major: </span><input name="major" class="form-control" value="{{ profile.major }}" /><br>
-	<span class="bold">School: </span><input name="school" class="form-control" value="{{ profile.school }}" /><br>
-	<input class="btn btn-default" type="submit" value="Save and Update" /> {% if profile_change %}<label style="color:green;">Update success!</label>{% endif %}
+
+	<div class="col-sm-4">
+		<span class="bold">Email</span>
+	</div>
+	<div class="col-sm-8">
+		<input name="email" class="form-control" value="{{ profile.user.email }}"/>
+	</div>
+	<div class="col-sm-4">
+		<span class="bold">Phone Number</span>
+	</div>
+	<div class="col-sm-8">
+		<input name="phone" class="form-control" value="{{ profile.phone }}" />
+	</div>
+	<div class="col-sm-4">
+		<span class="bold">Major</span>
+	</div>
+	<div class="col-sm-8">
+		<input name="major" class="form-control" value="{{ profile.major }}"/>
+	</div>
+	<div class="col-sm-4">
+		<span class="bold">School</span>
+	</div>
+	<div class="col-sm-8">
+		<input name="school" class="form-control" value="{{ profile.school }}"/>
+	</div>
+	<input class="btn btn-default btn-red" type="submit" value="Save"/> {% if profile_change %}<label style="color:green;">Update success!</label>{% endif %}
 </form>
 
 

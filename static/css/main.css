@@ -115,12 +115,12 @@ height: 100px;
 	}
 
 	/* style for search bar */
-	.form-control {
+	.search-bar {
 		border-style: none;
 		box-shadow: 0 0 0 rgba(0,0,0,0);
 	}
 
-	.form-control:focus {
+	.search-bar:focus {
 		outline: none;
 		border-style: none;
   		box-shadow: 0 0 0 rgba(0,0,0,0);
@@ -272,6 +272,15 @@ height: 100px;
 	}
 
 /* ============================================================================
+.::[ ABOUT PAGE ]::.
+============================================================================ */
+
+	.about-title {
+		margin-top: 50px;
+		margin-bottom: 30px;
+	}
+
+/* ============================================================================
 .::[ DISCOVER PAGE ]::.
 ============================================================================ */
 	
@@ -366,6 +375,10 @@ height: 100px;
 /* ============================================================================
 .::[ CREATE ]::.
 ============================================================================ */
+	
+.push-block {
+	background-color: #f4f4f4;
+}
 
 	.create-header {
 		padding-top: 16%;
@@ -395,7 +408,6 @@ height: 100px;
 		padding-left: 15px;
 		padding-right: 15px;
 		margin-bottom: 100px;
-
 		/*stacking fieldsets above each other*/
 		position: absolute;
 	}
@@ -441,12 +453,12 @@ height: 100px;
 	}
 	/*progressbar*/
 	#progressbar {
-		
 		/*CSS counters to number the steps*/
 		text-align: center;
 		counter-reset: step;
 		margin: auto;
 	}
+
 	#progressbar li {
 		list-style-type: none;
 		color: black;
@@ -454,6 +466,7 @@ height: 100px;
 		float: left;
 		position: relative;
 	}
+
 	#progressbar li:before {
 		content: counter(step);
 		counter-increment: step;
@@ -474,6 +487,7 @@ height: 100px;
 		top: 9px;
 		z-index: -1; /*put it behind the numbers*/
 	}
+
 	#progressbar li:first-child:after {
 		/*discoveror not needed before the first step*/
 		content: none; 
@@ -553,7 +567,8 @@ height: 100px;
 ============================================================================ */
 
 
-.project-box {
+.project-box-1 {
+	padding-bottom: 50px;
 /*	background-color: white;
 	border-radius: 3px;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);*/
@@ -573,11 +588,21 @@ height: 500px;
 	
 }
 
+.project-box-title {
+	margin-top: 40px;
+
+}
+
+.project-box-author {
+	margin-bottom: 40px;
+}
+
 .project-box-right {
-/*	background-color: white;
-	border-radius: 0px 3px 3px 0px;*/
-/*	border-left: 1px solid #e7e7e7;
-	text-align: center;*/
+	padding-left: 30px;
+}
+
+.project-box-descriptors {
+	border-bottom: 1px solid #f1f1f1;
 }
 
 .currently-recruiting-text {
@@ -591,8 +616,9 @@ height: 500px;
 	border-radius: 3px;
 }
 
-.project-slide-2 {
+.project-box-2 {
 	background: white;
+	padding-bottom: 50px;
 }
 
 
@@ -608,7 +634,8 @@ height: 500px;
 	padding: 0px 20px 20px 20px;
 	color: black;
 	box-sizing: border-box;
-	margin-top: 20px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 .profile-form-header{
@@ -647,6 +674,7 @@ $$  .::[ LOGIN/SIGNUP ]::.  $$
 	margin-top: 40px;
 	padding-top: 20px;
 	text-align: center;
+	margin-bottom: 40px;
 }
 
 .login-box-fields {
