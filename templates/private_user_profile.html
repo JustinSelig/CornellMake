@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ profile.user }}'s Profile{% endblock %}
-{% block body-color %}grey{% endblock %}
+{% block body-color %}white{% endblock %}
 {% block content %}
 
 <!--
@@ -15,65 +15,62 @@
 	<input type="submit" value="Change Password" />
 </form>
 -->
-
+<div class="edit-profile-box">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-				<div class="profile-box">
+			<div class="col-md-10 col-md-offset-1">
 
-
-
-
-
-			<div class="profile-form-header">
-				<span class="profile-form-title">Edit Profile</span>
-				<a href="/accounts/user/{{profile.user}}">
-					<button class="btn btn-default pull-right">View Profile</button>
-				</a>
+				<div class="edit-profile-title">
+				<span>Edit Profile</span>
 			</div>
+				
 
-			<br>
 
-			<div class="profile-form-section">
-			<span class="bold">Username:</span> {{ profile.user.username }}
+			<!-- <span class="bold">Username:</span> {{ profile.user.username }}
 			<ul></ul>
 			<span class="bold">Name:</span> {{ profile.user.first_name }} {{ profile.user.last_name }} 
-			<ul></ul>
-			<span class="bold">My Projects:</span> <ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul>
-			<span class="bold">Pending Membership Requests:</span> <ul>{% for project in member_requests %}<li>{{ project.name }}</li>{% endfor %}</ul><br>
-
-			</div>
-			<br>
+			<ul></ul> -->
+			
 
 
 			<form action="" method="post">{% csrf_token %}
+				<div class="row edit-profile-section">
+					<div class="col-md-5">
+						<span class="bold">Email</span><br>
+						<input name="email" class="form-control" value="{{ profile.user.email }}"/>
+					</div>
+				
+				<div class="col-md-5 col-md-offset-1">
+						<span class="bold">Major</span><br>
+						<input name="major" class="form-control" value="{{ profile.major }}"/>
+					</div>
+					
+				</div>
 
-				<div class="col-sm-4">
-					<span class="bold">Email</span>
+				<div class="row edit-profile-section">
+
+					<div class="col-md-5">
+						<span class="bold">Phone Number</span><br>
+						<input name="phone" class="form-control" value="{{ profile.phone }}" />
+					</div>
+					
+					<div class="col-md-5 col-md-offset-1">
+						<span class="bold">School</span>
+						<input name="school" class="form-control" value="{{ profile.school }}"/>
+					</div>
 				</div>
-				<div class="col-sm-8">
-					<input name="email" class="form-control" value="{{ profile.user.email }}"/>
-				</div>
-				<div class="col-sm-4">
-					<span class="bold">Phone Number</span>
-				</div>
-				<div class="col-sm-8">
-					<input name="phone" class="form-control" value="{{ profile.phone }}" />
-				</div>
-				<div class="col-sm-4">
-					<span class="bold">Major</span>
-				</div>
-				<div class="col-sm-8">
-					<input name="major" class="form-control" value="{{ profile.major }}"/>
-				</div>
-				<div class="col-sm-4">
-					<span class="bold">School</span>
-				</div>
-				<div class="col-sm-8">
-					<input name="school" class="form-control" value="{{ profile.school }}"/>
-				</div>
-				<input class="btn btn-default btn-red" type="submit" value="Save and Update"/> {% if profile_change %}<label style="color:green;">Update success!</label>{% endif %}
+
+				<span class="bold">My Projects:</span> <ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul>
+
+				<span class="bold">Pending Membership Requests:</span> <ul>{% for project in member_requests %}<li>{{ project.name }}</li>{% endfor %}</ul>
+
+				<br>
+
+				<input class="btn btn-default btn-normal" type="submit" value="Save and Update"/> {% if profile_change %}<label style="color:green;">Update success!</label>{% endif %}
 			</form>
+			<br><a href="/accounts/user/{{profile.user}}" class="view-profile-link">
+					<span>View Profile</span>
+				</a>
 
 
 			</div>

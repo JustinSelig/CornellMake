@@ -14,6 +14,10 @@
 		background-color: #fff;
 	}
 
+	.bold {
+		font-weight: bold;
+	}
+
 	/*	removed all roundness from bootstrap elements */
 	* {
   		-webkit-border-radius: 0;
@@ -250,6 +254,20 @@ height: 100px;
 		background-color: #00C441;
 	}
 
+	.btn-normal {
+		background-color: #00ccff;
+		padding: 10px 35px;
+		border: 0px;
+		border-radius: 3px;
+		color: white;
+	}
+
+	.btn-normal:hover {
+		background-color: #00a2cc;
+		color: white;
+	}
+	
+
 /* ============================================================================
 .::[ HOME PAGE ]::.
 ============================================================================ */
@@ -285,6 +303,10 @@ height: 100px;
 	.about-title {
 		margin-top: 50px;
 		margin-bottom: 20px;
+	}
+
+	.about-text {
+		padding-bottom: 50px;
 	}
 
 /* ============================================================================
@@ -666,18 +688,11 @@ height: 500px;
 	background-color: white;
 }
 
-.profile-form-header{
-	border-bottom: 1px solid #e7e7e7;
-	padding-bottom: 20px;
-	padding-top: 20px;
-	margin: 0;
 
-}
-
-.profile-form-title {
+.profile-box-username {
 		font-size: 2em;
 		font-weight: 500;
-	}
+}
 
 .profile-information {
 	float: left;
@@ -693,9 +708,53 @@ height: 500px;
 }
 
 
+
+/* ============================================================================
+!!  .::[ EDIT PROFILE ]::.  !!
+============================================================================ */
+
+
+.edit-profile-title {
+	font-size: 2em;
+	font-weight: 500;
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+.edit-profile-section {
+	margin-bottom: 20px;
+}
+
+.edit-profile-section input, #msform textarea {
+		box-shadow: none;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		box-sizing: border-box;
+	}
+
+	.edit-profile-section input:focus, #msform textarea:focus {
+		box-shadow: none;
+		border: 1px solid #78c9fc;
+	}
+
+.view-profile-link {
+	color: #00ccff;
+}
+
+.view-profile-link:hover {
+	text-decoration: none;
+	color: black;
+}
+
+
 /* ============================================================================
 $$  .::[ LOGIN/SIGNUP ]::.  $$
 ============================================================================ */
+
+.login-title {
+	font-size: 2em;
+	font-weight: 500;
+}	
 
 .login-box {
 /*	background: #2F2F2F;*/

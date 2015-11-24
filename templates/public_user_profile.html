@@ -9,16 +9,16 @@
 			<div class="col-md-10 col-md-offset-1 profile-box-1-contents">
 						<img src="http://lorempixel.com/150/150/cats" class="profile-picture"/>
 						<div class="profile-information">
-							<span class="profile-form-title">{{ profile.user.username }}</span><br>
-							<span class="bold">Email:</span>  {{ profile.user.email }}<br>
-							<span class="bold">Phone:</span>  {{ profile.phone }}<br>
-							<span class="bold">Major:</span>  {{ profile.major }}<br>
-							<span class="bold">School:</span>  {{ profile.school }}
+							<span class="profile-box-username">{{ profile.user.username }}</span><br>
+							<span class="bold">{{ profile.user.email }}</span> · <span>{{ profile.phone }}(phone)</span>  <br>
+							
+							
+							<span>{{ profile.school }}(school) , </span>  <span>{{ profile.major }}(major)</span>
 						</div>
 
 
 					{% if profile.user == user %}
-						<a href="/accounts/user/profile/"><button class="btn btn-default pull-right">Edit Profile</button></a><br>
+						<a href="/accounts/user/profile/"><button class="btn btn-default btn-normal pull-right">Edit Profile</button></a><br>
 						{% endif %}
 			</div>
 		</div>
