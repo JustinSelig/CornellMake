@@ -19,8 +19,7 @@
 		<span class="login-title">redirecting</span>
 		{% else %}
 
-		<span class="login-title">Sign Up</span>
-		<br>
+		<h2 class="login-title">Sign Up</h2>
 		<span style="color:red;">{{ error }}</span>
 		<form id="register_form" action="/accounts/register/" method="POST">
 			{% csrf_token %}
@@ -45,7 +44,7 @@
 				<input id="id_password2" name="password2" type="password" autocomplete="off" required placeholder="Confirm Password" class="form-control">
 			</div><br>
 			<div class="row">
-				<button class="btn btn-default btn-normal" type="submit" value="register">Sign Up</button>
+				<button class="btn btn-default btn-red" type="submit" value="register">Sign Up</button>
 			</div>
 		</form>
 		</div>

@@ -6,6 +6,15 @@
 		font-family: Helvetica ,sans-serif;
 	}
 
+	a {
+		color: #00ccff;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: black;
+	}
+
 	.grey-bg {
 		background-color: #f4f4f4;
 	}
@@ -752,8 +761,8 @@ $$  .::[ LOGIN/SIGNUP ]::.  $$
 ============================================================================ */
 
 .login-title {
-	font-size: 2em;
-	font-weight: 500;
+	margin-bottom: 20px;
+	margin-top: 10px;
 }	
 
 .login-box {
@@ -790,6 +799,17 @@ $$  .::[ LOGIN/SIGNUP ]::.  $$
     padding-bottom: 20px;
 }
 
+.login-box input, #msform textarea {
+		box-shadow: none;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		box-sizing: border-box;
+	}
+
+	.login-box input:focus, #msform textarea:focus {
+		box-shadow: none;
+		border: 1px solid #78c9fc;
+	}
 
 
 
