@@ -417,12 +417,23 @@ height: 100px;
 	}
 	/*inputs*/
 	#msform input, #msform textarea {
-		padding: 15px;
+		box-shadow: none;
 		border: 1px solid #ccc;
 		border-radius: 3px;
 		width: 100%;
 		box-sizing: border-box;
 	}
+
+	#msform input:focus, #msform textarea:focus {
+		box-shadow: none;
+		border: 1px solid #78c9fc;
+	}
+
+	#id_image {
+		padding: 15px;
+	}
+
+
 	/*buttons*/
 	#msform .action-button {
 		width: 100px;
