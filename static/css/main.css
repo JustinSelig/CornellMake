@@ -4,7 +4,14 @@
 	
 	body {
 		font-family: Helvetica ,sans-serif;
+	}
+
+	.grey-bg {
 		background-color: #f4f4f4;
+	}
+
+	.white-bg {
+		background-color: #fff;
 	}
 
 	/*	removed all roundness from bootstrap elements */
@@ -277,7 +284,7 @@ height: 100px;
 
 	.about-title {
 		margin-top: 50px;
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	}
 
 /* ============================================================================
@@ -649,6 +656,16 @@ height: 500px;
 	margin-bottom: 40px;
 }
 
+.profile-box-1 {
+	background-color: #f4f4f4;
+	border-bottom: 1px solid #e7e7e7;
+
+}
+
+.profile-box-2 {
+	background-color: white;
+}
+
 .profile-form-header{
 	border-bottom: 1px solid #e7e7e7;
 	padding-bottom: 20px;
@@ -662,8 +679,17 @@ height: 500px;
 		font-weight: 500;
 	}
 
-.profile-form-section {
-	border-bottom: 1px solid #e7e7e7;
+.profile-information {
+	float: left;
+	margin-left: 20px;
+}
+
+.profile-picture {
+	float: left;
+}
+
+.profile-box-1-contents {
+	padding: 50px 30px 50px 0;
 }
 
 
