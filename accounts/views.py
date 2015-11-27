@@ -18,7 +18,7 @@ from django.http import Http404
 def register(request):
 	if request.method == 'POST':
 		form = MyRegistrationForm(request.POST)
-		username = request.POST.get('username')
+		username = request.POST.get('username') #set username to email?? how to make username not a field??
 		if form.is_valid():
 			print "valid form"
 			form.save()
@@ -42,9 +42,11 @@ def register(request):
 
 def login(request):
 	if request.method == 'POST':
-		username = request.POST.get('username', ' ')
+		#username = request.POST.get('username', ' ')
 		password = request.POST.get('password', ' ')
-		user = auth.authenticate(username=username, password=password)
+		email = request.POST.get('email', ' ')
+		#user = auth.authenticate(username=username, password=password)
+		user = auth.authenticate(password=password, email=email, username=email)
 		if user is not None:
 			auth.login(request, user)
 #			form = UserProfileForm(instance=request.user.profile)

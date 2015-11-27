@@ -13,7 +13,7 @@
 		<!-- Bootstrap -->
 		<link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
 		<!-- Site Specific -->
-		<!--link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css"-->
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,700italic,700,600italic,600,400italic,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500italic,500' rel='stylesheet' type='text/css'>
 
@@ -32,6 +32,7 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 		{% block stylesheets %}{% endblock %}
+<<<<<<< HEAD
 		<!--style>
 		.hero {
 			background-image: url({{ STATIC_URL }}/images/landing-bg.jpg);
@@ -52,6 +53,8 @@
 			font-weight: 300;
 		}
 		</style-->
+=======
+>>>>>>> 5734ecfdd665c23a6a5fbaf3501aa7fb48a292d1
 	</head>
 	<body class="{% block body-color %}{% endblock %}-bg">
 	<div class="wrapper">
