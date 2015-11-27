@@ -105,7 +105,7 @@ def private_user_profile(request):
 """Renders public user profile page"""
 def public_user_profile(request, username):
 	try: profile = UserProfile.objects.get(user__username=username) #use '__' instead of '.' since invocation, not expression
-	except: raise Http404
+	except: raise Http404 #handle this!!!
 	#username cannot be unicode? would representation in browser be same as in server? (ex. %3B)
 #	profile = request.user.profile #triggers django to create profile and populate it if not extant
 #	form = UserProfileForm(instance=profile)

@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+		'django.core.context_processors.static',
             ],
         },
     },
@@ -140,7 +141,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
+    #'/var/www/static/',
+    'static',
 )
 
 #necessary for image upload to find static folder
@@ -151,5 +153,5 @@ AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 

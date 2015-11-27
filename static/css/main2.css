@@ -1,0 +1,1123 @@
+/* ============================================================================
+.::[ GLOBAL SETTINGS ]::.
+============================================================================ */
+	
+	body {
+		font-family: Helvetica ,sans-serif;
+	}
+
+	a {
+		color: #00ccff;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: black;
+	}
+
+	.grey-bg {
+		background-color: #f4f4f4;
+	}
+
+	.white-bg {
+		background-color: #fff;
+	}
+
+	.bold {
+		font-weight: bold;
+	}
+
+	/*	removed all roundness from bootstrap elements */
+	* {
+  		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+        border-radius: 0;
+	}
+
+	/* adjust size of bootstrap default container  */
+	@media (min-width: 1200px) {
+	.container {
+	   	width: 1100px;
+	  }
+	}
+
+	/* larger title, for descriptions over images */
+	h3 {
+		font-size: 27px;
+    	font-weight: 300;
+	}
+
+	/* smaller header, for page titles */
+	h4 {
+		font-size: 22px;
+    	font-weight: 300;
+	}
+
+	/* smaller text (project thumbnail descriptions)*/
+	.smalltext {
+		font-size: 1.2rem;
+	}
+
+	/* custom dropdowns */
+	select {
+		-webkit-appearance: none;
+	   	-moz-appearance: none;
+	   	appearance: none;
+		border: 2px solid black;
+		border-radius: 3px;
+		padding: 10px;
+		margin: 5px;
+		background: transparent;
+		width: 280px;
+		background: url('{{STATIC_URL}}/images/down-arrow.png') no-repeat 245px 25px; 
+		background-size: 17px 10px;
+	}
+
+	select:hover {
+		color: #919191;
+		border: 2px solid #919191;
+		background: url('{{STATIC_URL}}/images/down-arrow-grey.png') no-repeat 245px 25px; 
+		background-size: 17px 10px;
+	}
+
+	/* floating elements in navbar and footer */
+	.pull-right {
+		float: right;
+	}
+
+	.pull-left {
+		float: left;
+	}
+
+
+* {
+		margin: 0;
+	}
+
+	html, body {
+		height: 100%;
+	}
+
+.wrapper {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+margin-bottom: -100px;
+}
+.footer, .push {
+height: 100px;
+}
+
+
+/* ============================================================================
+.::[ NAV BAR ]::.
+============================================================================ */
+
+	/* navbar static top */
+	.navbar-static-top { 
+		margin-bottom: 0; 
+	}
+
+	/* entire navbar bar */
+	.navbar {
+		background-color: white;
+		border-bottom: 1px solid #d0d0d0;
+    	box-shadow: 0 -1px 4px rgba(0,0,0,0.2);
+	}
+
+	/* style for search bar box */
+	.navbar-form{
+		border-left: 2px solid #e7e7e7;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	/* style for search bar */
+	.search-bar {
+		border-style: none;
+		box-shadow: 0 0 0 rgba(0,0,0,0);
+	}
+
+	.search-bar:focus {
+		outline: none;
+		border-style: none;
+  		box-shadow: 0 0 0 rgba(0,0,0,0);
+	}
+
+	/*Style for navbar logo*/
+	.title-cornell {
+		font-weight: 400;
+		color: black;
+	}
+
+	.title-make {
+		font-weight: 600;
+		color: black;
+	}
+
+	/*navbar padding*/
+	.navbar-header {
+		padding-left: 20px;
+	}
+
+	.nav > li > a {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.navbar-nav {
+		margin-left: 10px;
+		margin-right: 20px;
+	}
+
+	.nav > li:hover {
+		background-color: #f0f0f0;
+	}
+
+/* ============================================================================
+.::[ FOOTER ]::.
+============================================================================ */
+
+	.footer {
+		background-color: #3D3D3D;
+	}
+
+	/* left side, footer */
+	.footer-logo-box {
+		float: left;
+	    height: 100px;
+	    padding-top: 30px;
+	    padding-bottom: 50px;
+	    color: white;
+	    padding-left: 20px;
+	}
+
+	.footer-logo {
+		font-size: 18px;
+	    line-height: 20px;
+	    color: white;
+	}
+
+	.footer-logo:hover {
+		text-decoration: none;
+		color: white;
+	}
+
+	.footer-cornell {
+			font-weight: 400;
+		}
+
+	.footer-make {
+			font-weight: 600;
+		}
+
+	/*right side, footer*/
+	.footer-right {
+		  padding-top: 30px;
+	    padding-bottom: 30px;
+	    padding-right: 20px;
+	    color: white;
+	    text-align: right;
+	}
+
+/* ============================================================================
+.::[ BUTTONS ]::.
+============================================================================ */
+
+	.btn-red {
+		background-color: #DD265A;
+		padding: 10px 35px;
+		border: 0px;
+		border-radius: 3px;
+		color: white;
+		font-size: 22px;
+	    	font-weight: 300;
+	}
+
+	.btn-red:hover {
+		background-color: #B72355;
+		color: white;
+	}
+
+	.btn-red a {
+		color: white;
+		text-decoration: none;
+	}
+
+	.btn-started {
+		margin-top: 30px;
+	}
+
+	fieldset .btn-red {
+		margin-top: 60px;
+		margin-bottom: 15px;
+	}
+
+	fieldset #submit{
+		background-color: #00D848;
+	}
+
+	fieldset #submit:hover {
+		background-color: #00C441;
+	}
+
+	.btn-normal {
+		background-color: #00ccff;
+		padding: 10px 35px;
+		border: 0px;
+		border-radius: 3px;
+		color: white;
+	}
+
+	.btn-normal:hover {
+		background-color: #00a2cc;
+		color: white;
+	}
+	
+
+/* ============================================================================
+.::[ HOME PAGE ]::.
+============================================================================ */
+
+	.hero {
+		background-image: url({{STATIC_URL}}/images/landing-bg.jpg);
+		text-align: center;
+		background-size: 100%
+	}
+
+	.hero-container {
+		padding-top:5%;
+		padding-bottom:5%;
+	}
+
+	.hero-text {
+		color: white;
+	}
+
+	.hero-text h1 {
+		font-weight: 300;
+	}
+
+	.all-projects-title {
+		margin-top: 50px;
+		margin-bottom: 20px;
+	}
+
+/* ============================================================================
+.::[ ABOUT PAGE ]::.
+============================================================================ */
+
+	.about-title {
+		margin-top: 50px;
+		margin-bottom: 20px;
+	}
+
+	.about-text {
+		padding-bottom: 50px;
+	}
+
+/* ============================================================================
+.::[ DISCOVER PAGE ]::.
+============================================================================ */
+	
+	/*style for filter/search header */
+	.discover-header {
+		background-color: #ffffff;
+		color: black;
+		padding-top: 100px;
+	    padding-bottom: 100px;
+	    font-size: 25px;
+	    text-align: left;
+	    border-bottom: 1px solid #e7e7e7;
+	    font-size: 27px;
+	    font-weight: 300;
+		
+	}
+
+	.all-projects-container {
+		margin-bottom: 80px;
+	}
+
+	/*style for project panel, comprised of thumbnail, info-box and category-box */
+	.project-panel {
+		background-color: white;
+		border: 0 none;
+		margin-top: 20px;
+		color: black;
+		box-sizing: border-box;
+		overflow: auto;
+
+		background: #fff;
+	    border-radius: 4px;
+	    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
+
+	.project-thumbnail {
+		width: 100%;
+	    height: 200px;
+	    overflow: hidden;
+	    position: relative;
+	}
+
+	.project-thumbnail-img {
+	    width: 100%;
+	    position: absolute;
+	}
+
+
+	.project-info-box {
+		padding: 10px;
+		height: 140px;
+		overflow: hidden;
+	}
+
+	.project-info-box a {
+		color: black;
+		text-decoration: none;
+	}
+
+	.project-info-box {
+	 	position: relative;
+	}
+
+	.project-info-box:after {
+	  position: absolute;
+	  bottom: 0;  
+	  height: 100%;
+	  width: 100%;
+	  content: "";
+	  background: linear-gradient(to top,
+	     rgba(255,255,255, 1) 10%, 
+	     rgba(255,255,255, 0) 90%
+	  );
+	  pointer-events: none; /* so the text is still selectable */
+	}
+
+	/* little grey bottom of project */
+	.project-category-box {
+		background-color: #f6f6f6;
+	    border-radius: 0 0 3px 3px;
+	    border-top: 1px solid #e7e7e7;
+	    box-shadow: 0 1px 0 0 #fff inset;
+	    padding: 10px;
+	    position: relative;
+	    color: #8E8E8E;
+	    font-weight: 500;
+	}
+
+
+
+
+/* ============================================================================
+.::[ CREATE ]::.
+============================================================================ */
+	
+.push-block {
+	background-color: #f4f4f4;
+}
+
+	.create-header {
+		padding-top: 16%;
+		padding-bottom: 20%;
+		text-align: center;
+		font-size: 27px;
+		font-weight: 300;
+	}
+
+	/*form styles*/
+	#msform {
+		position: relative;
+	}
+
+	#msform fieldset {
+	/*	background: #2F2F2F;*/
+		background-color: white;
+		background-position: -510px;
+		border: 0 none;
+		border-radius: 4px;
+	    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+		color: black;
+		box-sizing: border-box;
+		width: 100%;
+		margin-top: 60px;
+		padding-top: 30px;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-bottom: 100px;
+		/*stacking fieldsets above each other*/
+		position: absolute;
+	}
+	/*Hide all except first fieldset*/
+	#msform fieldset:not(:first-of-type) {
+		display: none;
+	}
+	/*inputs*/
+	#msform input, #msform textarea {
+		box-shadow: none;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	#msform input:focus, #msform textarea:focus {
+		box-shadow: none;
+		border: 1px solid #78c9fc;
+	}
+
+	#id_image {
+		padding: 15px;
+	}
+
+
+	/*buttons*/
+	#msform .action-button {
+		width: 100px;
+		background: #B31B1B;
+		font-weight: bold;
+		color: white;
+		border: 0 none;
+		border-radius: 1px;
+		cursor: pointer;
+		padding: 10px 5px;
+		margin: 10px 5px;
+	}
+	#msform .action-button:hover, #msform .action-button:focus {
+		box-shadow: 0 0 0 2px white, 0 0 0 3px #B31B1B;
+	}
+	/*headings*/
+	.fs-title {
+		font-size: 15px;
+		text-transform: uppercase;
+		color: #2C3E50;
+		margin-bottom: 10px;
+	}
+	.fs-subtitle {
+		font-weight: normal;
+		font-size: 13px;
+		color: #666;
+		margin-bottom: 20px;
+	}
+	/*progressbar*/
+	#progressbar {
+		/*CSS counters to number the steps*/
+		text-align: center;
+		counter-reset: step;
+		margin: auto;
+	}
+
+	#progressbar li {
+		list-style-type: none;
+		color: black;
+		width: 100px;
+		float: left;
+		position: relative;
+	}
+
+	#progressbar li:before {
+		content: counter(step);
+		counter-increment: step;
+		width: 100px;
+		line-height: 50px;
+		display: block;
+		color: #333;
+		background: white;
+	}
+	/*progressbar discoverors*/
+	#progressbar li:after {
+		content: '';
+		width: 100%;
+		height: 2px;
+		background: white;
+		position: absolute;
+		left: -50%;
+		top: 9px;
+		z-index: -1; /*put it behind the numbers*/
+	}
+
+	#progressbar li:first-child:after {
+		/*discoveror not needed before the first step*/
+		content: none; 
+	}
+	/*marking active/completed steps green*/
+	/*The number of the step and the discoveror before it = green*/
+	#progressbar li.active:before,  #progressbar li.active:after{
+		background: #DD265A;
+		color: white;
+	}
+
+	.progressbar-box {
+		width: 350px;
+		margin: auto;
+		margin-top: 30px;
+		margin-bottom: 70px;
+	}
+
+	.form-container {
+		height: 700px;
+	}
+
+
+	 .next-button {
+	 	width: 200px!important;
+	 	display: inline-block;
+	    margin-bottom: 0;
+	    line-height: 1.42857143;
+	 }
+
+	.optional-section {
+		background-color: #f6f6f6;
+		padding-top: 15px;
+		border-radius: 3px;
+		color: #777;;
+		
+	}
+
+	.optional-section p{
+		font-weight: 200;
+		color: #777;
+		padding-bottom: 10px;
+	}
+
+	.form-group-custom {
+		padding-bottom: 15px;
+	}
+
+	.checkbox {
+		display: inline;
+	}
+
+	.form-group-custom > .col-sm-8 {
+		padding-right: 0px;
+		margin-bottom: 30px;
+
+	}
+
+	.form-group-custom > .col-sm-4 {
+		padding-left: 0px;
+
+	}
+
+/* ============================================================================
+.::[ ABOUT ]::.
+============================================================================ */
+
+.about-header {
+	background-image: url({{STATIC_URL}}/images/makespace.jpg);
+	height: 300px;
+	background-size: 100%;
+}
+
+
+/* ============================================================================
+.::[ PROJECT PAGE ]::.
+============================================================================ */
+
+
+.project-box-1 {
+	padding-bottom: 50px;
+/*	background-color: white;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);*/
+
+}
+
+.project-box-header {
+	text-align: center;
+}
+
+.project-box-left {
+overflow: hidden;
+height: 500px;
+}
+
+.project-box-image {
+	
+}
+
+.project-box-title {
+	margin-top: 40px;
+
+}
+
+.project-box-author {
+	margin-bottom: 40px;
+}
+
+.project-box-right {
+	padding-left: 30px;
+}
+
+.project-box-descriptors {
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.currently-recruiting-text {
+	margin-top: 40%;
+}
+
+
+.tab-content {
+	background: white;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+	border-radius: 3px;
+}
+
+.project-box-2 {
+	background: white;
+	padding-bottom: 50px;
+}
+
+
+/* ============================================================================
+!!  .::[ PROFILE ]::.  !!
+============================================================================ */
+
+.profile-box {
+	background-color: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+	padding: 0px 20px 20px 20px;
+	color: black;
+	box-sizing: border-box;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.profile-box-1 {
+	background-color: #f4f4f4;
+	border-bottom: 1px solid #e7e7e7;
+
+}
+
+.profile-box-2 {
+	background-color: white;
+}
+
+
+.profile-box-username {
+		font-size: 2em;
+		font-weight: 500;
+}
+
+.profile-information {
+	float: left;
+	margin-left: 20px;
+}
+
+.profile-picture {
+	float: left;
+}
+
+.profile-box-1-contents {
+	padding: 50px 30px 50px 0;
+}
+
+
+
+/* ============================================================================
+!!  .::[ EDIT PROFILE ]::.  !!
+============================================================================ */
+
+
+.edit-profile-title {
+	font-size: 2em;
+	font-weight: 500;
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+.edit-profile-section {
+	margin-bottom: 20px;
+}
+
+.edit-profile-section input, #msform textarea {
+		box-shadow: none;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		box-sizing: border-box;
+	}
+
+	.edit-profile-section input:focus, #msform textarea:focus {
+		box-shadow: none;
+		border: 1px solid #78c9fc;
+	}
+
+.view-profile-link {
+	color: #00ccff;
+}
+
+.view-profile-link:hover {
+	text-decoration: none;
+	color: black;
+}
+
+
+/* ============================================================================
+$$  .::[ LOGIN/SIGNUP ]::.  $$
+============================================================================ */
+
+.login-title {
+	margin-bottom: 20px;
+	margin-top: 10px;
+}	
+
+.login-box {
+/*	background: #2F2F2F;*/
+	background-color: white;
+	background-position: -510px;
+	border: 0 none;
+	border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	
+	color: black;
+	box-sizing: border-box;
+	margin: auto;
+	margin-top: 40px;
+	padding-top: 20px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.login-box-fields {
+	padding: 0px 40px 20px 40px;
+
+}
+
+.login-box-footer {
+	background-color: #f6f6f6;
+    border-radius: 0 0 3px 3px;
+    border-top: 1px solid #e7e7e7;
+   /* box-shadow: 0 1px 0 0 #fff inset;*/
+    position: relative;
+    color: #8E8E8E;
+    font-weight: 500;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.login-box input, #msform textarea {
+		box-shadow: none;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		box-sizing: border-box;
+	}
+
+	.login-box input:focus, #msform textarea:focus {
+		box-shadow: none;
+		border: 1px solid #78c9fc;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+.::[ UNUSED ]::.
+============================================================================ */
+/*
+.PT-project {background-image: url("/static/images/bg1.jpg");}
+.RESEARCH-project {background-image: url("/static/images/bg2.jpg");}
+.STARTUP-project {background-image: url("/static/images/bg3.jpg");}
+.CH-project {background-image: url("/static/images/bg4.jpg");}
+.CS-project {background-image: url("/static/images/bg1.jpg");}
+.MECHE-project {background-image: url("/static/images/bg2.jpg");}
+.ENV-project {background-image: url("/static/images/bg3.jpg");}
+.ADM-project {background-image: url("/static/images/bg4.jpg");}
+.SOCIAL-project {background-image: url("/static/images/bg1.jpg");}
+.OTHER-project {background-image: url("/static/images/bg2.jpg");}*/
+
+
+/* Hover Flip Effects
+================================================== */
+	/* Hover flip from: http://davidwalsh.name/css-flip */
+	/* entire container, keeps perspective */
+	.flip-container {
+		perspective: 1000;
+		padding: 5px;
+	}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+	.flip-container, .front, .back {
+		/*width: 320px;*/
+		/*height: 300px;*/
+	}
+
+	/* flip speed goes here */
+	.flipper {
+		transition: 1s;
+		transform-style: preserve-3d;
+
+		position: relative;
+	}
+
+	/* hide back of pane during swap */
+	.front, .back {
+		backface-visibility: hidden;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	/* front pane, placed above back */
+	.front {
+		z-index: 2;
+		/* for firefox 31 */
+		transform: rotateY(0deg);
+	}
+
+	/* back, initially hidden pane */
+	.back {
+		transform: rotateY(180deg);
+	}
+	/* End hover-flip */
+
+	
+	
+
+/* Home Menu Nav
+================================================== */
+
+
+
+/* Hover Animations
+================================================== */	
+	.nav-bars .nav-top:hover,
+	.nav-bars .nav-bottom:hover,
+	.nav-bars .nav-right:hover,
+	.nav-bars .nav-left:hover {
+		z-index: 5;
+	}
+	
+	.nav-bars .nav-top:hover .text,
+	.nav-bars .nav-bottom:hover .text,
+	.nav-bars .nav-right:hover .text,
+	.nav-bars .nav-left:hover .text {
+		font-weight: bold;
+		text-shadow: 0 1px 1px rgba(0,0,0,.75);
+		transform: scale(3.5);
+	}
+	
+	.nav-bars .nav-top:hover,
+	.nav-bars .nav-bottom:hover {
+		height: 65%;
+	}
+	.nav-bars .nav-top:hover .text,
+	.nav-bars .nav-bottom:hover .text {
+		top: 35%;
+	}
+	
+	.nav-bars .nav-right:hover,
+	.nav-bars .nav-left:hover {
+		width: 65%;
+	}
+
+	
+	
+	
+/* Home Foreground Content
+================================================== */
+	.home-fg {
+		position: relative;
+		z-index: 1;
+		padding: 4em;
+		/*max-width: 75%;*/
+	}
+	
+	.home-bg {
+		position: relative;
+		z-index: -1;
+	}
+
+	
+	.home-fg .lead {
+		font-size: 2em;
+	}
+	
+	.home-fg .event {
+		background: rgba(0,0,0,.25);
+		color: rgba(250,250,250,.75);
+		padding: 1.5em;
+		width: 75%;
+		max-width: 41.5em;
+		position: absolute
+	}
+	
+/*	.home-fg .event h2 {
+		margin: 0 0 .5em 0;
+	}*/
+	
+
+/* Background Fader Styles
+================================================== */
+@-webkit-keyframes bgFadeInOut {
+	0% {
+		opacity:1;
+	}
+	17% {
+		opacity:1;
+	}
+	25% {
+		opacity:0;
+	}
+	92% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+@keyframes bgFadeInOut {
+	0% {
+		opacity:1;
+	}
+	17% {
+		opacity:1;
+	}
+	25% {
+		opacity:0;
+	}
+	92% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+.bg-fader {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	position: fixed;
+	top: 0;
+}
+
+.bg-fader-img {
+	-webkit-animation-name: bgFadeInOut;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 20s;
+
+	animation-name: bgFadeInOut;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 20s;
+}
+
+.bg-fader img:nth-of-type(1) {
+	-webkit-animation-delay: 15s;
+	-moz-animation-delay: 15s;
+	-o-animation-delay: 15s;
+	animation-delay: 15s;
+}
+
+.bg-fader img:nth-of-type(2) {
+	-webkit-animation-delay: 10s;
+	-moz-animation-delay: 10s;
+	-o-animation-delay: 10s;
+	animation-delay: 10s;
+}
+
+.bg-fader img:nth-of-type(3) {
+	-webkit-animation-delay: 5s;
+	-moz-animation-delay: 5s;
+	-o-animation-delay: 5s;
+	animation-delay: 5s;
+}
+
+.bg-fader img:nth-of-type(4) {
+	-webkit-animation-delay: 0;
+	-moz-animation-delay: 0;
+	-o-animation-delay: 0;
+	animation-delay: 0;
+}
+
+
+
+/* Mobile first responsive fader images
+================================================== */
+
+.bg-fader-img {
+	position: absolute;
+	height: auto;
+	width: auto;
+}
+
+/* ============================================================================
+.::[ MEDIA ]::.
+============================================================================ */
+.media-content {
+	background-color: #333;
+	height: 800px;
+}
+
+/*Parallax-specific css*/
+div.parallax-container {
+	position: relative;
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+	background: #333;
+	z-index: 5;
+}
+div.parallax-container div.parallax {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 2500px;
+	text-align: center;
+	height: 250px;
+	font-weight: bold;
+}
+.parallax1 {
+	color: #555;
+	font-size: 250px;
+	line-height: 80%;
+}
+.parallax2 {
+	color: #999;
+	font-size: 100px;
+	line-height: 320%;
+}
+.parallax3 {
+	color: #fff;
+	font-size: 50px;
+	line-height: 760%;
+}

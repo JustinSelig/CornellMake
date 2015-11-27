@@ -282,7 +282,7 @@ height: 100px;
 ============================================================================ */
 
 	.hero {
-		background-image: url('static/images/landing-bg.jpg');
+		background-image: url({{STATIC_URL}}/images/landing-bg.jpg);
 		text-align: center;
 		background-size: 100%
 	}
@@ -605,7 +605,7 @@ height: 100px;
 ============================================================================ */
 
 .about-header {
-	background-image: url(../images/makespace.jpg);
+	background-image: url({{STATIC_URL}}/images/makespace.jpg);
 	height: 300px;
 	background-size: 100%;
 }

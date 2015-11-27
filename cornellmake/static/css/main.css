@@ -3,259 +3,84 @@
 ============================================================================ */
 	
 	body {
-		padding: 0;
-
+		font-family: Helvetica ,sans-serif;
 	}
 
-	@font-face {
-    font-family: montserrat-bold;
-    src: url(..fonts/Montserrat-Bold.otf);
-}	
+	a {
+		color: #00ccff;
+	}
 
-/*	main { padding: 75px 0; }*/
+	a:hover {
+		text-decoration: none;
+		color: black;
+	}
 
-	/*	removed all roundness from bootstrapped elements */
+	.grey-bg {
+		background-color: #f4f4f4;
+	}
+
+	.white-bg {
+		background-color: #fff;
+	}
+
+	.bold {
+		font-weight: bold;
+	}
+
+	/*	removed all roundness from bootstrap elements */
 	* {
   		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
         border-radius: 0;
 	}
 
-	.bold {
-		font-weight: 500;
+	/* adjust size of bootstrap default container  */
+	@media (min-width: 1200px) {
+	.container {
+	   	width: 1100px;
+	  }
 	}
 
-	.white {
-	color: #ffffff;
+	/* larger title, for descriptions over images */
+	h3 {
+		font-size: 27px;
+    	font-weight: 300;
 	}
 
-
-	.home-white-panel {
-		background-color: white;
-		height: 100%;
+	/* smaller header, for page titles */
+	h4 {
+		font-size: 22px;
+    	font-weight: 300;
 	}
 
-	.newclass{
-		width:350px!important
+	/* smaller text (project thumbnail descriptions)*/
+	.smalltext {
+		font-size: 1.2rem;
 	}
 
-
-/* ============================================================================
-.::[ STANDARD LAYOUT]::.
-============================================================================ */
-
-	.navbar-static-top { margin-bottom: 0; }
-	
-	.makerspace-header {
-		padding: 75px 0;
-		margin: 0;
-	}
-	
-	.makerspace-header h1 {
-		font-size: 72px;
-	}
-	
-	.makerspace-header .lead {
-		font-size: 32px;
-	}
-	
-	.panel-title {
-		font-size: 24px;
-		font-weight: bold;
-	}
-
-	
-/* ============================================================================
-.::[ LANDING PAGE ]::.
-============================================================================ */
-	#main-content {
-		overflow: hidden;
-		background: url(../images/landing-bg.jpg) no-repeat center center fixed; 
-	 	-webkit-background-size: cover;
-	 	-moz-background-size: cover;
-	 	-o-background-size: cover;
-	 	background-size: cover;
-	}
-
-	.home-text {
-		padding-top: 6em;
-	}
-
-	@font-face {
-    font-family: 'Montserrat-Bold';
-    src: url(../fonts/Montserrat-Bold.otf);
-	}
-
-	h1{
-		font-weight: 800;
-		font-size: 3.5em;
-		line-height: 1em;
-		margin-top: 0; 
-		font-family: 'montserrat-bold';
-	}
-
-	h2{
-		font-weight: normal;
-		font-size: 1.4em;
-	}
-
-	.description {
-		font size: 2em!important;
-	}
-
-#logo
-{
-background:url(../images/CU-logo.svg) no-repeat center center;
-height:200px;
-width:100%;
-margin-top: 50px;
-}
-
-.home-white-panel {
-	background-color: white;
-	height: 100%;
-	text-align: center;
-}
-
-.description-button {
-	background-color: #0E4FA0;
-}
-
-.create-button {
-	background-color:#2FB4FA;
-}
-
-.sign-in-button {
-	background-color:#D8535C;
-}
-
-.landing-nav-button {
-    height: 35px;
-    width: 60%;
-    display: inline-block;
-    margin-left: 10%
-    margin-right: auto;
-    margin-bottom: 10px;
-    text-align: center;
-    color: white;
-    line-height: 2.5em;
-    border-radius: 3px;
-}
-
-#landing-nav-buttons {
-	left: 0!important;
-}
-
-/* ============================================================================
-.::[ HOME PAGE ]::.
-============================================================================ */
-	
-	.nav-home {
-		height:70px;
-		width:150px;
-		display:inline-block;
+	/* custom dropdowns */
+	select {
+		-webkit-appearance: none;
+	   	-moz-appearance: none;
+	   	appearance: none;
+		border: 2px solid black;
+		border-radius: 3px;
+		padding: 10px;
 		margin: 5px;
-		opacity: 1; /*Set to 0.7?*/
-		text-align: center;
-		color: white;
+		background: transparent;
+		width: 280px;
+		background: url('../images/down-arrow.png') no-repeat 245px 25px; 
+		background-size: 17px 10px;
 	}
 
-	.main-nav {
-		display:block;
-		position:relative;
-		left:-1000px;
+	select:hover {
+		color: #919191;
+		border: 2px solid #919191;
+		background: url('../images/down-arrow-grey.png') no-repeat 245px 25px; 
+		background-size: 17px 10px;
 	}
 
-	.navbar-nav-right {
-		margin: 0;
-	}
-
-/* Nav Bars
-================================================== */
-	.nav-bars {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-	
-	.nav-bars .nav-top,
-	.nav-bars .nav-bottom,
-	.nav-bars .nav-right,
-	.nav-bars .nav-left {
-		display: block;
-		color: #fff;
-		text-align: center;
-		padding: 0;
-		margin: 0;
-		position: fixed;
-		text-decoration: none;
-		transition: all 200ms ease-out;
-	}
-
-	.nav-bars .text {
-		display: inline-block;
-		position: relative;
-		transition: all 350ms ease-in;
-	}
-	
-	.nav-bars .nav-top {
-		top: 0;
-		line-height: 2.5em;
-		height: 2.5em;
-		width: 100%;
-		z-index: 3;
-		background: #2F2F2F;
-	}
-	
-	.nav-bars .nav-bottom {
-		bottom: 0;
-		line-height: 2.5em;
-		height: 2.5em;
-		width: 100%;
-		z-index: 3;
-		background: #2F2F2F;
-	}
-	
-	.nav-bars .nav-right {
-		right: 0;
-		height: 100%;
-		width: 2.5em;
-		z-index: 2;
-		background: #B31B1B;
-	}
-	
-	.nav-bars .nav-left {
-		left: 0;
-		height: 100%;
-		width: 2.5em;
-		z-index: 2;
-		background: #B31B1B;
-	}
-	
-	.nav-bars .nav-top .text {
-		top: 0;
-	}
-	.nav-bars .nav-right .text {
-		top: 0;
-	}
-	.nav-bars .nav-right .text {
-		-webkit-transform: rotate(90deg);
-		-moz-transform: rotate(90deg);
-		-o-transform: rotate(90deg);
-		position: relative;
-		top: 45%;
-	}
-	
-	.nav-bars .nav-left .text {
-		-webkit-transform: rotate(270deg);
-		-moz-transform: rotate(270deg);
-		-o-transform: rotate(270deg);
-		position: relative;
-		top: 45%;
-	}
-
-	
-
+	/* floating elements in navbar and footer */
 	.pull-right {
 		float: right;
 	}
@@ -264,21 +89,775 @@ margin-top: 50px;
 		float: left;
 	}
 
-	#username {
-		padding-right: 0;
+
+* {
+		margin: 0;
 	}
 
-	.red {
-		color: #bb1a20!important;
+	html, body {
+		height: 100%;
 	}
 
-	.nav li a:hover {
-		color: #bb1a20!important;
+.wrapper {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+margin-bottom: -100px;
+}
+.footer, .push {
+height: 100px;
+}
+
+
+/* ============================================================================
+.::[ NAV BAR ]::.
+============================================================================ */
+
+	/* navbar static top */
+	.navbar-static-top { 
+		margin-bottom: 0; 
 	}
 
-	.button-gradient {
-	background: linear-gradient(#fff, #f0f0f0);
+	/* entire navbar bar */
+	.navbar {
+		background-color: white;
+		border-bottom: 1px solid #d0d0d0;
+    	box-shadow: 0 -1px 4px rgba(0,0,0,0.2);
 	}
+
+	/* style for search bar box */
+	.navbar-form{
+		border-left: 2px solid #e7e7e7;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	/* style for search bar */
+	.search-bar {
+		border-style: none;
+		box-shadow: 0 0 0 rgba(0,0,0,0);
+	}
+
+	.search-bar:focus {
+		outline: none;
+		border-style: none;
+  		box-shadow: 0 0 0 rgba(0,0,0,0);
+	}
+
+	/*Style for navbar logo*/
+	.title-cornell {
+		font-weight: 400;
+		color: black;
+	}
+
+	.title-make {
+		font-weight: 600;
+		color: black;
+	}
+
+	/*navbar padding*/
+	.navbar-header {
+		padding-left: 20px;
+	}
+
+	.nav > li > a {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.navbar-nav {
+		margin-left: 10px;
+		margin-right: 20px;
+	}
+
+	.nav > li:hover {
+		background-color: #f0f0f0;
+	}
+
+/* ============================================================================
+.::[ FOOTER ]::.
+============================================================================ */
+
+	.footer {
+		background-color: #3D3D3D;
+	}
+
+	/* left side, footer */
+	.footer-logo-box {
+		float: left;
+	    height: 100px;
+	    padding-top: 30px;
+	    padding-bottom: 50px;
+	    color: white;
+	    padding-left: 20px;
+	}
+
+	.footer-logo {
+		font-size: 18px;
+	    line-height: 20px;
+	    color: white;
+	}
+
+	.footer-logo:hover {
+		text-decoration: none;
+		color: white;
+	}
+
+	.footer-cornell {
+			font-weight: 400;
+		}
+
+	.footer-make {
+			font-weight: 600;
+		}
+
+	/*right side, footer*/
+	.footer-right {
+		  padding-top: 30px;
+	    padding-bottom: 30px;
+	    padding-right: 20px;
+	    color: white;
+	    text-align: right;
+	}
+
+/* ============================================================================
+.::[ BUTTONS ]::.
+============================================================================ */
+
+	.btn-red {
+		background-color: #DD265A;
+		padding: 10px 35px;
+		border: 0px;
+		border-radius: 3px;
+		color: white;
+		font-size: 22px;
+	    	font-weight: 300;
+	}
+
+	.btn-red:hover {
+		background-color: #B72355;
+		color: white;
+	}
+
+	.btn-red a {
+		color: white;
+		text-decoration: none;
+	}
+
+	.btn-started {
+		margin-top: 30px;
+	}
+
+	fieldset .btn-red {
+		margin-top: 60px;
+		margin-bottom: 15px;
+	}
+
+	fieldset #submit{
+		background-color: #00D848;
+	}
+
+	fieldset #submit:hover {
+		background-color: #00C441;
+	}
+
+	.btn-normal {
+		background-color: #00ccff;
+		padding: 10px 35px;
+		border: 0px;
+		border-radius: 3px;
+		color: white;
+	}
+
+	.btn-normal:hover {
+		background-color: #00a2cc;
+		color: white;
+	}
+	
+
+/* ============================================================================
+.::[ HOME PAGE ]::.
+============================================================================ */
+
+	.hero {
+		background-image: url('../images/landing-bg.jpg');
+		text-align: center;
+		background-size: 100%
+	}
+
+	.hero-container {
+		padding-top:5%;
+		padding-bottom:5%;
+	}
+
+	.hero-text {
+		color: white;
+	}
+
+	.hero-text h1 {
+		font-weight: 300;
+	}
+
+	.all-projects-title {
+		margin-top: 50px;
+		margin-bottom: 20px;
+	}
+
+/* ============================================================================
+.::[ ABOUT PAGE ]::.
+============================================================================ */
+
+	.about-title {
+		margin-top: 50px;
+		margin-bottom: 20px;
+	}
+
+	.about-text {
+		padding-bottom: 50px;
+	}
+
+/* ============================================================================
+.::[ DISCOVER PAGE ]::.
+============================================================================ */
+	
+	/*style for filter/search header */
+	.discover-header {
+		background-color: #ffffff;
+		color: black;
+		padding-top: 100px;
+	    padding-bottom: 100px;
+	    font-size: 25px;
+	    text-align: left;
+	    border-bottom: 1px solid #e7e7e7;
+	    font-size: 27px;
+	    font-weight: 300;
+		
+	}
+
+	.all-projects-container {
+		margin-bottom: 80px;
+	}
+
+	/*style for project panel, comprised of thumbnail, info-box and category-box */
+	.project-panel {
+		background-color: white;
+		border: 0 none;
+		margin-top: 20px;
+		color: black;
+		box-sizing: border-box;
+		overflow: auto;
+
+		background: #fff;
+	    border-radius: 4px;
+	    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
+
+	.project-thumbnail {
+		width: 100%;
+	    height: 200px;
+	    overflow: hidden;
+	    position: relative;
+	}
+
+	.project-thumbnail-img {
+	    width: 100%;
+	    position: absolute;
+	}
+
+
+	.project-info-box {
+		padding: 10px;
+		height: 140px;
+		overflow: hidden;
+	}
+
+	.project-info-box a {
+		color: black;
+		text-decoration: none;
+	}
+
+	.project-info-box {
+	 	position: relative;
+	}
+
+	.project-info-box:after {
+	  position: absolute;
+	  bottom: 0;  
+	  height: 100%;
+	  width: 100%;
+	  content: "";
+	  background: linear-gradient(to top,
+	     rgba(255,255,255, 1) 10%, 
+	     rgba(255,255,255, 0) 90%
+	  );
+	  pointer-events: none; /* so the text is still selectable */
+	}
+
+	/* little grey bottom of project */
+	.project-category-box {
+		background-color: #f6f6f6;
+	    border-radius: 0 0 3px 3px;
+	    border-top: 1px solid #e7e7e7;
+	    box-shadow: 0 1px 0 0 #fff inset;
+	    padding: 10px;
+	    position: relative;
+	    color: #8E8E8E;
+	    font-weight: 500;
+	}
+
+
+
+
+/* ============================================================================
+.::[ CREATE ]::.
+============================================================================ */
+	
+.push-block {
+	background-color: #f4f4f4;
+}
+
+	.create-header {
+		padding-top: 16%;
+		padding-bottom: 20%;
+		text-align: center;
+		font-size: 27px;
+		font-weight: 300;
+	}
+
+	/*form styles*/
+	#msform {
+		position: relative;
+	}
+
+	#msform fieldset {
+	/*	background: #2F2F2F;*/
+		background-color: white;
+		background-position: -510px;
+		border: 0 none;
+		border-radius: 4px;
+	    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+		color: black;
+		box-sizing: border-box;
+		width: 100%;
+		margin-top: 60px;
+		padding-top: 30px;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-bottom: 100px;
+		/*stacking fieldsets above each other*/
+		position: absolute;
+	}
+	/*Hide all except first fieldset*/
+	#msform fieldset:not(:first-of-type) {
+		display: none;
+	}
+	/*inputs*/
+	#msform input, #msform textarea {
+		box-shadow: none;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	#msform input:focus, #msform textarea:focus {
+		box-shadow: none;
+		border: 1px solid #78c9fc;
+	}
+
+	#id_image {
+		padding: 15px;
+	}
+
+
+	/*buttons*/
+	#msform .action-button {
+		width: 100px;
+		background: #B31B1B;
+		font-weight: bold;
+		color: white;
+		border: 0 none;
+		border-radius: 1px;
+		cursor: pointer;
+		padding: 10px 5px;
+		margin: 10px 5px;
+	}
+	#msform .action-button:hover, #msform .action-button:focus {
+		box-shadow: 0 0 0 2px white, 0 0 0 3px #B31B1B;
+	}
+	/*headings*/
+	.fs-title {
+		font-size: 15px;
+		text-transform: uppercase;
+		color: #2C3E50;
+		margin-bottom: 10px;
+	}
+	.fs-subtitle {
+		font-weight: normal;
+		font-size: 13px;
+		color: #666;
+		margin-bottom: 20px;
+	}
+	/*progressbar*/
+	#progressbar {
+		/*CSS counters to number the steps*/
+		text-align: center;
+		counter-reset: step;
+		margin: auto;
+	}
+
+	#progressbar li {
+		list-style-type: none;
+		color: black;
+		width: 100px;
+		float: left;
+		position: relative;
+	}
+
+	#progressbar li:before {
+		content: counter(step);
+		counter-increment: step;
+		width: 100px;
+		line-height: 50px;
+		display: block;
+		color: #333;
+		background: white;
+	}
+	/*progressbar discoverors*/
+	#progressbar li:after {
+		content: '';
+		width: 100%;
+		height: 2px;
+		background: white;
+		position: absolute;
+		left: -50%;
+		top: 9px;
+		z-index: -1; /*put it behind the numbers*/
+	}
+
+	#progressbar li:first-child:after {
+		/*discoveror not needed before the first step*/
+		content: none; 
+	}
+	/*marking active/completed steps green*/
+	/*The number of the step and the discoveror before it = green*/
+	#progressbar li.active:before,  #progressbar li.active:after{
+		background: #DD265A;
+		color: white;
+	}
+
+	.progressbar-box {
+		width: 350px;
+		margin: auto;
+		margin-top: 30px;
+		margin-bottom: 70px;
+	}
+
+	.form-container {
+		height: 700px;
+	}
+
+
+	 .next-button {
+	 	width: 200px!important;
+	 	display: inline-block;
+	    margin-bottom: 0;
+	    line-height: 1.42857143;
+	 }
+
+	.optional-section {
+		background-color: #f6f6f6;
+		padding-top: 15px;
+		border-radius: 3px;
+		color: #777;;
+		
+	}
+
+	.optional-section p{
+		font-weight: 200;
+		color: #777;
+		padding-bottom: 10px;
+	}
+
+	.form-group-custom {
+		padding-bottom: 15px;
+	}
+
+	.checkbox {
+		display: inline;
+	}
+
+	.form-group-custom > .col-sm-8 {
+		padding-right: 0px;
+		margin-bottom: 30px;
+
+	}
+
+	.form-group-custom > .col-sm-4 {
+		padding-left: 0px;
+
+	}
+
+/* ============================================================================
+.::[ ABOUT ]::.
+============================================================================ */
+
+.about-header {
+	background-image: url('../images/makespace.jpg');
+	height: 300px;
+	background-size: 100%;
+}
+
+
+/* ============================================================================
+.::[ PROJECT PAGE ]::.
+============================================================================ */
+
+
+.project-box-1 {
+	padding-bottom: 50px;
+/*	background-color: white;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);*/
+
+}
+
+.project-box-header {
+	text-align: center;
+}
+
+.project-box-left {
+overflow: hidden;
+height: 500px;
+}
+
+.project-box-image {
+	
+}
+
+.project-box-title {
+	margin-top: 40px;
+
+}
+
+.project-box-author {
+	margin-bottom: 40px;
+}
+
+.project-box-right {
+	padding-left: 30px;
+}
+
+.project-box-descriptors {
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.currently-recruiting-text {
+	margin-top: 40%;
+}
+
+
+.tab-content {
+	background: white;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+	border-radius: 3px;
+}
+
+.project-box-2 {
+	background: white;
+	padding-bottom: 50px;
+}
+
+
+/* ============================================================================
+!!  .::[ PROFILE ]::.  !!
+============================================================================ */
+
+.profile-box {
+	background-color: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+	padding: 0px 20px 20px 20px;
+	color: black;
+	box-sizing: border-box;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.profile-box-1 {
+	background-color: #f4f4f4;
+	border-bottom: 1px solid #e7e7e7;
+
+}
+
+.profile-box-2 {
+	background-color: white;
+}
+
+
+.profile-box-username {
+		font-size: 2em;
+		font-weight: 500;
+}
+
+.profile-information {
+	float: left;
+	margin-left: 20px;
+}
+
+.profile-picture {
+	float: left;
+}
+
+.profile-box-1-contents {
+	padding: 50px 30px 50px 0;
+}
+
+
+
+/* ============================================================================
+!!  .::[ EDIT PROFILE ]::.  !!
+============================================================================ */
+
+
+.edit-profile-title {
+	font-size: 2em;
+	font-weight: 500;
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+.edit-profile-section {
+	margin-bottom: 20px;
+}
+
+.edit-profile-section input, #msform textarea {
+		box-shadow: none;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		box-sizing: border-box;
+	}
+
+	.edit-profile-section input:focus, #msform textarea:focus {
+		box-shadow: none;
+		border: 1px solid #78c9fc;
+	}
+
+.view-profile-link {
+	color: #00ccff;
+}
+
+.view-profile-link:hover {
+	text-decoration: none;
+	color: black;
+}
+
+
+/* ============================================================================
+$$  .::[ LOGIN/SIGNUP ]::.  $$
+============================================================================ */
+
+.login-title {
+	margin-bottom: 20px;
+	margin-top: 10px;
+}	
+
+.login-box {
+/*	background: #2F2F2F;*/
+	background-color: white;
+	background-position: -510px;
+	border: 0 none;
+	border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	
+	color: black;
+	box-sizing: border-box;
+	margin: auto;
+	margin-top: 40px;
+	padding-top: 20px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.login-box-fields {
+	padding: 0px 40px 20px 40px;
+
+}
+
+.login-box-footer {
+	background-color: #f6f6f6;
+    border-radius: 0 0 3px 3px;
+    border-top: 1px solid #e7e7e7;
+   /* box-shadow: 0 1px 0 0 #fff inset;*/
+    position: relative;
+    color: #8E8E8E;
+    font-weight: 500;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.login-box input, #msform textarea {
+		box-shadow: none;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		box-sizing: border-box;
+	}
+
+	.login-box input:focus, #msform textarea:focus {
+		box-shadow: none;
+		border: 1px solid #78c9fc;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+.::[ UNUSED ]::.
+============================================================================ */
+/*
+.PT-project {background-image: url("/static/images/bg1.jpg");}
+.RESEARCH-project {background-image: url("/static/images/bg2.jpg");}
+.STARTUP-project {background-image: url("/static/images/bg3.jpg");}
+.CH-project {background-image: url("/static/images/bg4.jpg");}
+.CS-project {background-image: url("/static/images/bg1.jpg");}
+.MECHE-project {background-image: url("/static/images/bg2.jpg");}
+.ENV-project {background-image: url("/static/images/bg3.jpg");}
+.ADM-project {background-image: url("/static/images/bg4.jpg");}
+.SOCIAL-project {background-image: url("/static/images/bg1.jpg");}
+.OTHER-project {background-image: url("/static/images/bg2.jpg");}*/
+
 
 /* Hover Flip Effects
 ================================================== */
@@ -327,6 +906,8 @@ margin-top: 50px;
 		transform: rotateY(180deg);
 	}
 	/* End hover-flip */
+
+	
 	
 
 /* Home Menu Nav
@@ -539,424 +1120,4 @@ div.parallax-container div.parallax {
 	color: #fff;
 	font-size: 50px;
 	line-height: 760%;
-}
-
-/* ============================================================================
-.::[ CREATE ]::.
-============================================================================ */
-
-
-/*form styles*/
-#msform {
-/*	width: 400px;*/
-	text-align: center;
-	position: relative;
-}
-#msform fieldset {
-/*	background: #2F2F2F;*/
-	background-color: white;
-	background-position: -510px;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
-	padding: 20px 20px 20px 20px;
-	color: black;
-	box-sizing: border-box;
-	width: 80%;
-	margin: 5% 10%;
-
-	/*stacking fieldsets above each other*/
-	position: absolute;
-}
-/*Hide all except first fieldset*/
-#msform fieldset:not(:first-of-type) {
-	display: none;
-}
-/*inputs*/
-#msform input, #msform textarea {
-	padding: 15px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	margin-bottom: 10px;
-	width: 100%;
-	box-sizing: border-box;
-	color: #2C3E50;
-	font-size: 13px;
-}
-/*buttons*/
-#msform .action-button {
-	width: 100px;
-	background: #B31B1B;
-	font-weight: bold;
-	color: white;
-	border: 0 none;
-	border-radius: 1px;
-	cursor: pointer;
-	padding: 10px 5px;
-	margin: 10px 5px;
-}
-#msform .action-button:hover, #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #B31B1B;
-}
-/*headings*/
-.fs-title {
-	font-size: 15px;
-	text-transform: uppercase;
-	color: #2C3E50;
-	margin-bottom: 10px;
-}
-.fs-subtitle {
-	font-weight: normal;
-	font-size: 13px;
-	color: #666;
-	margin-bottom: 20px;
-}
-/*progressbar*/
-#progressbar {
-	margin-bottom: 30px;
-	/*CSS counters to number the steps*/
-	counter-reset: step;
-}
-#progressbar li {
-	list-style-type: none;
-	color: black;
-	width: 33.33%;
-	float: left;
-	position: relative;
-}
-#progressbar li:before {
-	content: counter(step);
-	counter-increment: step;
-	width: 20px;
-	line-height: 20px;
-	display: block;
-	font-size: 10px;
-	color: #333;
-	background: white;
-	border-radius: 3px;
-	margin: 0 auto 5px auto;
-}
-/*progressbar discoverors*/
-#progressbar li:after {
-	content: '';
-	width: 100%;
-	height: 2px;
-	background: white;
-	position: absolute;
-	left: -50%;
-	top: 9px;
-	z-index: -1; /*put it behind the numbers*/
-}
-#progressbar li:first-child:after {
-	/*discoveror not needed before the first step*/
-	content: none; 
-}
-/*marking active/completed steps green*/
-/*The number of the step and the discoveror before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
-	background: #B31B1B;
-	color: white;
-}
-
-.form-container {
-	height: 700px;
-}
-
-.grey-container {
-	background-color: #f2f3f4;
-}
-
- .next-button {
- 	width: 30%!important;
- 	    display: inline-block;
-    padding: 6px 12px!important;
-    margin-bottom: 0;
-    font-size: 14px!important;
-    font-weight: 400!important;
-    line-height: 1.42857143;
- }
-
-/* ============================================================================
-.::[ DISCOVER ]::.
-============================================================================ */
-
-.thumbnail{
-	height: 400px;
-	overflow: scroll;
-}
-
-.thumbnail::-webkit-scrollbar { 
-	display: none; 
-}
-
-.category-box:hover {
-	background: white;
-}
-
-.white-background {
-	background: white;
-}
-
-.categories-panel {
-/*	background: #2F2F2F;*/
-	background-color: white;
-	background-position: -510px;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
-	margin-top: 20px;
-	padding-top: 10px;
-	color: black;
-	box-sizing: border-box;
-	width: 100%;
-	/*margin: 5% 10%;*/
-}
-
-.search-panel {
-	padding: 10px 10px;
-}
-
-
-.projects-panel {
-/*	background: #2F2F2F;*/
-	background-color: white;
-	background-position: -510px;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
-	margin-top: 20px;
-	color: black;
-	box-sizing: border-box;
-	width: 100%;
-	/*margin: 5% 10%;*/
-
-	overflow: auto;
-}
-.categories-title {
-	margin-left: 5%;
-}
-.category-box {
-	background-color: white;
-	border: 1px solid #ccc;
-	padding: 8px;
-	margin:  7px 5%;
-	width: 90%;
-	text-align: left;
-}
-
-#last-category-box {
-	margin-bottom: 14px;
-}
-
-.category-box:hover {
-	background-color: #EEE;
-}
-
-.categories-panel ul {
-	padding-left: 0;
-}
-
-.project-panel {
-	
-
-}
-
-.project-picture-box {
-	width: 200px; 
-	height: 200px; 
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	float: left;
-
-}
-
-.project-picture {
-
-}
-
-.project-caption {
-		border-left: 1px solid #e7e7e7;
-		padding-left: 20px;
-		height: 200px;
-}
-
-.view-project-button {
-	position:  relative;
-   
-}
-
-.project-description {
-}
-/*.research {
-	background-color: #0E4FA0;
-
-}
-
-.startup {
-	background-color:#2FB4FA;
-}
-
-.computer-hardware {
-	background-color:#D8535C;
-}
-
-.computer-software {
-
-}
-
-.mechanical {
-
-}
-
-.environmental {
-
-}
-
-.design {
-
-}
-
-.social {
-
-}
-
-.other {
-
-}*/
-
-
-
-/* ============================================================================
-.::[ PROJECT PAGE ]::.
-============================================================================ */
-
-.PT-project {background-image: url("/static/images/bg1.jpg");}
-.RESEARCH-project {background-image: url("/static/images/bg2.jpg");}
-.STARTUP-project {background-image: url("/static/images/bg3.jpg");}
-.CH-project {background-image: url("/static/images/bg4.jpg");}
-.CS-project {background-image: url("/static/images/bg1.jpg");}
-.MECHE-project {background-image: url("/static/images/bg2.jpg");}
-.ENV-project {background-image: url("/static/images/bg3.jpg");}
-.ADM-project {background-image: url("/static/images/bg4.jpg");}
-.SOCIAL-project {background-image: url("/static/images/bg1.jpg");}
-.OTHER-project {background-image: url("/static/images/bg2.jpg");}
-
-.project-intro {
-	width: 100%;
-	height: 500px;
-	display: inline-flex;
-	-webkit-box-shadow: inset 0 8px 6px -6px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow: inset 0 8px 6px -6px rgba(50, 50, 50, 0.75);
-	box-shadow: inset 0 8px 6px -6px rgba(50, 50, 50, 0.75);
-}
-
-.project-header div{
-}
-
-.project-header {
-	background-color: white;
-	height: 300px;
-	margin: auto;
-/*	width: 980px;*/
-	padding: 0;
-	border: none;
-	border-radius: 5px;
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
-
-}
-
-.project-header-left {
-	padding: 25px;
-	border-radius: 3px 0px 0px 3px;
-	height: inherit;
-}
-
-.project-header-right {
-	background-color: white;
-	height: inherit;
-	border-radius: 0px 3px 3px 0px;
-	border-left: 1px solid #e7e7e7;
-	text-align: center;
-}
-
-.currently-recruiting-text {
-	margin-top: 40%;
-}
-
-.project-title-section {
-	border-bottom: 1px solid #e7e7e7;
-	padding-bottom: 10px;
-	margin: 0;
-}
-
-.tab-content {
-	background: white;
-			box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
-				border-radius: 3px;
-
-
-}
-
-.project-information {
-	margin-top: 20px;
-
-
-}
-
-/* ============================================================================
-!  .::[ PROFILE ]::.  !
-============================================================================ */
-
-.profile-box {
-/*	background: #2F2F2F;*/
-	background-color: white;
-	background-position: -510px;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
-	padding: 0px 20px 20px 20px;
-	color: black;
-	box-sizing: border-box;
-	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 20px;
-}
-
-.profile-form-header{
-	border-bottom: 1px solid #e7e7e7;
-	padding-bottom: 20px;
-	padding-top: 20px;
-	margin: 0;
-
-}
-
-.profile-form-title {
-		font-size: 2em;
-		font-weight: 500;
-	}
-
-.profile-form-section {
-	border-bottom: 1px solid #e7e7e7;
-}
-
-
-/*LOGIN*/
-
-
-.login-box {
-/*	background: #2F2F2F;*/
-	background-color: white;
-	background-position: -510px;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
-	padding: 0px 40px 20px 40px;
-	color: black;
-	box-sizing: border-box;
-	width: 30%;
-	margin: auto;
-	margin-top: 20px;
-	text-align: center;
 }
