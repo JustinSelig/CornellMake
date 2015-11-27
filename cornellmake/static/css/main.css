@@ -9,7 +9,7 @@
 
 	@font-face {
     font-family: montserrat-bold;
-    src: url(..fonts/Montserrat-Bold.otf);
+    src: url(../fonts/Montserrat-Bold.otf);
 }	
 
 /*	main { padding: 75px 0; }*/

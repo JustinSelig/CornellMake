@@ -130,18 +130,18 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['testmake.herokuapp.com']
+ALLOWED_HOSTS = ['cornellmake.herokuapp.com']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = '/static/'
+STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
+    #'/var/www/static/',
 )
 
 #necessary for image upload to find static folder
