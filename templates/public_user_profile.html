@@ -1,48 +1,44 @@
 {% extends "base.html" %}
 {% block title %}{{ profile.user }}'s Profile{% endblock %}
+{% block body-color %}white{% endblock %}
 {% block content %}
 
+<div class="profile-box-1">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 profile-box-1-contents">
+						<img src="http://lorempixel.com/150/150/cats" class="profile-picture"/>
+						<div class="profile-information">
+							<span class="profile-box-username">{{ profile.user.username }}</span><br>
+							<span class="bold">{{ profile.user.email }}</span> · <span>{{ profile.phone }}(phone)</span>  <br>
+							
+							
+							<span>{{ profile.school }}(school) , </span>  <span>{{ profile.major }}(major)</span>
+						</div>
 
 
-
-
-<div class="col-md-3"></div>
-
-<div class="col-md-6">
-	<div class="profile-box">
-
-
-
-
-
-<div class="profile-form-header">
-	<span class="profile-form-title">{{ profile.user.username }}</span>
-	{% if profile.user == user %}
-<a href="/accounts/user/profile/"><button class="btn btn-default pull-right">Edit Profile</button></a><br>
-{% endif %}
+					{% if profile.user == user %}
+						<a href="/accounts/user/profile/"><button class="btn btn-default btn-normal pull-right">Edit Profile</button></a><br>
+						{% endif %}
+			</div>
+		</div>
+	</div>
 </div>
 
+<div class="profile-box-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 all-projects-title">
+				<h4>Current Projects:</h4>
 
-<div class="profile-form-section">
-
-<br>
-
-<span class="bold">Name:</span> {{ profile.user.first_name}} {{ profile.user.last_name}}<br><ul></ul>
-<span class="bold">Current projects: </span> <ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul><br>
+			</div>
+				<div class="profile-form-section">
+					<ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul><br>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<br>
-<span class="bold">Email:</span>  {{ profile.user.email }}<br><br>
-<span class="bold">Phone:</span>  {{ profile.phone }}<br><br>
-<span class="bold">Major:</span>  {{ profile.major }}<br><br>
-<span class="bold">School:</span>  {{ profile.school }}
-
-
-
-
-</div>
-</div>
-<div class="col-md-3"></div>
-
 
 
 

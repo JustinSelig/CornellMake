@@ -2,40 +2,28 @@
 {% block title %}Discover{% endblock %}
 
 {% block content %}
-
-<div>
-	<h1>What will you make?</h1>
-	<form accept-charset="UTF-8" method="POST">
-		{% csrf_token %}
-		<span class="bold">I want to post a</span>
-			<span>
-				<select name="category">
-					<option value="random">Random</option>
-					<option value="academic">Academic</option>
-					<option value="extracurricular">Extracurricular</option>
-					<option value="business">Startup/Business</option>
-					<option value="personal">Personal</option>
-				</select>
-			</span>
-			<span class="bold">project called:</span><br/>
-			<input type="text" name="project_name" placeholder="Project Name"><br/>
-			<input id="submit" type="submit" name="submit-initial" class="btn btn-default" value="Create" />
-	</form>
-	<!--form accept-charset="UTF-8" method="GET">
-		<span class="bold">I want to post a</span>
-			<span>
-				<select name="category">
-					<option value="random">Random</option>
-					<option value="academic">Academic</option>
-					<option value="extracurricular">Extracurricular</option>
-					<option value="business">Startup/Business</option>
-					<option value="personal">Personal</option>
-				</select>
-			</span>
-			<span class="bold">project called:</span><br/>
-			<input type="text" name="project_name" placeholder="Project Name"><br/>
-			<input id="submit" type="submit" name="submit-initial" class="btn btn-default" value="Create" />
-	</form-->
+<div class="create-header">
+	<div class="container">
+	  	<div class="row">
+	   		<div class="col-md-12">
+				<form accept-charset="UTF-8" method="POST">
+					{% csrf_token %}
+					<span>I want to post a</span>
+						<span>
+							<select name="category" class="select-create-category">
+								<option value="business">Startup/Business</option>
+								<option value="academic">Academic</option>
+								<option value="extracurricular">Extracurricular</option>
+								<option value="personal">Personal</option>
+							</select>
+						</span>
+						<span>project called:</span> <input type="text" name="project_name" placeholder="Project Name">
+						<br/>
+						<input id="submit" type="submit" name="submit-initial" class="btn btn-default btn-red btn-started" value="Create" />
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
 {% endblock %}
