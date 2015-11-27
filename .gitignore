@@ -1,0 +1,6 @@
+*.pyc
+#Ignore emacs back ups
+*#
+*~
+settings.py
+db.sqlite3

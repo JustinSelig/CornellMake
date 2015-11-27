@@ -33,6 +33,7 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 		{% block stylesheets %}{% endblock %}
+<<<<<<< HEAD
 		<!--style>
 		.hero {
 			background-image: url({{ STATIC_URL }}/images/landing-bg.jpg);
@@ -53,6 +54,8 @@
 			font-weight: 300;
 		}
 		</style-->
+=======
+>>>>>>> 5734ecfdd665c23a6a5fbaf3501aa7fb48a292d1
 	</head>
 	<body class="{% block body-color %}{% endblock %}-bg">
 	<div class="wrapper">

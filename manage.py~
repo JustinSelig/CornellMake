@@ -3,7 +3,15 @@ import os
 import sys
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cornellmake.settings")
+=======
+<<<<<<< HEAD
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cornellmake.settings")
+=======
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Makerspace_Website.settings")
+>>>>>>> 5734ecfdd665c23a6a5fbaf3501aa7fb48a292d1
+>>>>>>> heroku
 
     from django.core.management import execute_from_command_line
 
