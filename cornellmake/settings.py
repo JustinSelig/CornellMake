@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 import dj_database_url
 
+#from django.core.wsgi import get_wsgi_application
+#from whitenoise.django import DjangoWhiteNoise
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -158,8 +160,5 @@ AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-from django.core.wsgi import get_wsgi_application
-from whitenoise.django import DjangoWhiteNoise
-
-application = get_wsgi_application()
-application = DjangoWhiteNoise(application)
+#application = get_wsgi_application()
+#application = DjangoWhiteNoise(application)
