@@ -1,1 +1,1 @@
-web: gunicorn cornellmake:app --log-file -
+web: gunicorn cornellmake.wsgi:application --log-file -
