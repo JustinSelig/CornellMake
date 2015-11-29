@@ -31,6 +31,7 @@
 		<div class="col-md-12 all-projects-title">
 			<h4>People are working on:</h4>
 		</div>
+				{% if projects %}				
 				{% for project in projects %}
 				<div class="col-sm-4">
 					<div class="project-panel">
@@ -51,7 +52,8 @@
 							</div>
 					</div>
 				</div>
-				{% endfor %}		
+				{% endfor %}
+				{% endif %}		
 	</div>		
 </div>
 

@@ -2,7 +2,7 @@
 {% block title %}CornellMake{% endblock %}
 {% block body-color %}grey{% endblock %}
 {% block stylesheets %} 
-<link rel="stylesheet" href="{{STATIC_URL}}css/main.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/main2.css">
 {% endblock %}
 {% block content %}
 
