@@ -111,10 +111,10 @@ def project_page(request, project_url):
 	project = get_object_or_404(Project, url=project_url) #finds project object in database based on url. Very cool!
 	context = {'project': project}
 	context.update(csrf(request))
-	profile=request.user.profile
 	if request.method == 'GET':
 		return render(request, 'project_page.html', context)
-	elif 'join-project' in request.POST and request.POST['join-project'] == 'submit': #if join project, send email to project owner for approval and add request to table for approval
+	profile=request.user.profile	#improve this logic: should only be able to view projects if not logged in
+	if 'join-project' in request.POST and request.POST['join-project'] == 'submit': #if join project, send email to project owner for approval and add request to table for approval
 		project.member_requests.add(request.user)
 		profile.member_requests.add(project)
 		profile.save()
