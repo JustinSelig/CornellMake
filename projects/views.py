@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, render_to_response
 from forms import ProjectSubmissionForm
 from django.core.context_processors import csrf
 from django.http import HttpResponseRedirect
@@ -139,3 +139,19 @@ def project_page(request, project_url):
 			project.save()
 		profile.member_requests.remove(project)
 		return render(request, 'project_page.html', context)
+
+"""Dynamic ajax search; called on every keystroke. Filters through product table in database based on query."""
+def ajax_result(request):
+	print "in ajax result"
+	#query = request.POST['search_text']
+	if request.method == 'POST':
+		print "1"
+		search_text = request.POST['search_text']
+		query = search_text
+		print "2"
+	else:
+		search_text = ''
+		query = search_text
+		print "3"
+	projects = Project.objects.filter(Q(name__icontains=search_text) | Q(description__icontains=search_text))
+	return render_to_response('ajax_result.html', {'projects':projects, 'query':query})

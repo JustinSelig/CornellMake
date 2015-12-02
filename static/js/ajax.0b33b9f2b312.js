@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+window.alert("in else!");
 //AJAX SEARCH ON KEYSTROKE
 	$(function() {
 		$('#search-input').keyup(function(e) {

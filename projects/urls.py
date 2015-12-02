@@ -6,5 +6,6 @@ urlpatterns = patterns('',
 	#url(r'^create-form/$', 'projects.views.create_form', name='create_form'),
 	url(r'^create/admin-approve/$', 'projects.views.approve'),
 	url(r'^discover/$', 'projects.views.discover'),
-	url(ur'^projects/(?P<project_url>.*)/$', 'projects.views.project_page', name="project_page") #regex allows all chars except spaces
+	url(ur'^projects/(?P<project_url>.*)/$', 'projects.views.project_page', name="project_page"), #regex allows all chars except spaces
+	url(r'^ajax_result/$', 'projects.views.ajax_result'),
 )

@@ -18,7 +18,7 @@ from django.http import Http404
 def register(request):
 	if request.method == 'POST':
 		form = MyRegistrationForm(request.POST)
-		username = request.POST.get('username')
+		username = request.POST.get('username') #set username to email?? how to make username not a field??
 		if form.is_valid():
 			print "valid form"
 			form.save()
@@ -42,9 +42,11 @@ def register(request):
 
 def login(request):
 	if request.method == 'POST':
-		username = request.POST.get('username', ' ')
+		#username = request.POST.get('username', ' ')
 		password = request.POST.get('password', ' ')
-		user = auth.authenticate(username=username, password=password)
+		email = request.POST.get('email', ' ')
+		#user = auth.authenticate(username=username, password=password)
+		user = auth.authenticate(password=password, email=email, username=email)
 		if user is not None:
 			auth.login(request, user)
 #			form = UserProfileForm(instance=request.user.profile)
@@ -105,7 +107,7 @@ def private_user_profile(request):
 """Renders public user profile page"""
 def public_user_profile(request, username):
 	try: profile = UserProfile.objects.get(user__username=username) #use '__' instead of '.' since invocation, not expression
-	except: raise Http404
+	except: raise Http404 #handle this!!!
 	#username cannot be unicode? would representation in browser be same as in server? (ex. %3B)
 #	profile = request.user.profile #triggers django to create profile and populate it if not extant
 #	form = UserProfileForm(instance=profile)
@@ -117,15 +119,25 @@ def delete_user(request):
 
 
 ###################### 	PASSWORD RESET ######################
-
+"""
+"""Uses django system to render a password reset form asking for an email. Redirects to password_reset_done upon submission."""
 def reset(request):
-	pass
+	return password_reset(request, template_name='password_reset_form.html',
+	  email_template_name='password_reset_email.html',
+	  subject_template_name='reset_subject.txt',
+	  post_reset_redirect=reverse('password_reset_done'))
 
+"""Rendered upon form submission. Uses django system to send email to user with a one-time link."""
 def reset_done(request):
-	pass
+	return password_reset_done(request, template_name='password_reset_done.html')
 
+
+"""Rendered when user visits the one-time link. Asks for new password. Redirects to password_reset_complete upon submission."""
 def reset_confirm(request, uidb64=None, token=None):
-	pass
+	return password_reset_confirm(request, template_name='password_reset_confirm.html',
+	  uidb64=uidb64, token=token, post_reset_redirect=reverse('password_reset_complete'))
 
+"""Renders a page notifying user of a successful password reset."""
 def reset_complete(request):
-	pass
+	return password_reset_complete(request, template_name='password_reset_complete.html')
+"""
