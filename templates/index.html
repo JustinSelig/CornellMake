@@ -1,37 +1,68 @@
 {% extends "base.html" %}
 {% block title %}CornellMake{% endblock %}
 {% block body-color %}grey{% endblock %}
-{% block stylesheets %} 
-<link rel="stylesheet" href="{{STATIC_URL}}css/main2.css">
-{% endblock %}
 {% block content %}
 
+{% if not user.is_authenticated %}
 <div class="hero">
 <div class="container hero-container">
 	<div class="row">
-		<div class="col-md-12 hero-text">
-			<h3>Find people to help you bring your ideas to life.</h3>
+		<div class="col-md-12">
 
-			{% if not user.is_authenticated %}
+			<div class="hero-text">
+			<h1 class="hero-title">Bring your ideas to life.</h1>
+			<h2 class="hero-subtitle">CornellMake is a community of people looking to collaborate on engineering and creative projects.</h2>
+			</div>
 
-			<a href="/accounts/register/"><button class="btn btn-default btn-red btn-started" type="submit" value="started">Sign Up</button></a>
+			<button class="btn btn-green btn-started" type="submit" value="started"><a href="/accounts/register">
 
-			{% else %}
-			{% endif %}
+				Get Started</a></button>
+
+		
+		</div>
+	</div>
+</div>
+</div>
+{% else %}
+<div class="hero-alt">
+<div class="container hero-container">
+	<div class="row">
+		<div class="col-md-12">
+
+			<div class="hero-text">
+			<h1 class="hero-title">Welcome, {{ user }}!</h1>
+			<h2 class="hero-subtitle">Feel free to browse projects, or post one of your own.</h2>
+			</div>
+
+			<button class="btn btn-green btn-started" type="submit" value="started"><a href="/create">
+
+				Start a project</a></button>
+
+		
 		</div>
 	</div>
 </div>
 </div>
 
 
+{% endif %}
+
 <div class="container">
-	<div class="row all-projects-container">
+	<div class="row ">
 		
 
 		<div class="col-md-12 all-projects-title">
-			<h4>People are working on:</h4>
+			<h4 class="pull-left">Featured Projects:</h4>
+
+			<a href="discover">
+				<button class="btn btn-default btn-normal pull-right" type="submit" value="seeall">
+					See all
+				</button>
+			</a>
 		</div>
-				{% if projects %}				
+	</div>
+
+	<div class="row all-projects-container">
 				{% for project in projects %}
 				<div class="col-sm-4">
 					<div class="project-panel">
@@ -40,8 +71,8 @@
 							</div>
 							<div class="project-info-box">
 
-								<strong><p><a href="/projects/{{ project.url }}">{{project.idea_name}}</a></strong><br>
-								by {{project.name}}</p>
+								<p class="project-title"><a href="/projects/{{ project.url }}">{{project.idea_name}}</a></p>
+								<p class="project-author">by {{project.name}}</p>
 								<p class="smalltext project-description">{{project.description}} 
 
 								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -53,8 +84,8 @@
 					</div>
 				</div>
 				{% endfor %}
-				{% endif %}		
-	</div>		
+
+</div>
 </div>
 
 

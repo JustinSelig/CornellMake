@@ -53,14 +53,14 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="main-navbar">
 					<ul class="nav navbar-nav">
-						<li><a href="/create/">Create</a></li>
+						<li><a href="/create/">CREATE</a></li>
 <!-- 						{% if user.is_authenticated %}
  -->						
 						<!-- {% endif %} -->
-						<li><a href="/discover/">Discover</a></li>
+						<li><a href="/discover/">DISCOVER</a></li>
 						
 <!-- 						<li><a href="/media/">Media</a></li>
- -->						<li><a href="/about/">About</a></li>
+ -->						<li><a href="/about/">ABOUT</a></li>
 						
 					</ul>
 					<form action="/discover/" class="navbar-form  navbar-right pull-left" role="search" method="get">
@@ -74,9 +74,7 @@
  -->				</form>
  					<!-- ajax search results-->
  					<div class="search" style="top:-332px;">
-						<div>
-							<div id="search-results"></div>
-						</div>
+						<div id="search-results"></div>
 					</div>
 				
 				<!--	
@@ -116,15 +114,17 @@
 </div>
 		
 	<div class="footer" id="footer">
-		<div class="container-fluid">
+		<div class="container">
+			<div class="row">
 			<div class="footer-logo-box">
-				<a class="footer-logo" href="/"><span class="footer-cornell">Cornell</span><span class="footer-make">Make</span></a>
-				<p class="smalltext">© 2015</p>
+				<a class="footer-logo" href="/"><span class="footer-cornell">Cornell</span><span class="blue footer-make">Make</span></a>
+				<p class="smalltext grey">© 2015</p>
 			</div>
  			<div class="footer-right">
 				<div class="pull-right">
-					<strong>Questions? Talk to us:</strong> <p class="smalltext">hello@cornellmake.com</p>
+					<span class="grey"><strong>Question? Just ask:</strong></span> <p class="smalltext grey">hello@cornellmake.com</p>
 				</div>
+			</div>
 			</div>
 		</div>
 	</div>
