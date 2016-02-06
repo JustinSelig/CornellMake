@@ -20,9 +20,8 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 
-				<div class="edit-profile-title">
-				<span>Edit Profile</span>
-			</div>
+				<h4 class="edit-profile-title">
+				Edit Profile</h4>
 				
 
 
@@ -62,7 +61,7 @@
 
 				<span class="bold">My Projects:</span> <ul>{% for project in profile.projects.all %}<li>{{ project.idea_name }}</li>{% endfor %}</ul>
 
-				<span class="bold">Pending Membership Requests:</span> <ul>{% for project in member_requests %}<li>{{ project.name }}</li>{% endfor %}</ul>
+			<!-- 	<span class="bold">Pending Membership Requests:</span> <ul>{% for project in member_requests %}<li>{{ project.name }}</li>{% endfor %}</ul> -->
 
 				<br><br>
 
