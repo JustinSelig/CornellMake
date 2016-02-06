@@ -1,0 +1,13 @@
+Back-end:
+-Fix issue with public user profile
+-Send email when project is approved
+-Fix project submission form issues-doesn't submit unless all fields are satisfied
+-limit email sig ups to @cornell.edu
+
+Front-end:
+-Create html/css email template for approved project
+-Format search query ajax results
+-Figure out how to serve static files that a user uploads-Amazon web service?
+-Add google map
+-Update about page with pictures and text- people, sponsors, description
+-Update site with pictures of spaces
