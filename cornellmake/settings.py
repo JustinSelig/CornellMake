@@ -26,9 +26,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 
 # Application definition
@@ -90,7 +90,7 @@ DATABASES = {
 }
 """
 
-
+"""
 #Use this when testing locally -- subsequent one is for Heroku
 DATABASES = {
     'default': {
@@ -102,16 +102,16 @@ DATABASES = {
         'PORT': '',
     }
 }
-
-
 """
+
+
 # we only need the engine name, as heroku takes care of the rest
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
     }
 }
-"""
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -124,7 +124,7 @@ USE_TZ = True
 
 
 # Parse database configuration from $DATABASE_URL
-#DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config()
 
 # Enable Persistent Connections
 DATABASES['default']['CONN_MAX_AGE'] = 500

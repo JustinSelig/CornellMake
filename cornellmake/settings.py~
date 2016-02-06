@@ -90,7 +90,7 @@ DATABASES = {
 }
 """
 
-
+"""
 #Use this when testing locally -- subsequent one is for Heroku
 DATABASES = {
     'default': {
@@ -102,16 +102,16 @@ DATABASES = {
         'PORT': '',
     }
 }
-
-
 """
+
+
 # we only need the engine name, as heroku takes care of the rest
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
     }
 }
-"""
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
