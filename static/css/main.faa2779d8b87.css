@@ -79,14 +79,14 @@
 		margin: 5px;
 		background: transparent;
 		width: 280px;
-		background: url('../images/down-arrow.png') no-repeat 245px 25px; 
+		background: url("../images/down-arrow.04f04df06b23.png") no-repeat 245px 25px; 
 		background-size: 17px 10px;
 	}
 
 	select:hover {
 		color: #919191;
 		border: 2px solid #919191;
-		background: url('../images/down-arrow-grey.png') no-repeat 245px 25px; 
+		background: url("../images/down-arrow-grey.a088ef197cf2.png") no-repeat 245px 25px; 
 		background-size: 17px 10px;
 	}
 
@@ -336,13 +336,13 @@ height: 130px;
 ============================================================================ */
 
 	.hero {
-		background-image: url(../images/bg6.jpg);
+		background-image: url("../images/bg6.8d5065c7abb9.jpg");
 		text-align: center;
 		background-size: 100%
 	}
 
 	.hero-alt {
-		background-image: url(../images/bg5.jpg);
+		background-image: url("../images/bg5.29e394b3b81c.jpg");
 		text-align: center;
 		background-size: 100%
 	}
@@ -393,7 +393,7 @@ height: 130px;
 	}
 
 .about-image {
-	background-image: url(../images/bg7.jpg);
+	background-image: url("../images/bg7.5bc677c3e20c.jpg");
 	background-size: 100%;
 	text-align: center;
 		padding-top:16%;
@@ -1000,16 +1000,16 @@ $$  .::[ LOGIN/SIGNUP ]::.  $$
 .::[ UNUSED ]::.
 ============================================================================ */
 /*
-.PT-project {background-image: url("/static/images/bg1.jpg");}
-.RESEARCH-project {background-image: url("/static/images/bg2.jpg");}
-.STARTUP-project {background-image: url("/static/images/bg3.jpg");}
-.CH-project {background-image: url("/static/images/bg4.jpg");}
-.CS-project {background-image: url("/static/images/bg1.jpg");}
-.MECHE-project {background-image: url("/static/images/bg2.jpg");}
-.ENV-project {background-image: url("/static/images/bg3.jpg");}
-.ADM-project {background-image: url("/static/images/bg4.jpg");}
-.SOCIAL-project {background-image: url("/static/images/bg1.jpg");}
-.OTHER-project {background-image: url("/static/images/bg2.jpg");}*/
+.PT-project {background-image: url("/static/images/bg1.0b856750c83a.jpg");}
+.RESEARCH-project {background-image: url("/static/images/bg2.27bdf0f4c75e.jpg");}
+.STARTUP-project {background-image: url("/static/images/bg3.d63a06c11a55.jpg");}
+.CH-project {background-image: url("/static/images/bg4.c2a78bd396b8.jpg");}
+.CS-project {background-image: url("/static/images/bg1.0b856750c83a.jpg");}
+.MECHE-project {background-image: url("/static/images/bg2.27bdf0f4c75e.jpg");}
+.ENV-project {background-image: url("/static/images/bg3.d63a06c11a55.jpg");}
+.ADM-project {background-image: url("/static/images/bg4.c2a78bd396b8.jpg");}
+.SOCIAL-project {background-image: url("/static/images/bg1.0b856750c83a.jpg");}
+.OTHER-project {background-image: url("/static/images/bg2.27bdf0f4c75e.jpg");}*/
 
 
 /* ============================================================================

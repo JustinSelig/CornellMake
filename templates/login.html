@@ -19,7 +19,7 @@
 	{% if user.is_authenticated %}
 	<h1>Redirecting</h1>
 	{% else %}
-	<h2 class="login-title">Login</h2>
+	<h4>Login</h4>
 	<form action="/accounts/login/" method="POST">
 		{% csrf_token %}
 		<div class="row">
@@ -40,7 +40,7 @@
 		</div>
 		<br>
 		<div class="row">
-			<button class="btn btn-default btn-red" type="submit" value="login">Login</button>
+			<button class="btn btn-default btn-green" type="submit" value="login">Login</button>
 		</div>
 	</form>
 

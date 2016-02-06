@@ -3,7 +3,13 @@
 ============================================================================ */
 	
 	body {
-		font-family: Helvetica ,sans-serif;
+		font-family: "Source Sans Pro", Helvetica ,sans-serif;
+		font-size: 15px;
+	}
+
+	.navlink {
+		font-size: 1.2rem;
+    	letter-spacing: 0.6px;
 	}
 
 	a {
@@ -41,22 +47,26 @@
 	  }
 	}
 
-	/* larger title, for descriptions over images */
+	/* larger title, for descriptions over images and isolated text */
 	h3 {
-		font-size: 27px;
+		font-size: 25px;
     	font-weight: 300;
 	}
 
 	/* smaller header, for page titles */
 	h4 {
 		font-size: 22px;
-    	font-weight: 300;
+    	font-weight: 400;
 	}
 
 	/* smaller text (project thumbnail descriptions)*/
 	.smalltext {
 		font-size: 1.2rem;
 	}
+
+	
+
+
 
 	/* custom dropdowns */
 	select {
@@ -102,10 +112,10 @@
 min-height: 100%;
 height: auto !important;
 height: 100%;
-margin-bottom: -100px;
+margin-bottom: -130px;
 }
 .footer, .push {
-height: 100px;
+height: 130px;
 }
 
 
@@ -138,6 +148,7 @@ height: 100px;
 	.search-bar {
 		border-style: none;
 		box-shadow: 0 0 0 rgba(0,0,0,0);
+		color: ;
 	}
 
 	.search-bar:focus {
@@ -148,13 +159,17 @@ height: 100px;
 
 	/*Style for navbar logo*/
 	.title-cornell {
+		font-family: "Source Sans Pro";
 		font-weight: 400;
 		color: black;
+		font-size: 19px;
 	}
 
 	.title-make {
+		font-family: "Source Sans Pro";
 		font-weight: 600;
 		color: black;
+		font-size: 19px;
 	}
 
 	/*navbar padding*/
@@ -179,17 +194,25 @@ height: 100px;
 /* ============================================================================
 .::[ FOOTER ]::.
 ============================================================================ */
+	.blue {
+		color: #00ccff;
+	}
+
+	.grey {
+		color: #999999;
+	}
+
 
 	.footer {
-		background-color: #3D3D3D;
+		background-color: #282727;
 	}
 
 	/* left side, footer */
 	.footer-logo-box {
 		float: left;
-	    height: 100px;
-	    padding-top: 30px;
-	    padding-bottom: 50px;
+	    height: 130px;
+	    padding-top: 40px;
+	    padding-bottom: 70px;
 	    color: white;
 	    padding-left: 20px;
 	}
@@ -225,23 +248,64 @@ height: 100px;
 /* ============================================================================
 .::[ BUTTONS ]::.
 ============================================================================ */
+	
+	/*default button color: blue*/
 
-	.btn-red {
-		background-color: #DD265A;
+	.btn {
+		background-color: #00ccff;
 		padding: 10px 35px;
 		border: 0px;
-		border-radius: 3px;
+		border-radius: 4px;
 		color: white;
-		font-size: 22px;
-	    	font-weight: 300;
+	}
+
+	.btn:hover {
+		background-color: #00a2cc;
+		color: white;
+	}
+
+	.btn-green {
+		background-color: #1DE9B6;
+	}
+
+	.btn-green:hover {
+		background-color: #00BFA5;
+		color: white;
+	}
+
+	.btn-red {
+		background-color: #f476be;
 	}
 
 	.btn-red:hover {
-		background-color: #B72355;
-		color: white;
+		background-color: #db67a9;
 	}
 
-	.btn-red a {
+
+	.btn-red {
+		padding: 10px 35px;
+		border: 0px;
+		border-radius: 4px;
+		color: white;
+	    font-weight: 300;
+	}
+
+
+	.btn-seeall {
+		padding: 5px 20px;
+		border-style: solid;
+		border: solid 1px #f5f5f5;
+		background-color: transparent;
+		color: #f5f5f5;
+		border-radius: 3px;
+
+	}
+
+	.btn-seeall:hover {
+	
+	}
+
+	.btn-green a {
 		color: white;
 		text-decoration: none;
 	}
@@ -250,31 +314,21 @@ height: 100px;
 		margin-top: 30px;
 	}
 
-	fieldset .btn-red {
+	fieldset .btn-create-form {
 		margin-top: 60px;
 		margin-bottom: 15px;
 	}
 
 	fieldset #submit{
-		background-color: #00D848;
+		background-color: #1DE9B6;
 	}
 
 	fieldset #submit:hover {
-		background-color: #00C441;
+		background-color: #00BFA5;
 	}
 
-	.btn-normal {
-		background-color: #00ccff;
-		padding: 10px 35px;
-		border: 0px;
-		border-radius: 3px;
-		color: white;
-	}
 
-	.btn-normal:hover {
-		background-color: #00a2cc;
-		color: white;
-	}
+
 	
 
 /* ============================================================================
@@ -282,27 +336,47 @@ height: 100px;
 ============================================================================ */
 
 	.hero {
-		background-image: url('../images/landing-bg.jpg');
+		background-image: url(../images/bg6.jpg);
+		text-align: center;
+		background-size: 100%
+	}
+
+	.hero-alt {
+		background-image: url(../images/bg5.jpg);
 		text-align: center;
 		background-size: 100%
 	}
 
 	.hero-container {
-		padding-top:5%;
-		padding-bottom:5%;
+		padding-top:10%;
+		padding-bottom:19%;
 	}
 
-	.hero-text {
+	.hero-title {
+		font-size: 45px;
+
+		font-weight: 600;
 		color: white;
+		line-height: 45px;
 	}
 
-	.hero-text h1 {
-		font-weight: 300;
+	.hero-subtitle {
+		font-size: 25px;
+		font-weight: 100;
+
+		color: white;
+		line-height: 30px;
+		letter-spacing: 0.5px;
 	}
 
 	.all-projects-title {
 		margin-top: 50px;
 		margin-bottom: 20px;
+	}
+
+	.hero-text {
+		max-width: 600px;
+		margin: auto;
 	}
 
 /* ============================================================================
@@ -317,6 +391,64 @@ height: 100px;
 	.about-text {
 		padding-bottom: 50px;
 	}
+
+.about-image {
+	background-image: url(../images/bg7.jpg);
+	background-size: 100%;
+	text-align: center;
+		padding-top:16%;
+		padding-bottom:25%;
+	}
+
+.about-section-1 {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.about-section-2 {
+	background-color: #dddddd;
+	color: #545454;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+	.about-panel {
+		overflow: auto;
+	}
+
+	.about-thumbnail {
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.about-thumbnail-img {
+	    width: 100%;
+	    position: absolute;
+	}
+
+.about-section-3 {
+	background-color: #282727;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	color: white;
+}
+
+.about-picture {
+	overflow: hidden;
+}
+
+.about-info {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.title-bottom-margin {
+	padding-bottom: 100px;
+}
+
+
 
 /* ============================================================================
 .::[ DISCOVER PAGE ]::.
@@ -343,7 +475,7 @@ height: 100px;
 	/*style for project panel, comprised of thumbnail, info-box and category-box */
 	.project-panel {
 		background-color: white;
-		border: 0 none;
+		border: solid 1px rgba(0,0,0,0.1);
 		margin-top: 20px;
 		color: black;
 		box-sizing: border-box;
@@ -351,8 +483,8 @@ height: 100px;
 
 		background: #fff;
 	    border-radius: 4px;
-	    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-	}
+/*	    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+*/	}
 
 	.project-thumbnail {
 		width: 100%;
@@ -373,8 +505,19 @@ height: 100px;
 		overflow: hidden;
 	}
 
+	.project-title {
+		margin: 0
+	;
+
+	}
+
+	.project-author {
+
+
+	}
+
 	.project-info-box a {
-		color: black;
+		color: #00BFA5;
 		text-decoration: none;
 	}
 
@@ -413,7 +556,24 @@ height: 100px;
 /* ============================================================================
 .::[ CREATE ]::.
 ============================================================================ */
-	
+
+.project-name-input {
+	margin-left: 15px;
+	border-top: 0px ;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: 2px solid black;
+	width: 300px;
+}
+
+.project-name-input:focus {
+	outline: none;
+
+}
+
+
+
+
 .push-block {
 	background-color: #f4f4f4;
 }
@@ -435,10 +595,11 @@ height: 100px;
 	/*	background: #2F2F2F;*/
 		background-color: white;
 		background-position: -510px;
-		border: 0 none;
+		border: solid 1px rgba(0,0,0,0.1);
+
 		border-radius: 4px;
-	    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-		color: black;
+/*	    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+*/		color: black;
 		box-sizing: border-box;
 		width: 100%;
 		margin-top: 60px;
@@ -542,11 +703,12 @@ height: 100px;
 		content: none; 
 	}
 	/*marking active/completed steps green*/
-	/*The number of the step and the discoveror before it = green*/
+	/*The number of the step and the discoveror before it = green. orginal: #DD265A*/
 	#progressbar li.active:before,  #progressbar li.active:after{
-		background: #DD265A;
+		background: #f476be;
 		color: white;
 	}
+
 
 	.progressbar-box {
 		width: 350px;
@@ -600,15 +762,6 @@ height: 100px;
 
 	}
 
-/* ============================================================================
-.::[ ABOUT ]::.
-============================================================================ */
-
-.about-header {
-	background-image: url('../images/makespace.jpg');
-	height: 300px;
-	background-size: 100%;
-}
 
 
 /* ============================================================================
@@ -724,8 +877,6 @@ height: 500px;
 
 
 .edit-profile-title {
-	font-size: 2em;
-	font-weight: 500;
 	margin-top: 50px;
 	margin-bottom: 30px;
 }
@@ -769,10 +920,12 @@ $$  .::[ LOGIN/SIGNUP ]::.  $$
 /*	background: #2F2F2F;*/
 	background-color: white;
 	background-position: -510px;
-	border: 0 none;
-	border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 	
+	border-radius: 4px;
+			border: solid 1px rgba(0,0,0,0.1);
+
+/*    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+*/	
 	color: black;
 	box-sizing: border-box;
 	margin: auto;
@@ -858,227 +1011,6 @@ $$  .::[ LOGIN/SIGNUP ]::.  $$
 .SOCIAL-project {background-image: url("/static/images/bg1.jpg");}
 .OTHER-project {background-image: url("/static/images/bg2.jpg");}*/
 
-
-/* Hover Flip Effects
-================================================== */
-	/* Hover flip from: http://davidwalsh.name/css-flip */
-	/* entire container, keeps perspective */
-	.flip-container {
-		perspective: 1000;
-		padding: 5px;
-	}
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-	.flip-container, .front, .back {
-		/*width: 320px;*/
-		/*height: 300px;*/
-	}
-
-	/* flip speed goes here */
-	.flipper {
-		transition: 1s;
-		transform-style: preserve-3d;
-
-		position: relative;
-	}
-
-	/* hide back of pane during swap */
-	.front, .back {
-		backface-visibility: hidden;
-
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-
-	/* front pane, placed above back */
-	.front {
-		z-index: 2;
-		/* for firefox 31 */
-		transform: rotateY(0deg);
-	}
-
-	/* back, initially hidden pane */
-	.back {
-		transform: rotateY(180deg);
-	}
-	/* End hover-flip */
-
-	
-	
-
-/* Home Menu Nav
-================================================== */
-
-
-
-/* Hover Animations
-================================================== */	
-	.nav-bars .nav-top:hover,
-	.nav-bars .nav-bottom:hover,
-	.nav-bars .nav-right:hover,
-	.nav-bars .nav-left:hover {
-		z-index: 5;
-	}
-	
-	.nav-bars .nav-top:hover .text,
-	.nav-bars .nav-bottom:hover .text,
-	.nav-bars .nav-right:hover .text,
-	.nav-bars .nav-left:hover .text {
-		font-weight: bold;
-		text-shadow: 0 1px 1px rgba(0,0,0,.75);
-		transform: scale(3.5);
-	}
-	
-	.nav-bars .nav-top:hover,
-	.nav-bars .nav-bottom:hover {
-		height: 65%;
-	}
-	.nav-bars .nav-top:hover .text,
-	.nav-bars .nav-bottom:hover .text {
-		top: 35%;
-	}
-	
-	.nav-bars .nav-right:hover,
-	.nav-bars .nav-left:hover {
-		width: 65%;
-	}
-
-	
-	
-	
-/* Home Foreground Content
-================================================== */
-	.home-fg {
-		position: relative;
-		z-index: 1;
-		padding: 4em;
-		/*max-width: 75%;*/
-	}
-	
-	.home-bg {
-		position: relative;
-		z-index: -1;
-	}
-
-	
-	.home-fg .lead {
-		font-size: 2em;
-	}
-	
-	.home-fg .event {
-		background: rgba(0,0,0,.25);
-		color: rgba(250,250,250,.75);
-		padding: 1.5em;
-		width: 75%;
-		max-width: 41.5em;
-		position: absolute
-	}
-	
-/*	.home-fg .event h2 {
-		margin: 0 0 .5em 0;
-	}*/
-	
-
-/* Background Fader Styles
-================================================== */
-@-webkit-keyframes bgFadeInOut {
-	0% {
-		opacity:1;
-	}
-	17% {
-		opacity:1;
-	}
-	25% {
-		opacity:0;
-	}
-	92% {
-		opacity:0;
-	}
-	100% {
-		opacity:1;
-	}
-}
-
-@keyframes bgFadeInOut {
-	0% {
-		opacity:1;
-	}
-	17% {
-		opacity:1;
-	}
-	25% {
-		opacity:0;
-	}
-	92% {
-		opacity:0;
-	}
-	100% {
-		opacity:1;
-	}
-}
-
-.bg-fader {
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
-	position: fixed;
-	top: 0;
-}
-
-.bg-fader-img {
-	-webkit-animation-name: bgFadeInOut;
-	-webkit-animation-timing-function: ease-in-out;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-duration: 20s;
-
-	animation-name: bgFadeInOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 20s;
-}
-
-.bg-fader img:nth-of-type(1) {
-	-webkit-animation-delay: 15s;
-	-moz-animation-delay: 15s;
-	-o-animation-delay: 15s;
-	animation-delay: 15s;
-}
-
-.bg-fader img:nth-of-type(2) {
-	-webkit-animation-delay: 10s;
-	-moz-animation-delay: 10s;
-	-o-animation-delay: 10s;
-	animation-delay: 10s;
-}
-
-.bg-fader img:nth-of-type(3) {
-	-webkit-animation-delay: 5s;
-	-moz-animation-delay: 5s;
-	-o-animation-delay: 5s;
-	animation-delay: 5s;
-}
-
-.bg-fader img:nth-of-type(4) {
-	-webkit-animation-delay: 0;
-	-moz-animation-delay: 0;
-	-o-animation-delay: 0;
-	animation-delay: 0;
-}
-
-
-
-/* Mobile first responsive fader images
-================================================== */
-
-.bg-fader-img {
-	position: absolute;
-	height: auto;
-	width: auto;
-}
 
 /* ============================================================================
 .::[ MEDIA ]::.
