@@ -52,16 +52,6 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="main-navbar">
 					<ul class="nav navbar-nav">
-<<<<<<< HEAD
-						<li><a href="/create/">CREATE</a></li>
-<!-- 						{% if user.is_authenticated %}
- -->						
-						<!-- {% endif %} -->
-						<li><a href="/discover/">DISCOVER</a></li>
-						
-<!-- 						<li><a href="/media/">Media</a></li>
- -->						<li><a href="/about/">ABOUT</a></li>
-=======
 						<li><a class="navlink" href="/create/">CREATE</a></li>
 <!-- 						{% if user.is_authenticated %}
  -->						
@@ -70,10 +60,10 @@
 						
 <!-- 						<li><a href="/media/">Media</a></li>
  -->						<li><a class="navlink" href="/about/">ABOUT</a></li>
->>>>>>> ee7828fa2fbc08282ab822b41fca63ac4c61c10f
 						
 					</ul>
 					<form action="/discover/" class="navbar-form  navbar-right pull-left" role="search" method="get">
+					{% csrf_token %}
 						<div class="form-group">
 							<span class="glyphicon glyphicon-search"></span>
 							<input type="text" id="search-input" name="project-search" autocomplete="off" 

@@ -63,6 +63,7 @@
 						
 					</ul>
 					<form action="/discover/" class="navbar-form  navbar-right pull-left" role="search" method="get">
+						{% csrf_token %}
 						<div class="form-group">
 							<span class="glyphicon glyphicon-search"></span>
 							<input type="text" id="search-input" name="project-search" autocomplete="off" 
