@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import Http404
 
 ############ USER REGISTRATION AND LOGIN ####################
-
+"""
 def register(request):
 	if request.method == 'POST':
 		form = MyRegistrationForm(request.POST)
@@ -23,6 +23,32 @@ def register(request):
 			print "valid form"
 			form.save()
 			make_user_profile(request, username)
+			args = {'success':'Your account has been created. Please use the information you provided to log in below.'}
+			return render(request, 'login.html', args)
+		else:
+			print "invalid form"
+			args = {}
+			args.update(csrf(request))
+			args['form'] = MyRegistrationForm()
+			if request.POST.get('password1') != request.POST.get('password2'):
+				args['error'] = 'Passwords do not match'
+			else:
+				args['error'] = 'An account with that username may already exist. Please use a different one.'
+			return render(request, 'register.html', args)
+	args = {}
+	args.update(csrf(request))
+	args['form'] = MyRegistrationForm()
+	return render(request, 'register.html', args)
+"""
+
+def register(request):
+	if request.method == 'POST':
+		form = MyRegistrationForm(request.POST)
+		email = request.POST.get('email') #set username to email?? how to make username not a field??
+		if form.is_valid():
+			print "valid form"
+			form.save()
+			make_user_profile(request, username, email)
 			args = {'success':'Your account has been created. Please use the information you provided to log in below.'}
 			return render(request, 'login.html', args)
 		else:
@@ -120,24 +146,20 @@ def delete_user(request):
 
 ###################### 	PASSWORD RESET ######################
 """
-"""Uses django system to render a password reset form asking for an email. Redirects to password_reset_done upon submission."""
 def reset(request):
 	return password_reset(request, template_name='password_reset_form.html',
 	  email_template_name='password_reset_email.html',
 	  subject_template_name='reset_subject.txt',
 	  post_reset_redirect=reverse('password_reset_done'))
 
-"""Rendered upon form submission. Uses django system to send email to user with a one-time link."""
 def reset_done(request):
 	return password_reset_done(request, template_name='password_reset_done.html')
 
 
-"""Rendered when user visits the one-time link. Asks for new password. Redirects to password_reset_complete upon submission."""
 def reset_confirm(request, uidb64=None, token=None):
 	return password_reset_confirm(request, template_name='password_reset_confirm.html',
 	  uidb64=uidb64, token=token, post_reset_redirect=reverse('password_reset_complete'))
 
-"""Renders a page notifying user of a successful password reset."""
 def reset_complete(request):
 	return password_reset_complete(request, template_name='password_reset_complete.html')
 """
