@@ -26,9 +26,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 
 # Application definition
@@ -92,18 +92,18 @@ DATABASES = {
 
 
 #uncomment below when testing locally: comment when pushing to github -- subsequent one is for Heroku
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cornellmake',
-        'USER': 'justin',
-        'PASSWORD': 'abc123',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-"""
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'cornellmake',
+#         'USER': 'charlie',
+#         'PASSWORD': '4561',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
 
 #comment out below when testing locally: uncomment when pushing to github (used by heroku)
 

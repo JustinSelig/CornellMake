@@ -2,6 +2,7 @@
 {% block title %}About{% endblock %}
 {% block body-color %}white{% endblock %}
 {% block content %}
+{% load static %}
 
 <div class="about-image">
   <div class="container">
@@ -18,6 +19,18 @@
      <div class="col-sm-6">
         <p> The Cornell Maker Association (CMA) was originally conceived as a university-wide, cross-disciplinary initiative to foster innovation and creativity in the Cornell community. Founded by six undergraduates in the Engineering Leadership Program, CMA was created with the intention of providing Cornell students with the necessary resources to work on projects outside of their normal academic environment. 
         </p>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-6"><h4>Where we are</h4></div>
+      <div class="col-sm-6">
+        <div id="map" style="height: 354px; width:530px;"></div>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrjjHwS-mNwMQnHgRu9Ts6KKuNnvZiG88&callback=initMap">
+        </script>
+        <script src="../static/js/maps.js"></script>
+        <script>initMap();</script>
+      </div>
   </div>
 </div>
 </div>
@@ -37,10 +50,11 @@
            <div class="col-sm-3">
               <div class="about-panel">
                 <div class="about-thumbnail">
-                    <img src="http://lorempixel.com/200/200/cats" class="about-picture about-thumbnail-img"/>
+                    <img src="http://lorempixel.com/200/200/cats" class="about-picture about-thumbnail-img img-thumbnail"/>
                 </div>
                 <div class="about-info">
                   <strong><p>Justin Selig</p></strong>
+                  <i><p>Short blurb</p></i>
                   <p>description</p>
                 </div>
               </div>
@@ -49,10 +63,11 @@
             <div class="col-sm-3">
               <div class="about-panel">
                 <div class="about-thumbnail">
-                    <img src="http://lorempixel.com/200/200/cats" class="about-picture about-thumbnail-img"/>
+                    <img src="http://lorempixel.com/200/200/cats" class="about-picture about-thumbnail-img img-thumbnail"/>
                 </div>
                 <div class="about-info">
-                  <strong><p>Justin Selig</p></strong>
+                  <strong><p>Charlie Tark</p></strong>
+                  <i><p>Short blurb</p></i>
                   <p>description</p>
                 </div>
               </div>
@@ -61,10 +76,11 @@
            <div class="col-sm-3">
               <div class="about-panel">
                 <div class="about-thumbnail">
-                    <img src="http://lorempixel.com/200/200/cats" class="about-picture about-thumbnail-img"/>
+                    <img src="http://lorempixel.com/200/200/cats" class="about-picture about-thumbnail-img img-thumbnail"/>
                 </div>
                 <div class="about-info">
-                  <strong><p>Justin Selig</p></strong>
+                  <strong><p>Brendan Elliot</p></strong>
+                  <i><p>Short blurb</p></i>
                   <p>description</p>
                 </div>
               </div>
@@ -73,10 +89,11 @@
             <div class="col-sm-3">
               <div class="about-panel">
                 <div class="about-thumbnail">
-                    <img src="http://lorempixel.com/200/200/cats" class="about-picture about-thumbnail-img"/>
+                    <img src="http://lorempixel.com/200/200/cats" class="about-picture about-thumbnail-img img-thumbnail"/>
                 </div>
                 <div class="about-info">
                   <strong><p>Justin Selig</p></strong>
+                  <i><p>Short blurb</p></i>
                   <p>description</p>
                 </div>
               </div>
@@ -93,6 +110,18 @@
          <h4>Sponsors</h4>
        </div>
     </div>
+  </div>
+  <div class="row">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <img src="{% static "images/lcllogo.png" %}" alt="lcllogo" class="img-responsive" height="200" width="400">
+        </div>
+      <div class="col-md-6">
+        <img src="{% static "images/cornelllogo.png" %}" alt="cornelllogo" class="img-responsive" height="200" width="350">
+      </div>
+    </div>
+  </div>
   </div>
 </div>
 
