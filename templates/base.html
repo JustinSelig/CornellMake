@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html><!--Used by all pages-->
 <html lang="en">
 	<head>
@@ -46,7 +47,8 @@
 						<span class="icon-bar"></span>
 					</button>
 <!-- 					<span class="title-cornell">Cornell</span>
- -->					<a class="navbar-brand" href="/"><span class="title-cornell">Cornell</span><span class="title-make">Make</span></a>
+ -->					<!-- <a class="navbar-brand" href="/"><span class="title-cornell">Cornell</span><span class="title-make">Make</span></a> -->
+ 						<a href="/"><img src="{% static "images/cornellmakelogo.png" %}" class="navbar-brand"></a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -143,12 +145,13 @@
 		<div class="container">
 			<div class="row">
 			<div class="footer-logo-box">
-				<a class="footer-logo" href="/"><span class="footer-cornell">Cornell</span><span class="blue footer-make">Make</span></a>
+				<!-- <a class="footer-logo" href="/"><span class="footer-cornell">Cornell</span><span class="blue footer-make">Make</span></a> -->
+				<a href="/"><img src="{% static "images/cornellmakelogo.png" %}" class="footer-brand"></a>
 				<p class="smalltext grey">© 2015</p>
 			</div>
  			<div class="footer-right">
 				<div class="pull-right">
-					<span class="grey"><strong>Question? Just ask:</strong></span> <p class="smalltext grey">hello@cornellmake.com</p>
+					<span class="grey"><strong>Question? Just ask:</strong></span> <p class="smalltext grey">cornellmake1@gmail.com</p>
 				</div>
 			</div>
 			</div>
